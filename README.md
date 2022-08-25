@@ -5,7 +5,7 @@
 - [Grupo](#Listado-de-Grupo)
 - [Tablero de trabajo](#Tablero-de-trabajo) 
 
-### Tema y Descripción
+# Tema y Descripción
 
 
 
@@ -13,27 +13,29 @@
 
 
 
+
+
 ## Webs Referentes 
-### https://dogfydiet.com
+#### https://dogfydiet.com
 
 
 
 ## Listado de Grupo
 
-# Myriam Alvarez:
-- Escriba sobre sí misma aquí
+### Myriam Alvarez:
+#### Escriba sobre sí misma aquí
 
-# Nathaniel Boyd:
-- Escriba sobre sí mismo aquí
+### Nathaniel Boyd:
+#### Escriba sobre sí mismo aquí
 
-# Juana Colaneri:
-- Escriba sobre sí misma aquí
+### Juana Colaneri:
+#### Escriba sobre sí misma aquí
 
-# Federico Nieva:
-- Escriba sobre sí mismo aquí
+### Federico Nieva:
+#### Escriba sobre sí mismo aquí
 
-# Agustín Platero:
-- Escriba sobre sí mismo aquí
+### Agustín Platero:
+#### Escriba sobre sí mismo aquí
 
 
 
