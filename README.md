@@ -4,20 +4,21 @@
 - [Webs Referentes](#Webs-Referentes)
 - [Grupo](#Listado-de-Grupo)
 - [Tablero de trabajo](#Tablero-de-trabajo) 
+<br  />
 
 # Tema y Descripción
-
+<br  />
 
 
 ## Público de Objetivo
-
+<br  />
 
 
 
 
 ## Webs Referentes 
 #### https://dogfydiet.com
-
+<br  />
 
 
 ## Listado de Grupo
@@ -36,7 +37,7 @@
 
 ### Agustín Platero:
 #### Escriba sobre sí mismo aquí
-
+<br  />
 
 
 ## Tablero de trabajo
