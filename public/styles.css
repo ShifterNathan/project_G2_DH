@@ -42,8 +42,27 @@
   #section2 {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    background-image: url("img/fondosVarios/blob-scene-haikei\ \(2\).png");
+  }
+
+  .imgSec2B1 {
+    display: flex;
+    width: 30%;
+    height: 80%;
+  }
+
+  #parteASec2 {
+    display: flex;
+    width: 30%;
+    height: 80%;
+  }
+
+  .imgSec2B2 {
+    display: flex;
+    width: 30%;
+    height: 80%;
   }
 
   /******************** SECCIÓN 3: "OPINIONES" ********************/
@@ -53,7 +72,9 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    background-color: #f5b77c; /* si tengo tiempo hacer un fondo más lindo*/
+    background-image: url("img/fondosVarios/blob-scene-haikei\ \(2\).png");
+    background-size: inherit;
+    /*background-color: #f5b77c; /*¿qué les gusta más?*/
   }
 
    #fotosOpiniones {
