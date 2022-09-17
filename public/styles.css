@@ -44,25 +44,27 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    background-image: url("img/fondosVarios/blob-scene-haikei\ \(2\).png");
+    background-image: url("img/indexSection3/fondoSec3.png");
+    background-size: cover;
   }
 
   .imgSec2B1 {
     display: flex;
-    width: 30%;
-    height: 80%;
+    width: 50%;
+    height: 100%;
   }
 
   #parteASec2 {
     display: flex;
-    width: 30%;
-    height: 80%;
-  }
-
-  .imgSec2B2 {
-    display: flex;
-    width: 30%;
-    height: 80%;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 50%;
+    height: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    background-image: url("img/fondosVarios/circle-scatter-haikei.png");
+    /*no sé que hice que no me cubre todo*/
   }
 
   /******************** SECCIÓN 3: "OPINIONES" ********************/
@@ -72,8 +74,7 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    background-image: url("img/fondosVarios/blob-scene-haikei\ \(2\).png");
-    background-size: inherit;
+    background-image: url("img/fondosVarios/circle-scatter-haikei.png");
     /*background-color: #f5b77c; /*¿qué les gusta más?*/
   }
 
