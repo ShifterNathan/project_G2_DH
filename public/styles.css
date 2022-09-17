@@ -36,3 +36,75 @@
     transition: transform 1.2s ease;
     transition: transform 1.2s ease,-webkit-transform 1.2s ease;
   }
+
+  /******************** SECCIÓN 2: "DALE A TU PERRO LA COMIDA QUE SE MERECE" ********************/
+ 
+  #section2 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  /******************** SECCIÓN 3: "OPINIONES" ********************/
+  
+  #section3Opiniones {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5b77c; /* si tengo tiempo hacer un fondo más lindo*/
+  }
+
+   #fotosOpiniones {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img1 {
+    display: flex;
+    width: 15%;
+    height: 75%;
+    opacity: 0.8;
+  }
+
+  .img2 {
+    display: flex;
+    width: 15%;
+    height: 75%;
+    opacity: 0.8;
+  }
+
+  .img3 {
+    display: flex;
+    width: 15%;
+    height: 75%;
+    opacity: 0.8;
+  }
+
+  .img4 {
+    display: flex;
+    width: 15%;
+    height: 75%;
+    opacity: 0.8;
+  }
+
+  .img5 {
+    display: flex;
+    align-self: center;
+    width: 80%;
+    opacity: 0.8;
+    /*modificar el posicionamiento*/
+  }
+
+  .leerMas {
+    display: flex;
+    align-self: flex-end;
+    background-color: #ef863d;
+    opacity: 0.8;
+    border: #ef863d;
+    color: white;
+    /*modificar el :hover que se pone azul*/
+  }
