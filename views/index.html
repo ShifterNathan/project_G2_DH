@@ -16,7 +16,7 @@
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
             <div class="container">
                 <a href="#" class="navbar-brand">
-                    <img src="/img/isologotipo.jpg" class="img-fluid">
+                    <img src="/img/isologotipoNav.png" class="img-fluid">
                 </a>
                 <button type="button" class="navbar-toggler"
                  data-bs-target="#navbarNav" 
@@ -32,18 +32,79 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-black">Nosotros</a>
+                            <a href="#" class="nav-link text-white">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-black">Tienda</a>
+                            <a href="#" class="nav-link text-white">Tienda</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-black">Blog</a>
+                            <a href="#" class="nav-link text-white">Blog</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
+        <script>
+            var nav = document.querySelector('nav');
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 100) {
+                    nav.classList.add('bg-dark', 'shadow');
+                } else {
+                    nav.classList.remove('bg-dark', 'shadow');
+                }
+            });
+        </script>
+        <!---------------------- CARRUSEL ---------------------->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" id="start">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">              
+                <img src="/img/carrusel/patas_con_tazon.jpg" class="d-block w-100">
+                <div class="carousel-caption text-center">
+                    <h3>Myriam porfa, escribe algo aquí (1)</h3>
+                    <p>Mensaje predeterminado</p>
+                    <a class="btn btn-outline-light btn-lg" href="#">Ver Servicios</a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="/img/carrusel/perro_con_vegetales.jpg" class="d-block w-100">
+                <div class="carousel-caption text-center">
+                    <h3>Myriam porfa, escribe algo aquí (2)</h3>
+                    <p>Otro mensaje predeterminado</p>
+                    <a class="btn btn-outline-light btn-lg" href="#">Ver Servicios</a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="/img/carrusel/perro_en_compu.jpg" class="d-block w-100">
+                <div class="carousel-caption text-center">
+                    <h3>Myriam porfa, escribe algo aquí (3)</h3>
+                    <p>Y dale con los mensajes predeterminados</p>
+                    <a class="btn btn-outline-light btn-lg" href="#">Ver Servicios</a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="/img/carrusel/perro_listo_para_comer.jpg" class="d-block w-100">
+                <div class="carousel-caption text-center">
+                    <h3>Myriam porfa, escribe algo aquí (4)</h3>
+                    <p>¡Lo cocinamos nosotros!</p>
+                    <a class="btn btn-outline-light btn-lg" href="#">Ver Servicios</a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
     </header>
 
     <!-------------------- SECCIÓN 2: "DALE A TU PERRO LA COMIDA QUE SE MERECE" ---------------------->
