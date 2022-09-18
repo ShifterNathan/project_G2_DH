@@ -1,6 +1,11 @@
 /******************** NAVBAR ********************/
+
 .navbar-brand img {
-    height: 3vw;
+    height: 4vw;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .nav-item{
@@ -47,7 +52,7 @@
   }
   
   .slide img {
-    height: 90vh;
+    height: 100vh;
   }
   
   .carousel-caption {
