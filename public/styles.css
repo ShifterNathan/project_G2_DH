@@ -3,6 +3,30 @@
     height: 3vw;
 }
 
+.nav-item{
+  font-weight: bold;
+}
+
+.navbar-nav li {
+  padding-right: 2vh;
+}
+
+.nav-item .nav-link{
+  text-transform: uppercase;
+  border-radius: 1vh;
+  letter-spacing: .3vh;
+
+}
+
+.nav-item .nav-link:hover{
+  background-color: #EF863D;
+  transition: background-color 0.8s;
+  
+  
+}
+
+
+
 
 
 /******************** CARRUSEL ********************/
@@ -23,7 +47,7 @@
   }
   
   .slide img {
-    height: 100vh;
+    height: 90vh;
   }
   
   .carousel-caption {
