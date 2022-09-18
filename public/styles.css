@@ -181,14 +181,10 @@ body {
     opacity: 0.8;
     border: #ef863d;
     color: white;
-  
-    /*modificar el :hover que se pone azul*/
-    .nav-item .nav-link:hover{
-      background-color: #EF863D;
-      transition: background-color 0.8s;
-      
-      
-    }
+  }
+
+  .leerMas:hover {
+    background-color: #EF863D;
   }
 
     /******************** SECCIÓN 4 ********************/
