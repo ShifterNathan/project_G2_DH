@@ -84,9 +84,10 @@ body {
 
   .imgSec2B1 {
     display: flex;
-    width: 10vw;
-    height: 5vw;
+    width: 50vw;
+    height: 30vw;
     padding-left:5vw;
+    border-radius: 10%;
   }
 
   #parteASec2 {
@@ -99,27 +100,37 @@ body {
     padding: 50px;
     box-sizing: border-box;
     background-color: #FDFAF2;
-    /*no sé que hice que no me cubre todo*/
+  }
+  
+  #titParteA{
+    font-family: "baloo 2";
   }
 
+  #subtParteA{
+    font-family: "baloo 2";    
+  }
   .li1 {
     background-color: #F5B77C;
     opacity: 0.8;
+    font-family: "baloo 2";
   }
 
   .li2 {
     background-color: #F5B77C;
     opacity: 0.8;
+    font-family: "baloo 2";
   }
 
   .li3 {
     background-color: #F5B77C;
     opacity: 0.8;
+    font-family: "baloo 2";
   }
 
   .li4 {
     background-color: #F5B77C;
     opacity: 0.8;
+    font-family: "baloo 2";
   }
 
   /******************** SECCIÓN 3: "OPINIONES" ********************/
@@ -181,10 +192,12 @@ body {
     opacity: 0.8;
     border: #ef863d;
     color: white;
+    font-family: "baloo 2";
   }
 
   .leerMas:hover {
     background-color: #EF863D;
+    transition: background-color 5s;
   }
 
     /******************** SECCIÓN 4 ********************/
