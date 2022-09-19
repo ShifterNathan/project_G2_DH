@@ -76,10 +76,16 @@ body {
   
   #titParteA {
     font-family: "baloo 2";
+    color:#EF863D;
+    font-weight: bold;
+    font-size: 2.5rem;
   }
 
   #subtParteA {
-    font-family: "baloo 2";    
+    font-family: "baloo 2";  
+    color:#EF863D;
+    font-size: 1.2rem;
+    line-height: 35px;  
   } 
 
   .li1 {
