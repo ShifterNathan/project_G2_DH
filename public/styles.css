@@ -135,6 +135,10 @@ body {
 
   /******************** SECCIÓN 3: "OPINIONES" ********************/
   
+#img_seccion_3 img {
+  width: 20vw;
+}
+
   #section3Opiniones {
     display: flex;
     flex-flow: column wrap;
@@ -207,3 +211,5 @@ body {
 
 
     /******************** SECCIÓN 4 ********************/
+
+
