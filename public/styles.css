@@ -5,7 +5,7 @@
 }
 
 .navbar {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 153, 51, 0.4);
 }
 
 .nav-item{
@@ -181,5 +181,7 @@
     color: white;
     /*modificar el :hover que se pone azul*/
   }
+
+
 
     /******************** SECCIÓN 4 ********************/
