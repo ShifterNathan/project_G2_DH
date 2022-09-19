@@ -1,3 +1,7 @@
+body {
+  background-color: #FDFAF2;
+}
+
 /******************** NAVBAR ********************/
 
 .navbar-brand img {
@@ -75,14 +79,15 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    background-image: url("img/indexSection3/fondoSec3.png");
-    background-size: cover;
+    background-color: #FDFAF2;
   }
 
   .imgSec2B1 {
     display: flex;
-    width: 50%;
-    height: 100%;
+    width: 50vw;
+    height: 30vw;
+    padding-left:5vw;
+    border-radius: 10%;
   }
 
   #parteASec2 {
@@ -94,28 +99,38 @@
     height: 100%;
     padding: 50px;
     box-sizing: border-box;
-    background-image: url("img/fondosVarios/circle-scatter-haikei.png");
-    /*no sé que hice que no me cubre todo*/
+    background-color: #FDFAF2;
+  }
+  
+  #titParteA{
+    font-family: "baloo 2";
   }
 
+  #subtParteA{
+    font-family: "baloo 2";    
+  }
   .li1 {
     background-color: #F5B77C;
     opacity: 0.8;
+    font-family: "baloo 2";
   }
 
   .li2 {
     background-color: #F5B77C;
     opacity: 0.8;
+    font-family: "baloo 2";
   }
 
   .li3 {
     background-color: #F5B77C;
     opacity: 0.8;
+    font-family: "baloo 2";
   }
 
   .li4 {
     background-color: #F5B77C;
     opacity: 0.8;
+    font-family: "baloo 2";
   }
 
   /******************** SECCIÓN 3: "OPINIONES" ********************/
@@ -125,52 +140,54 @@
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-    background-image: url("img/fondosVarios/circle-scatter-haikei.png");
-    /*background-color: #f5b77c; /*¿qué les gusta más?*/
+    width: 100vw;
+    height: 40vh;
   }
 
-   #fotosOpiniones {
+   #imgDeOpinionesDH {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
+    width: 75vw;
+    height: 40vh;
+    opacity:0.8;
   }
 
-  .img1 {
+  /*.img1 {
     display: flex;
-    width: 15%;
-    height: 75%;
+    width: 15vw;
+    height: 75vw;
     opacity: 0.8;
   }
 
   .img2 {
     display: flex;
-    width: 15%;
-    height: 75%;
+    width: 15vw;
+    height: 75vw;
     opacity: 0.8;
   }
 
   .img3 {
     display: flex;
-    width: 15%;
-    height: 75%;
+    width: 15vw;
+    height: 75vw;
     opacity: 0.8;
   }
 
   .img4 {
     display: flex;
-    width: 15%;
-    height: 75%;
+    width: 15vw;
+    height: 75vw;
     opacity: 0.8;
-  }
+  }*/
 
   .img5 {
     display: flex;
     align-self: center;
-    width: 80%;
+    width: 75vw;
     opacity: 0.8;
-    /*modificar el posicionamiento*/
-  }
+   }
 
   .leerMas {
     display: flex;
@@ -179,7 +196,12 @@
     opacity: 0.8;
     border: #ef863d;
     color: white;
-    /*modificar el :hover que se pone azul*/
+    font-family: "baloo 2";
+  }
+
+  #botonLeerMasOpiniones:hover {
+    background-color: #EF863D !important;
+    transition: background-color 5s;
   }
 
 
