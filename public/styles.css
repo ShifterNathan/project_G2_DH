@@ -73,65 +73,43 @@ body {
   }
 
   /******************** SECCIÓN 2: "DALE A TU PERRO LA COMIDA QUE SE MERECE" ********************/
- 
-  #section2 {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: #FDFAF2;
-  }
-
-  .imgSec2B1 {
-    display: flex;
-    width: 50vw;
-    height: 30vw;
-    padding-left:5vw;
-    border-radius: 10%;
-  }
-
-  #parteASec2 {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 50%;
-    height: 100%;
-    padding: 50px;
-    box-sizing: border-box;
-    background-color: #FDFAF2;
-  }
   
-  #titParteA{
+  #titParteA {
     font-family: "baloo 2";
   }
 
-  #subtParteA{
+  #subtParteA {
     font-family: "baloo 2";    
-  }
+  } 
+
   .li1 {
     background-color: #F5B77C;
-    opacity: 0.8;
     font-family: "baloo 2";
   }
 
   .li2 {
     background-color: #F5B77C;
-    opacity: 0.8;
     font-family: "baloo 2";
   }
 
   .li3 {
     background-color: #F5B77C;
-    opacity: 0.8;
     font-family: "baloo 2";
   }
 
   .li4 {
     background-color: #F5B77C;
-    opacity: 0.8;
     font-family: "baloo 2";
   }
+
+  /*.li4:hover{
+    background-color: #EF863D;
+    transition: background-color 2s;
+  }*/
+  
+  /*@media only screen and () {
+    
+  }*/
 
   /******************** SECCIÓN 3: "OPINIONES" ********************/
   
@@ -139,6 +117,7 @@ body {
   width: 20vw;
 }
 
+/*
   #section3Opiniones {
     display: flex;
     flex-flow: column wrap;
@@ -157,58 +136,22 @@ body {
     height: 40vh;
     opacity:0.8;
   }
+*/
 
-  /*.img1 {
-    display: flex;
-    width: 15vw;
-    height: 75vw;
-    opacity: 0.8;
-  }
-
-  .img2 {
-    display: flex;
-    width: 15vw;
-    height: 75vw;
-    opacity: 0.8;
-  }
-
-  .img3 {
-    display: flex;
-    width: 15vw;
-    height: 75vw;
-    opacity: 0.8;
-  }
-
-  .img4 {
-    display: flex;
-    width: 15vw;
-    height: 75vw;
-    opacity: 0.8;
-  }*/
-
-  .img5 {
-    display: flex;
-    align-self: center;
-    width: 75vw;
-    opacity: 0.8;
-   }
-
-  .leerMas {
-    display: flex;
+  #boton_leer_mas_opciones {
     align-self: flex-end;
-    background-color: #ef863d;
     opacity: 0.8;
     border: #ef863d;
     color: white;
     font-family: "baloo 2";
   }
 
+  /*
   #botonLeerMasOpiniones:hover {
     background-color: #EF863D !important;
     transition: background-color 5s;
   }
-
-
+  */
 
     /******************** SECCIÓN 4 ********************/
 
