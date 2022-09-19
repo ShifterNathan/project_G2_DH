@@ -88,28 +88,36 @@ body {
     line-height: 35px;  
   } 
 
-  .li1 {
-    background-color: #F5B77C;
+  #li1 {
+    background-color: #EF863D;
     font-family: "baloo 2";
+    color: #FDFAF2;
+    opacity: 0.9;
   }
 
-  .li2 {
-    background-color: #F5B77C;
+  #li2 {
+    background-color: #EF863D;
     font-family: "baloo 2";
+    color: #FDFAF2;
+    opacity: 0.9;
   }
 
-  .li3 {
-    background-color: #F5B77C;
+  #li3 {
+    background-color: #EF863D;
     font-family: "baloo 2";
+    color: #FDFAF2;
+    opacity: 0.9;
   }
 
-  .li4 {
-    background-color: #F5B77C;
+  #li4 {
+    background-color: #EF863D;
     font-family: "baloo 2";
+    color: #FDFAF2;
+    opacity: 0.9;
   }
 
   /*.li4:hover{
-    background-color: #EF863D;
+    background-color: #F5B77C;
     transition: background-color 2s;
   }*/
   
@@ -120,7 +128,11 @@ body {
   /******************** SECCIÓN 3: "OPINIONES" ********************/
   
 #img_seccion_3 img {
-  width: 20vw;
+  width: 17vw;
+}
+
+#img_trustpilot {
+  width: 50vw;
 }
 
 /*
@@ -144,11 +156,10 @@ body {
   }
 */
 
-  #boton_leer_mas_opciones {
-    align-self: flex-end;
+  .leerMas {
     opacity: 0.8;
     border: #ef863d;
-    color: white;
+    color: #FDFAF2;
     font-family: "baloo 2";
   }
 
