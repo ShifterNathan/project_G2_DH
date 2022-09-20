@@ -81,7 +81,7 @@ body {
     font-family: "baloo 2";
     color:#EF863D;
     font-weight: bold;
-    font-size: 2.5vw;
+    font-size: 40px;
   }
 
   #subtParteA {
@@ -119,64 +119,23 @@ body {
     opacity: 0.9;
   }
 
-  /*.li4:hover{
-    background-color: #F5B77C;
-    transition: background-color 2s;
-  }*/
-  
-  @media (max-width: 480px) {
-    #titParteA{
-      font-size: 22px;
-    } 
-    #subtParteA{
-      font-size: 18px;
-    }
-  }
-
   /******************** SECCIÓN 3: "OPINIONES" ********************/
   
-#img_seccion_3 img {
-  width: 17vw;
-}
-
-#img_trustpilot {
-  width: 50vw;
-}
-
-/*
-  #section3Opiniones {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 40vh;
-  }
-
-   #imgDeOpinionesDH {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    width: 75vw;
-    height: 40vh;
-    opacity:0.8;
-  }
-*/
-
-  .leerMas {
+  #boton_leer_mas{
     opacity: 0.8;
-    border: #ef863d;
+    background-color: #EF863D;
+    border: solid #ef863d;
     color: #FDFAF2;
     font-family: "baloo 2";
   }
 
-  /*
-  #botonLeerMasOpiniones:hover {
-    background-color: #EF863D !important;
-    transition: background-color 5s;
+  #boton_leer_mas:hover {
+    background-color: #F5B77C;
+    border: solid #F5B77C;
+    transition: 
+      background-color, 2s, 
+      border, 2s;
   }
-  */
 
 /******************** SECCIÓN 4 ********************/
 
@@ -197,3 +156,41 @@ footer .btn:hover {
 }
 
 
+/******************** MEDIA QUERIES ********************/
+
+/******** Smaller smartphones ********/
+
+@media (max-width: 480px) {
+  #titParteA{
+    font-size: 22px;
+  } 
+  #subtParteA{
+    font-size: 18px;
+  }
+  }
+
+/******** Tablets and larger smartphones ********/
+
+@media (min-width: 481px) and (max-width: 768px) {
+  #titParteA{
+    font-size: 22px;
+  } 
+  #subtParteA{
+    font-size: 18px;
+  }
+}
+
+/******** Laptops, larger tablets in landscape and small desktops ********/
+
+@media (min-width: 769px) and (max-width: 1279px) {
+  #titParteA{
+    font-size: 22px;
+  } 
+  #subtParteA{
+    font-size: 18px;
+  }
+}
+
+/******** Larger desktops and monitors ********/
+
+@media (min-width: 1280px) {}
