@@ -8,8 +8,20 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/index.html'))
 });
 
-app.get('/', (req, res) => {
+app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, '/views/login.html'))
+});
+
+app.get('/registro', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/registro.html'))
+});
+
+app.get('/producto', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/producto.html'))
+});
+
+app.get('/tienda', (req, res) => {
+    res.sendFile(path.join(__dirname, '/views/tienda.html'))
 });
 
 app.listen(3000, function () {
