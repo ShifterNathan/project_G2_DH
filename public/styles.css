@@ -124,9 +124,14 @@ body {
     transition: background-color 2s;
   }*/
   
-  /*@media only screen and () {
-    
-  }*/
+  @media (max-width: 480px) {
+    #titParteA{
+      font-size: 22px;
+    } 
+    #subtParteA{
+      font-size: 18px;
+    }
+  }
 
   /******************** SECCIÓN 3: "OPINIONES" ********************/
   
