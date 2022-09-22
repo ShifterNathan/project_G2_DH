@@ -9,9 +9,7 @@ body {
     height: 4vw;
 }
 
-.navbar {
-  background-color: rgba(255, 153, 51, 0.4);
-}
+
 
 .nav-item{
   font-weight: bold;
@@ -159,8 +157,8 @@ footer .btn:hover {
   color: white !important;
   background-color: #EF863D !important;
 }
-.ft-social {
-  padding: 0 1.875rem 1.25rem;
+.ft-social a {
+  margin-right: 2vw;
 }
 .ft-social-list {
   display: flex;
