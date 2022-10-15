@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="css/mdb/mdb.min.css" />
     <link rel="stylesheet" href="/css/styles.css">
+    <!-- MDB + styles.css (arriba y abajo de mdb para reemplazarlo) -->
     
   </head>
   <body>
@@ -173,6 +174,58 @@
         <input type="password" id="registerRepeatPassword" class="form-control" />
         <label class="form-label" for="registerRepeatPassword">Repita su contraseña</label>
       </div>
+      
+      <div class="text-center mb-3">
+        <i style='font-size:24px' class='fa-solid fa-dog'></i> <p>Creá el perfil de tu perro:</p>
+        
+        <!-- Nombre perrito -->
+      <div class="form-outline mb-4">
+        <input type="text" id="registerName" class="form-control" />
+        <label class="form-label" for="registerName">Nombre</label>
+      </div>
+
+      <!-- Edad perrito -->
+      <div class="form-outline mb-5">
+        <input type="text" id="ageDOG" class="form-control" />
+        <label class="form-label" for="ageDOG">Edad</label>
+      </div>
+
+
+      <!-- Peso perrito -->
+      <div class= "pesoperrito">
+        <label for="peso">Peso (en kg):</label>
+        <input type="range" value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value" id="peso" name="peso" min="0" max="50">
+        <output>24</output>
+      </div>
+       
+
+       <!-- Actividad del perrito -->
+       <div class= "actividad">
+      <form>
+        <label for="peso">Actividad:</label>&nbsp;
+          <input type="radio" name="optradio" checked>Activo
+        </label>
+        &nbsp;
+          <input type="radio" name="optradio">Inactivo
+        </label>
+      </div>
+      </form>
+
+
+    
+      
+
+
+
+
+<!--  Foto perrito -->
+<div class= "fotoperrito">
+ <label class="form-label" for="imageDOG">Foto de tu perro:</label>
+  <input type="file" name="imageDOG"/>
+      </div>
+
+
+      
 
 
       <!-- Submit button -->
