@@ -11,6 +11,7 @@ const usuariosController = require('../controllers/usuariosController');
 // ********** RUTAS **********
 
 router.get('/login', usuariosController.login);
+
 router.get('/registro', usuariosController.registro);
 
 

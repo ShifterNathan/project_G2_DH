@@ -9,7 +9,13 @@ app.set('views', './views');
 
 
 // ---------- Recursos estáticos ----------
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, './public')));  // Necesario para los archivos estáticos en el folder /public
+
+
+// ---------- Middlewares ----------
+app.use(express.urlencoded({ extended: false })); // para acceder a los datos del método POST
+app.use(express.json()); // para acceder a los datos del método POST
+
 
 // ---------- Rutas ----------
 const mainRouter = require('./src/routes/mainRoutes')
@@ -19,6 +25,7 @@ const usuariosRouter = require('./src/routes/usuariosRouter');
 app.use('/', mainRouter);
 app.use('/tienda', tiendaRouter);
 app.use('/usuarios', usuariosRouter);
+
 
 // ********** Comprobación de que el servidor está funcionando (Hard coded) **********
 app.listen(port, function () {

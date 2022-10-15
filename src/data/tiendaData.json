@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "nombre": "Sticks de cerdo",
+        "precio": "1235",
+        "descuento": "5",
+        "categoria": "snacks",
+        "descripcion": "Irresistibles snacks hechos 100% de cerdo. Son una fuente de proteínas para tu perro, rico en calcio y fósforo, que mejora su salud dental",
+        "imagen": "img-cafetera-moulinex.jpg"
+    }
+]
