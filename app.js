@@ -12,9 +12,20 @@ app.set('views', './views');
 // ---------- Recursos estáticos ----------
 app.use(express.static('public'));
 
-app.use('/', mainRouter)
+// ---------- Rutas ----------
+const tiendaRouter = require('./src/routes/tiendaRouter');
+
+app.use('/', mainRouter);
+app.use('/tienda', tiendaRouter);
 
 
+// ********** Comprobación de que el servidor está funcionando (Hard coded) **********
 app.listen(port, function () {
     console.log(`Servidor corriendo en puerto ${port}`)
 });
+
+
+
+
+// ********** Exportación de todo lo construido con express. No tocar **********
+module.exports = app;
