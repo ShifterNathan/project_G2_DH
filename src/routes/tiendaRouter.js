@@ -9,7 +9,7 @@ const tiendaController = require('../controllers/tiendaController');
 const multerDiskStorage = multer.diskStorage({
     
     destination: function(req, file, cb) {       
-     cb(null, path.join(__dirname,'public/img/imagenesTiendaProductos'));   
+     cb(null, path.join(__dirname,"../../public/img/imagenesTiendaProductos"));   
     },
     
     filename: function(req, file, cb) {          
