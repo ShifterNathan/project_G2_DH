@@ -10,12 +10,12 @@ const controller = {
         res.render('tienda');
     },
 
-    create: (req, res) => {
+    crear: (req, res) => {
         res.render('tiendaCreateForm');
     }, 
 
     // ---------- BUSCADOR DE PRODUCTOS EN LA TIENDA ----------
-    detail: (req, res) => {
+    detalle: (req, res) => {
         let idURL = req.params.id;
         let producto;
 

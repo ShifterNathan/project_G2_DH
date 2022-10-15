@@ -12,7 +12,7 @@ const tiendaController = require('../controllers/tiendaController');
 // ********** RUTAS **********
 router.get('/', tiendaController.tienda);
 
-router.get('/create');
+router.get('/crear');
 
 
 
