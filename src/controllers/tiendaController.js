@@ -2,16 +2,44 @@ const fs = require('fs');
 const path = require('path');
 
 const tiendaFilePath = path.join(__dirname, '../data/tiendaData.json');
-// const tienda = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
+const tiendaProductos = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
 
+
+// -------------------- EL CONTROLADOR DE TIENDA --------------------
 const controller = {
+
     tienda: (req, res) => {
         //const tienda = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
-        res.render('tienda');
+        res.render('tienda', {productos: tiendaProductos});
     },
 
-    crear: (req, res) => {
+    // ---------- CARGAR PRODUCTOS EN LA TIENDA ----------
+    
+    crearProducto: (req, res) => {
         res.render('tiendaCreateForm');
+    }, 
+
+    guardarProducto: (req, res) => {
+        
+        let nombreImagen=req.file.filename;
+
+        let productoNuevo = {
+			id: (tiendaProductos[tiendaProductos.length-1].id)+1, 
+			nombre: req.body.nombre,
+			precio: req.body.precio,
+			descuento: req.body.descuento,
+			categoria: req.body.categoria,
+			descripcion: req.body.descripcion,
+			imagen: nombreImagen
+		   };
+		
+        tiendaProductos.push(productoNuevo);
+
+        console.log(tiendaProductos)
+
+		fs.writeFileSync(tiendaFilePath, JSON.stringify(tiendaProductos, null, " "));
+
+		res.redirect("/");
     }, 
 
     // ---------- BUSCADOR DE PRODUCTOS EN LA TIENDA ----------

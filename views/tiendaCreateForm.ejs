@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+        <link rel="icon" href="/img/isologotipo.ico"> 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Roboto&family=Trade+Winds&display=swap" rel="stylesheet">
+
+        <title> Crear producto </title>
+
+    </head>
+
+    <body>
+    
+    <!-- Header -->
+	<%- include('partials/headerNavbar') %>
+
+    <!-- Formulario de creación de productos de la tienda de DogHouse -->
+        <div class="container products-wrapper">
+
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title"> Formulario de creación de productos para la tienda Doghouse </h2>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <form action="/tienda/crear" method="POST" enctype="multipart/form-data">
+                    <div class="row product-detail">
+                        <div class="col-12 col-md-6">
+                            <label for="name" class="form-label"> Nombre del producto:</label>
+                            <input type="text" id="name" name="nombre" placeholder="Sticks de cerdo" class="form-input">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="price" class="form-label"> Precio del producto:</label>
+                            <input type="text" id="price" name="precio" class="form-input">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="discount" class="form-label"> Descuento:</label>
+                            <input type="text" id="discount" name="descuento" placeholder="5" class="form-input">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="category" class="form-label"> Categoría:</label>
+                            <select name="category" id="categoria" class="form-input">
+                                <option value="">Elegí</option>
+                                <option value="todos"> Todos los productos </option>
+                                <option value="snacks"> Snacks naturales </option>
+                                <option value="suplementos"> Suplementos nutricionales </option>
+                                <option value="ultimos"> Últimos agregados</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label for="imagenProducto" class="form-label"> Seleccionar imagen:</label>
+                            <input type="file" name="imagenProducto">
+                        </div>
+                        <div class="col-12">
+                            <label for="description" class="form-label"> Descripción:</label>
+                            <textarea name="description" id="descripcion" class="form-input"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="buy-now-button"> Guardar producto</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    
+        </div>   
+
+    <!-- Footer -->
+	<%- include('partials/footer') %>
+    
+    </body>
+
+</html>

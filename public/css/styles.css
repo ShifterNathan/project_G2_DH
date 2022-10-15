@@ -171,6 +171,34 @@ footer .btn:hover {
   font-size: 1.25rem;
 }
 
+/******************** LOGIN/REGISTRO ********************/
+
+
+
+.fotoperrito
+{
+margin-right: 92rem;
+margin-bottom:4px;
+}
+
+.pesoperrito
+{
+  margin-top:-1rem;
+margin-right: 104rem;
+margin-bottom:1rem;
+
+}
+
+.actividad
+{
+  margin-top:1rem;
+margin-right: 106rem;
+margin-bottom:1rem;
+
+}
+
+
+
 /******************** MEDIA QUERIES ********************/
 
 /******** Smaller smartphones ********/

@@ -17,6 +17,31 @@
                 <p>TIENDA</p>
             </div>
         </div>
+
+        <div class="container ">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title">Productos orientados al cuidado de tu perro</h2>
+                </div>
+                <!-- Show the "visited" products -->
+                <% for(let producto of productos) { %>
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <section class="product-box">
+                        <a href="/tienda/detalle/<%=producto.id %>" >
+                                <img src="/img/tiendaProductos/<%=producto.imagen %>" alt="imagen de producto">
+                            <article class="infoProducto">
+                                <h2>$<%=producto.precio %></h2>
+                                <span><%=producto.descuento %>% OFF</span>
+                                <p><%=producto.nombre %></p>
+                                <p><%=producto.categoria %></p>
+                            </article>
+                        </a>
+                    </section>
+                    
+                </div>
+                <% } %>
+            </div>
+        </div>
         
 
 

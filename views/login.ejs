@@ -168,6 +168,39 @@
         <label class="form-label" for="registerRepeatPassword">Repita su contraseña</label>
       </div>
 
+              <!-- Nombre perrito -->
+              <div class="form-outline mb-4">
+                <input type="text" id="registerName" class="form-control" />
+                <label class="form-label" for="registerName">Nombre</label>
+              </div>
+        
+              <!-- Edad perrito -->
+              <div class="form-outline mb-5">
+                <input type="text" id="ageDOG" class="form-control" />
+                <label class="form-label" for="ageDOG">Edad</label>
+              </div>
+        
+        
+              <!-- Peso perrito -->
+              <div class= "pesoperrito">
+                <label for="peso">Peso (en kg):</label>
+                <input type="range" value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value" id="peso" name="peso" min="0" max="50">
+                <output>24</output>
+              </div>
+               
+        
+               <!-- Actividad del perrito -->
+               <div class= "actividad">
+              <form>
+                <label for="peso">Actividad:</label>&nbsp;
+                  <input type="radio" name="optradio" checked>Activo
+                </label>
+                &nbsp;
+                  <input type="radio" name="optradio">Inactivo
+                </label>
+              </div>
+              </form>
+
 
       <!-- Submit button -->
       <button type="submit" class="btn btn-primary btn-block mb-3"><i class='fas fa-paw'></i> BIENVENIDOS/AS</button>
