@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const tiendaFilePath = path.join(__dirname, '../data/tiendaData.json');
-const tiendaProductos= JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
+const tiendaProductos = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
 
 
 // -------------------- EL CONTROLADOR DE TIENDA --------------------
@@ -10,7 +10,7 @@ const controller = {
 
     tienda: (req, res) => {
         //const tienda = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
-        res.render('tienda');
+        res.render('tienda', {productos: tiendaProductos});
     },
 
     // ---------- CARGAR PRODUCTOS EN LA TIENDA ----------
@@ -41,7 +41,7 @@ const controller = {
     }, 
 
     // ---------- BUSCADOR DE PRODUCTOS EN LA TIENDA ----------
-    detail: (req, res) => {
+    detalle: (req, res) => {
         let idURL = req.params.id;
         let producto;
 
