@@ -1,0 +1,64 @@
+body {
+    background-color: #FDFAF2;
+    font-family: "baloo 2";
+  }
+
+/******************** NAVBAR ********************/
+
+.navbar-brand img {
+    height: 4vw;
+}
+
+.nav-item{
+  font-weight: bold;
+}
+
+.navbar-nav li {
+  padding-right: 2vh;
+}
+
+.nav-item .nav-link{
+  text-transform: uppercase;
+  border-radius: 1vh;
+  letter-spacing: .3vh;
+
+}
+
+.nav-item .nav-link:hover{
+  background-color: #EF863D;
+  transition: background-color 0.8s;
+
+}
+
+.bg-black {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/******************** FOOTER ********************/
+
+.bg-secondary {
+    background-color: #333 !important;
+  }
+  
+  footer a:hover {
+    background-color: #EF863D;
+    color: white !important;
+  }
+  
+  footer .btn:hover {
+    color: white !important;
+    background-color: #EF863D !important;
+  }
+  .ft-social a {
+    margin-right: 2vw;
+  }
+  .ft-social-list {
+    display: flex;
+    justify-content: center;
+    border-top: 1px #777 solid; 
+    padding-top: 1.25rem;
+  }
+  .ft-social-list li {
+    margin: 0.5rem;
+    font-size: 1.25rem;
+  }
