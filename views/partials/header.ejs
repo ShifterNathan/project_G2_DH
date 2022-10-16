@@ -1,0 +1,56 @@
+<header>
+    <!-------------------- MENU DE NAVEGACIÓN ---------------------->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+        <div class="container">
+            <a href="" class="navbar-brand">
+                <img src="/img/isologotipoNav.png" class="img-fluid">
+            </a>
+            <button type="button" class="navbar-toggler"
+             data-bs-target="#navbarNav" 
+             data-bs-toggle="collapse" 
+             aria-controls="navbarNav" 
+             aria-expanded="false"
+             aria-label="Toggle Navbar"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="nav navbar-nav ">
+                    <li class="nav-item active">
+                        <a href="" class="nav-link text-white text-decoration-none">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-white text-decoration-none">Acerca De</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/tienda" class="nav-link text-white text-decoration-none">Tienda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link text-white text-decoration-none">Blog</a>
+                    </li>
+                </ul>
+                <div class="mx-auto"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="/usuarios/registro" class="nav-link text-white text-decoration-none">Registrate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/usuarios/login" class="nav-link text-white text-decoration-none">Ingresá</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <script>
+        var nav = document.querySelector('nav');
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 100) {
+                nav.classList.add('bg-black', 'shadow');
+            } else {
+                nav.classList.remove('bg-black', 'shadow');
+            }
+        });
+    </script>
+    </header>
