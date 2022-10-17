@@ -7,5 +7,12 @@
   "categoria": "snacks",
   "descripcion": "Irresistibles snacks hechos 100% de cerdo. Son una fuente de proteínas para tu perro, rico en calcio y fósforo, que mejora su salud dental",
   "imagen": "img-cafetera-moulinex.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": "JAVASCRIPT",
+  "precio": "1",
+  "descuento": "69",
+  "imagen": "1665972645406.jpg"
  }
 ]
