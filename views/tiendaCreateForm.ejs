@@ -2,39 +2,39 @@
 
 <html>
     
-<!-- Include Head -->
-<%- include('partials/head', {title: 'Crear producto'}) %>
+    <!-- Include Head -->
+    <%- include('partials/head', {title: 'Crear producto'}) %>
 
     <body>
     
     <!-- Header -->
-	<%- include('./partials/header') %>
+	
 
     <!-- Formulario de creación de productos de la tienda de DogHouse -->
-        <div class="container products-wrapper">
+        <div class="container-fluid m-5">
+            
+            <div class="row m-2 justify-content-md-center">
 
-            <div class="row">
                 <div class="col-12">
                     <h2 class="products-title"> Formulario de creación de productos para la tienda Doghouse </h2>
                 </div>
-            </div>
 
-            <div class="col-12">
+                <div class="col-12 m-4">
                 <form action="/tienda/crear" method="POST" enctype="multipart/form-data">
                     <div class="row product-detail">
-                        <div class="col-12 col-md-6">
+                        <div class="col-12">
                             <label for="name" class="form-label"> Nombre del producto:</label>
                             <input type="text" id="name" name="nombre" placeholder="Sticks de cerdo" class="form-input">
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12">
                             <label for="price" class="form-label"> Precio del producto:</label>
                             <input type="text" id="price" name="precio" class="form-input">
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12">
                             <label for="discount" class="form-label"> Descuento:</label>
                             <input type="text" id="discount" name="descuento" placeholder="5" class="form-input">
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12">
                             <label for="category" class="form-label"> Categoría:</label>
                             <select name="category" id="categoria" class="form-input">
                                 <option value="">Elegí</option>
@@ -44,7 +44,7 @@
                                 <option value="ultimos"> Últimos agregados</option>
                             </select>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12">
                             <label for="imagenProducto" class="form-label"> Seleccionar imagen:</label>
                             <input type="file" name="imagenProducto">
                         </div>
@@ -58,11 +58,14 @@
                     </div>
                 </form>
             </div>
-    
+
+            </div>
         </div>   
 
     <!-- Footer -->
-	<%- include('./partials/footer') %>
+	    <div>
+            <%- include('./partials/footer') %>
+        </div>
     
     </body>
 
