@@ -37,7 +37,7 @@ const controller = {
 
 		fs.writeFileSync(tiendaFilePath, JSON.stringify(tiendaProductos, null, " "));
 
-		res.redirect("/");
+		res.redirect("/tienda");
     }, 
 
     // ---------- BUSCADOR DE PRODUCTOS EN LA TIENDA ----------
