@@ -44,7 +44,7 @@
       class="nav-link"
       id="tab-login"
       data-mdb-toggle="pill"
-      href="login"
+      href="/usuarios/login"
       role="tab"
       aria-controls="pills-login"
       aria-selected="false"
@@ -56,7 +56,7 @@
       class="nav-link active"
       id="tab-register"
       data-mdb-toggle="pill"
-      href="registro"
+      href="/usuarios/registro"
       role="tab"
       aria-controls="pills-register"
       aria-selected="true"
@@ -219,6 +219,9 @@
 
 
 <!--  Foto perrito -->
+<form action="/usuarios/create" method="POST" enctype="multipart/form-data">
+
+
 <div class= "fotoperrito">
  <label class="form-label" for="imageDOG">Foto de tu perro:</label>
   <input type="file" name="imageDOG"/>
@@ -230,7 +233,7 @@
 
       <!-- Submit button -->
       <button type="submit" class="btn btn-primary btn-block mb-3"><i class='fas fa-paw'></i> BIENVENIDOS/AS</button>
-    </form>
+    </form></form>
   </div>
 </div>
 
