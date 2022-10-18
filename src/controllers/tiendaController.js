@@ -41,18 +41,22 @@ const controller = {
     }, 
 
     // ---------- BUSCADOR DE PRODUCTOS EN LA TIENDA ----------
-    detalle: (req, res) => {
+    detalleProducto: (req, res) => {
+
         let idURL = req.params.id;
         let producto;
 
-        // construir el buscador de productos aquí
+		for (let x of tiendaProductos) {
+			if (idURL == x.id) {
+				producto = x;
+				break;
+			}
+		};
 
         res.render('tiendaDetalle', {productoDetalle: producto});
     },
 
-    
 
-        
 }
 
 module.exports = controller;

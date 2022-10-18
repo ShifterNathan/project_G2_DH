@@ -1,16 +1,86 @@
-<!-- Include Head -->
-<%- include('partials/head', {title: 'Inicio'}) %>
+<!DOCTYPE html>
+
+<html>
+    <!-- Include Head -->
+    <%- include('partials/head', {title: 'Inicio'}) %>
+
+<body>
+
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+    <!-- Como yo lo fui encarando -- Abajo está el que saco del CRUD 1 ejercicio -- Detalle producto tienda DogHouse 
+    
+    <div class="container-fluid">
+        
+        <div class="row">
+			<div class="col-12">
+				<h2 class="products-title"> Detalle del producto: <%= productoDetalle.nombre %> </h2>
+			</div>
+		</div>
+       
+        <div class="row">
+            <div class="col-6"> </div>
+            <div class="col-6"> </div>
+        </div>
+
+    </div> -->
+
+    <!-- Detalle producto tienda DogHouse -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title"> Detalle del producto: <%= productoDetalle.nombre %> </h2>
+			</div>
+		</div>
+		<div class="product-detail">
+			<div class="row">
+				<div class="col-12 col-lg-8">
+					<img src="/img/tienda/<%= productoDetalle.imagen %>" alt="Imagen de producto" class="product-detail-img"> <!-- Nath por qué usaste esa ruta en tienda.ejs, no entiendo -->
+					<p class="product-detail-description">
+						<%= productoDetalle.descripcion %>
+					</p>
+				</div>
+				<div class="col-12 col-lg-4">
+					<article class="product-detail-info">
+						<h2 class="product-detail-title"><%= productoDetalle.nombre %></h2>
+						
+							<p class="product-detail-price small">
+								<span>$<%= productoDetalle.precio %></span>
+								/
+								<b> <%= productoDetalle.descuento %> % OFF</b>
+							</p>
+							<p class="product-detail-price">
+								$<%=(productoDetalle.precio - (productoDetalle.precio * productoDetalle.descuento)/100) %> 
+							</p>
 
 
+						<ul class="actions-list">
+							<li>
+								<i class="fas fa-credit-card"></i>
+								<p>Pagá en 12 cuotas sin interes</p>
+							</li>
+						</ul>
 
+						<a href="#" class="buy-now-button"> COMPRAR AHORA </a>
+						<hr>
 
- <!-- Header -->
- <%- include('./partials/header') %>
+						<a href="/tienda/editar/<%= productoDetalle.id %>" class="action-button edit"> EDITAR PRODUCTO </a>
+						<form action="/tienda/eliminar/<%= productoDetalle.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+							<button type="submit" class="action-button delete"> ELIMINAR </button>
+						</form>
+					</article>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Detalle producto tienda DogHouse -->
 
+     <!-- Footer -->
+    <%- include('./partials/footer') %>
 
+</body>
 
+</html>
 
-
- <!-- Footer -->
- <%- include('./partials/footer') %>
  
