@@ -38,7 +38,8 @@ router.get('/detalle/:id', tiendaController.detalleProducto)
 // router.put('/editar/:id', tiendaController.editarProducto)
 
 /*** Para eliminar un producto de la tienda ***/ 
-//router.delete('/eliminar/:id', tiendaController.eliminarProducto); 
+
+router.delete('/delete/:id', tiendaController.destroy); 
 
 
 // ********** Exportación de las rutas. No tocar **********

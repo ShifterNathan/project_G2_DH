@@ -61,7 +61,20 @@ const controller = {
 
         res.render('tiendaDetalle', {productoDetalle: producto});
     },
+//Delete -Delete one product 
 
+destroy : (req, res)=>{
+    
+    let idProductoNuevo=req.params.id;
+
+    let arregloProducto= products.filter(function(elemento){
+        return elemento.id!= idProductoNuevo
+    })
+    
+    fs.writeFileSync(tiendaFilePath, JSON.stringify(arregloProducto,null, " "));
+
+		res.redirect("/tienda");    
+}
 
 }
 
