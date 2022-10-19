@@ -20,7 +20,6 @@ const multerDiskStorage = multer.diskStorage({
 
 const uploadFile = multer({ storage: multerDiskStorage });
 
-
 // ********** RUTAS **********
 
 /* La tienda */ 
@@ -34,8 +33,8 @@ router.post('/crear', uploadFile.single('imagenProducto'), tiendaController.guar
 router.get('/detalle/:id', tiendaController.detalleProducto)
 
 /* Para editar un producto de la tienda */ 
-// router.get('/editar/:id', tiendaController.editarProducto)
-// router.put('/editar/:id', tiendaController.editarProducto)
+router.get('/editar/:id', tiendaController.editar)
+router.put('/editar/:id', uploadFile.single('imagenProductoEditar'), tiendaController.actualizar)
 
 /*** Para eliminar un producto de la tienda ***/ 
 //router.delete('/eliminar/:id', tiendaController.eliminarProducto); 

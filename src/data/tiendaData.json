@@ -6,5 +6,60 @@
   "descuento": "5",
   "descripcion": "Soy totalmente natural",
   "imagen": "1666135974797aceite-salmon-para perros.jpeg"
+ },
+ {
+  "id": 2,
+  "nombre": "fghfd",
+  "precio": "523",
+  "descuento": "2",
+  "imagen": "1666146394336[GetPaidStock.com]-632ba98592a46.jpg"
+ },
+ {
+  "id": 3,
+  "nombre": "fs",
+  "precio": "2335",
+  "descuento": "12",
+  "descripcion": "xbxcbbxc",
+  "imagen": "1666146421116perro-a-dieta.jpeg"
+ },
+ {
+  "id": 4,
+  "nombre": "EDITADO",
+  "precio": "111111",
+  "descuento": "1111111",
+  "descripcion": "EDITADO",
+  "imagen": "1666146566441front-view-beautiful-dog-with-copy-space.jpg"
+ },
+ {
+  "id": 5,
+  "nombre": "",
+  "precio": "",
+  "descuento": "",
+  "descripcion": "",
+  "imagen": "1666146593742[GetPaidStock.com]-632ba88c4e1ef.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "EDITADO2",
+  "precio": "22222",
+  "descuento": "2",
+  "descripcion": "EDITADO2",
+  "imagen": "1666146630566gollum.jpg"
+ },
+ {
+  "id": 7,
+  "nombre": "EEEEE",
+  "precio": "2",
+  "descuento": "12312",
+  "descripcion": "123321132",
+  "imagen": "1666146657312gollum.jpg"
+ },
+ {
+  "id": 8,
+  "nombre": "EDITADO",
+  "precio": "123412",
+  "descuento": "50",
+  "descripcion": "EDITADO",
+  "imagen": "1666146693473gollum.jpg"
  }
 ]
