@@ -61,9 +61,9 @@ const controller = {
 
         res.render('tiendaDetalle', {productoDetalle: producto});
     },
-//Delete -Delete one product 
 
-<<<<<<< HEAD
+    // Method DELETE
+
 destroy : (req, res)=>{
     
     let idProductoNuevo=req.params.id;
@@ -76,41 +76,6 @@ destroy : (req, res)=>{
 
 		res.redirect("/tienda");    
 }
-=======
-    editar: (req, res) => {
-
-		let id = req.params.id;
-		let productoEncontrado;
-
-		for (let p of tiendaProductos){
-			if (id == p.id){
-				productoEncontrado = p;
-			}
-		}
-		res.render('tiendaEditForm',{ProductoaEditar: productoEncontrado});
-	},
-    
-    actualizar: (req, res) => {
-
-        console.log(req.file)
-        let id = req.params.id;
-        let nombreImagen = req.file.filename;
-
-		for (let p of tiendaProductos){
-			if (id == p.id){
-				p.nombre = req.body.nombre;
-                p.precio = req.body.precio;
-                p.descuento = req.body.descuento;
-                p.categoria = req.body.categoria;
-				p.descripcion = req.body.descripcion;
-				p.imagen = nombreImagen;
-				break;
-			}
-		}
-		fs.writeFileSync(tiendaFilePath, JSON.stringify(tiendaProductos, null, ' '));
-		res.redirect('/tienda');
-    }
->>>>>>> 2ff2c2686acf76219f2efa813494f9b8fe8c06de
 
 }
 

@@ -34,14 +34,11 @@ app.listen(port, function () {
     console.log(`Servidor corriendo en puerto ${port}`)
 });
 
-<<<<<<< HEAD
 //*****methodOverride/ delete */
 
 const methodOverride =require('method-override');
 app.use (methodOverride('method'));
 
 
-=======
->>>>>>> 2ff2c2686acf76219f2efa813494f9b8fe8c06de
 // ********** Exportación de todo lo construido con express. No tocar **********
 module.exports = app;
