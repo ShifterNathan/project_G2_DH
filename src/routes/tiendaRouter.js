@@ -29,6 +29,8 @@ router.get('/', tiendaController.tienda);
 router.get('/crear', tiendaController.crearProducto);
 router.post('/crear', uploadFile.single('imagenProducto'), tiendaController.guardarProducto);
 
+router.get('/formulario', tiendaController.formulario);
+
 /* Detalle de un producto cuando lo tocas particularmente en la tienda */ 
 router.get('/detalle/:id', tiendaController.detalleProducto)
 
@@ -37,7 +39,7 @@ router.get('/editar/:id', tiendaController.editar)
 router.put('/editar/:id', uploadFile.single('imagenProductoEditar'), tiendaController.actualizar)
 
 /*** Para eliminar un producto de la tienda ***/ 
-//router.delete('/eliminar/:id', tiendaController.eliminarProducto); 
+router.delete('/eliminar/:id', tiendaController.destroy); 
 
 
 // ********** Exportación de las rutas. No tocar **********

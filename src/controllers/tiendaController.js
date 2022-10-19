@@ -18,6 +18,10 @@ const controller = {
         res.render('tiendaCreateForm');
     }, 
 
+    formulario: (req, res) => {
+        res.render('formulario');
+    }, 
+
     guardarProducto: (req, res) => {
         
         let nombreImagen = req.file.filename;
@@ -94,7 +98,21 @@ const controller = {
 		}
 		fs.writeFileSync(tiendaFilePath, JSON.stringify(tiendaProductos, null, ' '));
 		res.redirect('/tienda');
-    }
+    },
+
+    
+    destroy : (req, res)=>{
+
+    let idProductoNuevo = req.params.id;
+
+    let arregloProducto = tiendaProductos.filter(function(elemento){
+        return elemento.id != idProductoNuevo
+    })
+
+    fs.writeFileSync(tiendaFilePath, JSON.stringify(arregloProducto,null, " "));
+
+		res.redirect("/tienda");    
+}
 
 }
 
