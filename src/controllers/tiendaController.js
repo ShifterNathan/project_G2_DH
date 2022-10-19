@@ -66,17 +66,25 @@ const controller = {
         res.render('tiendaDetalle', {productoDetalle: producto});
     },
 
-    // Method DELETE
 
-destroy : (req, res)=>{
-    
-    let idProductoNuevo=req.params.id;
+    editar: (req, res) => {
 
-    let arregloProducto= products.filter(function(elemento){
-        return elemento.id!= idProductoNuevo
-    })
-    
-    fs.writeFileSync(tiendaFilePath,JSON.stringify(arregloProducto,null, " "));
+		let id = req.params.id;
+		let productoEncontrado;
+
+		for (let p of tiendaProductos){
+			if (id == p.id){
+				productoEncontrado = p;
+			}
+		}
+		res.render('tiendaEditForm',{ProductoaEditar: productoEncontrado});
+	},
+
+    actualizar: (req, res) => {
+
+        console.log(req.file)
+        let id = req.params.id;
+        let nombreImagen = req.file.filename;
 
 		for (let p of tiendaProductos){
 			if (id == p.id){
@@ -94,7 +102,7 @@ destroy : (req, res)=>{
     },
 
     
-    destroy : (req, res)=>{
+    destroy : (req, res) => {
 
     let idProductoNuevo = req.params.id;
 
@@ -103,9 +111,9 @@ destroy : (req, res)=>{
     })
 
     fs.writeFileSync(tiendaFilePath, JSON.stringify(arregloProducto,null, " "));
+	res.redirect("/tienda");   
 
-		res.redirect("/tienda");    
-}
+    }
 
 }
 
