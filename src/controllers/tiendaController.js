@@ -72,7 +72,7 @@ destroy : (req, res)=>{
         return elemento.id!= idProductoNuevo
     })
     
-    fs.writeFileSync(tiendaFilePath, JSON.stringify(arregloProducto,null, " "));
+    fs.writeFileSync(tiendaFilePath,JSON.stringify(arregloProducto,null, " "));
 
 		res.redirect("/tienda");    
 }

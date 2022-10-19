@@ -35,9 +35,13 @@ app.listen(port, function () {
 });
 
 //*****methodOverride/ delete */
+app.delete('/tienda',function(req,res){
 
-const methodOverride =require('method-override');
-app.use (methodOverride('_method'));
+    const methodOverride =require('method-override');
+    app.use (methodOverride('_method'));
+
+});
+
 
 
 // ********** Exportación de todo lo construido con express. No tocar **********
