@@ -37,7 +37,7 @@ app.listen(port, function () {
 //*****methodOverride/ delete */
 
 const methodOverride =require('method-override');
-app.use (methodOverride('method'));
+app.use (methodOverride('_method'));
 
 
 // ********** Exportación de todo lo construido con express. No tocar **********
