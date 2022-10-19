@@ -2,6 +2,7 @@ const port = process.env.PORT || 3000
 const express = require('express');
 const path = require('path');
 const app = express();
+const methodOverride =  require('method-override'); // Para poder usar los métodos PUT y DELETE
 
 // ---------- Motor de plantillas ----------
 app.set('view engine', 'ejs');
@@ -15,6 +16,7 @@ app.use(express.static(path.join(__dirname, './public')));  // Necesario para lo
 // ---------- Middlewares ----------
 app.use(express.urlencoded({ extended: false })); // para acceder a los datos del método POST
 app.use(express.json()); // para acceder a los datos del método POST
+app.use(methodOverride('_method')); // Para poder usar el method="POST" en el formulario por PUT y DELETE
 
 
 // ---------- Rutas ----------
@@ -32,11 +34,14 @@ app.listen(port, function () {
     console.log(`Servidor corriendo en puerto ${port}`)
 });
 
+<<<<<<< HEAD
 //*****methodOverride/ delete */
 
 const methodOverride =require('method-override');
 app.use (methodOverride('method'));
 
 
+=======
+>>>>>>> 2ff2c2686acf76219f2efa813494f9b8fe8c06de
 // ********** Exportación de todo lo construido con express. No tocar **********
 module.exports = app;

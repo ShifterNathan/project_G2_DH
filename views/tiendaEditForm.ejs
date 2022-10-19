@@ -1,17 +1,72 @@
-<!-- Include Head -->
-<%- include('partials/head', {title: 'Inicio'}) %>
+<!DOCTYPE html>
 
+<html>
+    
+    <!-- Include Head -->
+    <%- include('partials/head', {title: 'Crear producto'}) %>
 
+    <body>
+    
+    <!-- Header 
+    <%- include('./partials/header') %> -->
 
+    <!-- Formulario de creación de productos de la tienda de DogHouse -->
+        <div class="container-fluid m-5">
+            
+            <div class="row m-2 justify-content-md-center">
 
- <!-- Header -->
- <%- include('./partials/header') %>
+                <div class="col-12">
+                    <h2> Formulario de creación de productos para la tienda Doghouse </h2>
+                </div>
 
+                <div class="col-12 m-4">
+                <form action="/tienda/editar/<%=ProductoaEditar.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="name" class="form-label"> Nombre del producto:</label>
+                            <input type="text" id="name" name="nombre" placeholder="Sticks de cerdo" class="form-input">
+                        </div>
+                        <div class="col-12">
+                            <label for="price" class="form-label"> Precio del producto:</label>
+                            <input type="number" id="price" name="precio" class="form-input">
+                        </div>
+                        <div class="col-12">
+                            <label for="discount" class="form-label"> Descuento:</label>
+                            <input type="number" id="discount" name="descuento" placeholder="5" class="form-input">
+                        </div>
+                        <div class="col-12">
+                            <label for="category" class="form-label"> Categoría:</label>
+                            <select name="category" id="categoria" class="form-input">
+                                <option value="">Elegí</option>
+                                <option value="todos"> Todos los productos </option>
+                                <option value="snacks"> Snacks naturales </option>
+                                <option value="suplementos"> Suplementos nutricionales </option>
+                                <option value="ultimos"> Últimos agregados</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label for="imagenProducto" class="form-label"> Seleccionar imagen:</label>
+                            <input type="file" name="imagenProductoEditar">
+                        </div>
+                        <div class="col-12">
+                            <label for="descripcion" class="form-label"> Descripción:</label>
+                            <textarea name="descripcion" id="descripcion" class="form-input"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="buy-now-button"> Guardar producto</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
+            </div>
+        </div>   
 
+    <!-- Footer -->
+	<div>
+    <%- include('./partials/footer') %>
+    </div>
+    
+    </body>
 
-
- <!-- Footer -->
- <%- include('./partials/footer') %>
- 
- 
+</html>

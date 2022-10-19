@@ -12,50 +12,54 @@
     <!-- Detalle producto tienda DogHouse -->
 	<div class="container-fluid">
 
-		<div class="row">
-			<div class="col-12">
-				<h2> Detalle del producto: <%= productoDetalle.nombre %> </h2>
+		<div class="row m-1">
+
+			<div class="col-sm-12 col-md-6 col-lg-6">
+				<img src="/img/tiendaProductos/<%=productoDetalle.imagen%>" style="max-width: 100%;" alt="Imagen de producto"> 
 			</div>
-		</div>
 
-		<div>
-			<div class="row">
-				<div class="col-12 col-lg-8">
-					<img src="/img/tiendaProductos/<%=productoDetalle.imagen%>" alt="Imagen de producto"> 
-					<p> <%= productoDetalle.descripcion %> </p>
-				</div>
-				<div class="col-12 col-lg-4">
-					<article>
-						<h2><%= productoDetalle.nombre %></h2>
-						
-							<p>
-								<span>$<%= productoDetalle.precio %></span>
-								/
-								<b> <%= productoDetalle.descuento %> % OFF</b>
-							</p>
-							<p>
-								$<%=(productoDetalle.precio - (productoDetalle.precio * productoDetalle.descuento)/100) %> 
-							</p>
+            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+					    <h2 ><%= productoDetalle.nombre %></h2>
+                        <p > <%= productoDetalle.descripcion %> </p>
 
+					    <p>
+							<span>$<%= productoDetalle.precio %></span>
+							/
+							<b> <%= productoDetalle.descuento %> % OFF</b>
+						</p>
 
-						<ul>
-							<li>
+						<p>
+							$<%=(productoDetalle.precio - (productoDetalle.precio * productoDetalle.descuento)/100) %> 
+						</p>
+                        
+                        <ul>
+							<li type="none">
 								<i class="fas fa-credit-card"></i>
 								<p>Pagá en 12 cuotas sin interes</p>
 							</li>
 						</ul>
 
+<<<<<<< HEAD
 						<a href="#" class="buy-now-button"> COMPRAR AHORA </a>
 						<hr>
 
 						<a href="/tienda/editar/<%= productoDetalle.id %>"> EDITAR PRODUCTO </a>
 						<form action="/tienda/delete/<%= productoDetalle.id %>?_method=DELETE" method="POST">
 							<button type="submit" class="action-button delete"> ELIMINAR </button>
+=======
+                        <button type="button" class="btn btn-link btn-lg col-12"> <a href="#"> COMPRAR AHORA </a> </button>
+                        
+                        <button type="button" class="btn btn-link btn-sm"> <a href="/tienda/editar/<%= productoDetalle.id %>"> EDITAR PRODUCTO </a> </button>
+						
+						<form action="/tienda/eliminar/<%= productoDetalle.id %>?_method=DELETE" method="POST">
+							<button type="submit" class="btn-sm"> ELIMINAR </button>
+>>>>>>> 2ff2c2686acf76219f2efa813494f9b8fe8c06de
 						</form>
-					</article>
-				</div>
+
 			</div>
+
 		</div>
+
 	</div>
 	<!-- /Detalle producto tienda DogHouse -->
 
