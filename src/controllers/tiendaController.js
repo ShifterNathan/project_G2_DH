@@ -4,7 +4,6 @@ const path = require('path');
 const tiendaFilePath = path.join(__dirname, '../data/tiendaData.json');
 const tiendaProductos = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
 
-
 // -------------------- EL CONTROLADOR DE TIENDA --------------------
 const controller = {
 
@@ -22,9 +21,16 @@ const controller = {
     guardarProducto: (req, res) => {
         
         let nombreImagen=req.file.filename;
-
+        let idProductoNuevo;
+        
+        if (tiendaProductos.length>0){
+            idProductoNuevo = (tiendaProductos[tiendaProductos.length-1].id)+1;    
+            } else {
+            idProductoNuevo = 1;
+            }
+        
         let productoNuevo = {
-			id: (tiendaProductos[tiendaProductos.length-1].id)+1, 
+			id: idProductoNuevo, 
 			nombre: req.body.nombre,
 			precio: req.body.precio,
 			descuento: req.body.descuento,
