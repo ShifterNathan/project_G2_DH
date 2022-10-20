@@ -1,8 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-//const usuariosFilePath = path.join(__dirname, '../data/usuarios.json');
-// const tienda = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
+
+
+const usuariosFilePath = path.join(__dirname, '../data/usuariosData.json');
+const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
 
 
@@ -11,21 +13,23 @@ const path = require('path');
 const controller = {
     
     login: (req, res) => {
-        res.render('login')
+        const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+        res.render('login', {usuarios: usuarios})
     },
 
     registro: (req, res) => {
-        res.render('registro')
+        const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+        res.render('registro',{usuarios: usuarios})
     }   
 }
 
 // ----------  ----------
-// Create -  Method to store
+// Create -  Guarda las imagenes del perro
 store: (req, res) => {
 	
     idNuevo=0;
 
-    for (let s of products){
+    for (let s of usuarios){
         if (idNuevo<s.id){
             idNuevo=s.id;
         }
@@ -35,23 +39,28 @@ store: (req, res) => {
 
     let nombreImagen = req.file.filename;
 
-    let productoNuevo =  {
-        id:   idNuevo,
-        name: req.body.name ,
-        price: req.body.price,
-        discount: req.body.discount,
-        category: req.body.category,
-        description: req.body.description,
-        image: nombreImagen
+    // Create -  Guarda los datos del usuario?
+
+    let usuarioNuevo =  {
+        id:   (usuarios[usuarios.length-1].id)+1, 
+        name: req.body.registerName ,
+        apellido: req.body.registerLastName ,
+        password: req.body.password,
+        email: req.body.mail,
     };
 
-    products.push(productoNuevo);
+    usuarios.push(usuarioNuevo);
 
-    fs.writeFileSync(productsFilePath, JSON.stringify(products,null,' '));
+    fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios,null,' '));
 
     res.redirect('/');
     
 },
+
+
+
+
+
 
 
 module.exports = controller;
