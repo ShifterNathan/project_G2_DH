@@ -35,13 +35,7 @@ app.listen(port, function () {
     console.log(`Servidor corriendo en puerto ${port}`)
 });
 
-//*****methodOverride/ delete */
-app.delete('/tienda',function(req,res){
 
-    const methodOverride =require('method-override');
-    app.use (methodOverride('_method'));
-
-});
 
 
 
