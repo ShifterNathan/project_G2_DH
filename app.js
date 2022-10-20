@@ -29,14 +29,10 @@ app.use('/tienda', tiendaRouter);
 app.use('/usuarios', usuariosRouter);
 
 
-
 // ********** Comprobación de que el servidor está funcionando (Hard coded) **********
 app.listen(port, function () {
     console.log(`Servidor corriendo en puerto ${port}`)
 });
-
-
-
 
 
 // ********** Exportación de todo lo construido con express. No tocar **********
