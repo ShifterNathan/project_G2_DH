@@ -65,12 +65,10 @@
   </li>
 </ul>
 
-
-
 <div class="tab-content">
   <div class="tab-pane fade show" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-    <form>
-      <div class="text-center mb-3">
+
+    <div class="text-center mb-3">
         <i style='font-size:24px' class='fas'>&#xf406;</i><p>Inicia sesión con:</p>
         <button type="button" class="btn btn-primary btn-floating mx-1">
           <i class="fab fa-facebook-f"></i>
@@ -99,7 +97,6 @@
         <input type="password" id="loginPassword" class="form-control" />
         <label class="form-label" for="loginPassword">Contraseña</label>
       </div>
-
      
       <div class="row mb-4">
         <div class="col-md-6 d-flex justify-content-center">
@@ -123,8 +120,8 @@
       <div class="text-center">
         <p><a href="#!">Todavía no tengo una cuenta</a></p>
       </div>
-    </form>
-  </div>
+
+    </div>
   <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
     <form>
       <div class="text-center mb-3">
@@ -145,95 +142,56 @@
       </div>
 
       <p class="text-center">o crea una cuenta en DOGHOUSE:</p>
+    </form>
 
-      <!-- Name input -->
+    <form action="/usuarios/registro" method="POST">
+      
+      <!-- Nombre y apellido -->
       <div class="form-outline mb-4">
-        <input type="text" id="registerName" class="form-control" />
         <label class="form-label" for="registerName">Nombre</label>
+        <input type="text" id="registerName" name="registerName" class="form-control" />
       </div>
 
       <div class="form-outline mb-4">
-        <input type="text" id="registerName" class="form-control" />
-        <label class="form-label" for="registerName">Apellido</label>
+        <label class="form-label" for="registerSurname">Apellido</label>
+        <input type="text" id="registerSurname" name="registerSurname" class="form-control" />
       </div>
 
       <!-- Email input -->
       <div class="form-outline mb-4">
-        <input type="email" id="registerEmail" class="form-control" />
         <label class="form-label" for="registerEmail">Mail</label>
+        <input type="email" id="registerEmail" name="registerEmail" class="form-control" />
+      </div>
+
+      <!-- Teléfono -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="registerContactNumber">Teléfono o número de contacto</label>
+        <input type="tel" id="registerContactNumber" name="registerContactNumber" class="form-control" />
+      </div>
+
+      <!-- Dirección -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="registerAdress">Dirección</label>
+        <input type="text" id="registerAdress" name="registerAdress" class="form-control" />
       </div>
 
       <!-- Password input -->
       <div class="form-outline mb-4">
-        <input type="password" id="registerPassword" class="form-control" />
         <label class="form-label" for="registerPassword">Contraseña</label>
+        <input type="password" id="registerPassword" name="registerPassword" class="form-control" />
       </div>
 
       <!-- Repeat Password input -->
       <div class="form-outline mb-4">
-        <input type="password" id="registerRepeatPassword" class="form-control" />
         <label class="form-label" for="registerRepeatPassword">Repita su contraseña</label>
+        <input type="password" id="registerRepeatPassword" name="registerRepeatPassword" class="form-control" />
       </div>
-      
-      <div class="text-center mb-3">
-        <i style='font-size:24px' class='fa-solid fa-dog'></i> <p>Creá el perfil de tu perro:</p>
-        
-        <!-- Nombre perrito -->
-      <div class="form-outline mb-4">
-        <input type="text" id="registerName" class="form-control" />
-        <label class="form-label" for="registerName">Nombre</label>
-      </div>
-
-      <!-- Edad perrito -->
-      <div class="form-outline mb-5">
-        <input type="text" id="ageDOG" class="form-control" />
-        <label class="form-label" for="ageDOG">Edad</label>
-      </div>
-
-
-      <!-- Peso perrito -->
-      <div class= "pesoperrito">
-        <label for="peso">Peso (en kg):</label>
-        <input type="range" value="24" min="1" max="100" oninput="this.nextElementSibling.value = this.value" id="peso" name="peso" min="0" max="50">
-        <output>24</output>
-      </div>
-       
-
-       <!-- Actividad del perrito -->
-       <div class= "actividad">
-      <form>
-        <label for="peso">Actividad:</label>&nbsp;
-          <input type="radio" name="optradio" checked>Activo
-        </label>
-        &nbsp;
-          <input type="radio" name="optradio">Inactivo
-        </label>
-      </div>
-      </form>
-
-
-    
-      
-
-
-
-
-<!--  Foto perrito -->
-<form action="/usuarios/create" method="POST" enctype="multipart/form-data">
-
-
-<div class= "fotoperrito">
- <label class="form-label" for="imageDOG">Foto de tu perro:</label>
-  <input type="file" name="imageDOG"/>
-      </div>
-
-
-      
-
 
       <!-- Submit button -->
-      <button type="submit" class="btn btn-primary btn-block mb-3"><i class='fas fa-paw'></i> BIENVENIDOS/AS</button>
-    </form></form>
+      <button type="submit" class="buy-now-button"> <i class='fas fa-paw'></i> BIENVENIDOS/AS </button>
+    
+    </form>
+
   </div>
 </div>
 

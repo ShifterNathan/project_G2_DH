@@ -22,17 +22,12 @@ const uploadFile = multer({ storage: multerDiskStorage });
 
 // ********** RUTAS **********
 
+/* Login */ 
 router.get('/login', usuariosController.login);
 
+/* Registro nuevo usuario y el guardado de sus datos */ 
 router.get('/registro', usuariosController.registro);
-router.post('/registro', usuariosController.guardarUsuarioNuevo)
-
-//router.get('/create', usuariosController.login);
-//router.post('/create', uploadFile.single('imageDOG'), usuariosController.login);
-
-//router.get('/create', usuariosController.registro);
-//router.post('/create', uploadFile.single('imageDOG'), usuariosController.registro);
-
+router.post('/registro', usuariosController.guardarUsuarioNuevo);
 
 // ********** Exportación de las rutas. No tocar **********
 module.exports = router;

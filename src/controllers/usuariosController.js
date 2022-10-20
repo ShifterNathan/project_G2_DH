@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const usuariosFilePath = path.join(__dirname, '../data/usuarios.json');
-const usuariosNuevo = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
+const registroUsuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
 // -------------------- CONTROLADOR USUARIOS --------------------
 
@@ -19,33 +19,31 @@ const controller = {
     // Guardar un usuario nuevo en JSON
     guardarUsuarioNuevo: (req, res) => {
 	
-        let nombreImagen = req.file.filename;
-        let idProductoNuevo;
+        let idUsuarioNuevo;
         
-        if (tiendaProductos.length > 0){
-            idProductoNuevo = (tiendaProductos[tiendaProductos.length-1].id)+1;    
+        if (registroUsuarios.length > 0){
+            idUsuarioNuevo = (registroUsuarios[registroUsuarios.length-1].id)+1;    
         } else {
-            idProductoNuevo = 1;
-        }
+            idUsuarioNuevo = 1;
+        };
         
-        let productoNuevo = {
-			id: idProductoNuevo, 
-			nombre: req.body.nombre,
-			precio: req.body.precio,
-			descuento: req.body.descuento,
-			categoria: req.body.categoria,
-			descripcion: req.body.descripcion,
-			imagen: nombreImagen
+        let usuarioNuevo = {
+			id: idUsuarioNuevo, 
+			nombre: req.body.registerName,
+			apellido: req.body.registerSurname,
+			email: req.body.registerEmail,
+            telefono: req.body.registerContactNumber,
+            direccion: req.body.registerAdress,
+			contraseña: req.body.registerPassword
 		   };
 		
-        tiendaProductos.push(productoNuevo);
+        registroUsuarios.push(usuarioNuevo);
 
-		fs.writeFileSync(tiendaFilePath, JSON.stringify(tiendaProductos, null, " "));
+		fs.writeFileSync(usuariosFilePath, JSON.stringify(registroUsuarios, null, " "));
 
 		res.redirect("/");
-    }, 
-
-    }; 
+    } 
+}
 
 // ********** Exportación del controlador de usuario. No tocar **********
 module.exports = controller;
