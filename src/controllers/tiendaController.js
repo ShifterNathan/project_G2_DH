@@ -117,4 +117,5 @@ const controller = {
 
 }
 
+// ********** Exportación del controlador de la tienda. No tocar **********
 module.exports = controller;

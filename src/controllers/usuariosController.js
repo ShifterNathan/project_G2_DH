@@ -1,10 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-//const usuariosFilePath = path.join(__dirname, '../data/usuarios.json');
-// const tienda = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
-
-
+const usuariosFilePath = path.join(__dirname, '../data/usuarios.json');
+const usuariosNuevo = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
 // -------------------- CONTROLADOR USUARIOS --------------------
 
@@ -16,42 +14,38 @@ const controller = {
 
     registro: (req, res) => {
         res.render('registro')
-    }   
-}
+    },
 
-// ----------  ----------
-// Create -  Method to store
-store: (req, res) => {
+    // Guardar un usuario nuevo en JSON
+    guardarUsuarioNuevo: (req, res) => {
 	
-    idNuevo=0;
-
-    for (let s of products){
-        if (idNuevo<s.id){
-            idNuevo=s.id;
+        let nombreImagen = req.file.filename;
+        let idProductoNuevo;
+        
+        if (tiendaProductos.length > 0){
+            idProductoNuevo = (tiendaProductos[tiendaProductos.length-1].id)+1;    
+        } else {
+            idProductoNuevo = 1;
         }
-    }
+        
+        let productoNuevo = {
+			id: idProductoNuevo, 
+			nombre: req.body.nombre,
+			precio: req.body.precio,
+			descuento: req.body.descuento,
+			categoria: req.body.categoria,
+			descripcion: req.body.descripcion,
+			imagen: nombreImagen
+		   };
+		
+        tiendaProductos.push(productoNuevo);
 
-    idNuevo++;
+		fs.writeFileSync(tiendaFilePath, JSON.stringify(tiendaProductos, null, " "));
 
-    let nombreImagen = req.file.filename;
+		res.redirect("/");
+    }, 
 
-    let productoNuevo =  {
-        id:   idNuevo,
-        name: req.body.name ,
-        price: req.body.price,
-        discount: req.body.discount,
-        category: req.body.category,
-        description: req.body.description,
-        image: nombreImagen
-    };
+    }; 
 
-    products.push(productoNuevo);
-
-    fs.writeFileSync(productsFilePath, JSON.stringify(products,null,' '));
-
-    res.redirect('/');
-    
-},
-
-
+// ********** Exportación del controlador de usuario. No tocar **********
 module.exports = controller;
