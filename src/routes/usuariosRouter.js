@@ -22,8 +22,6 @@ const uploadFile = multer({ storage: multerDiskStorage });
 
 // ********** RUTAS **********
 
-/* Login */ 
-router.get('/login', usuariosController.login);
 
 /* Registro nuevo usuario y el guardado de sus datos */ 
 router.get('/registro', usuariosController.registro);
