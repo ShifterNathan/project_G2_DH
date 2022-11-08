@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const multer = require('multer');
+const { body } = require('express-validator');
 
 const usuariosController = require('../controllers/usuariosController');
 
@@ -20,12 +21,28 @@ const multerDiskStorage = multer.diskStorage({
 
 const uploadFile = multer({ storage: multerDiskStorage });
 
-// ********** RUTAS **********
 
+//***  Validaciones  ****/
+
+/* Registro */ 
+let validacionesRegistro = [
+    body('registerName').notEmpty().withMessage('Campo vacio'),
+    body('registerSurname').notEmpty().withMessage('Campo vacio'),
+    body('registerEmail'),
+    body('registerContactNumber'),
+    body('registerAdress'),
+    body('registerPassword').isStrongPassword(str [options]), //acá no sé si falta ponerle las options o vienen tipo por default de esta libreria
+    body('registerRepeatPassword'),
+ ]
+
+ /* Login */
+ 
+
+// ********** RUTAS **********/
 
 /* Registro nuevo usuario y el guardado de sus datos */ 
 router.get('/registro', usuariosController.registro);
-router.post('/registro', usuariosController.guardarUsuarioNuevo);
+router.post('/registro', validacionesRegistro, usuariosController.guardarUsuarioNuevo);
 
 // ********** Exportación de las rutas. No tocar **********
 module.exports = router;

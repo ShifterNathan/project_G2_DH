@@ -187,6 +187,11 @@
         <input type="password" id="registerRepeatPassword" name="registerRepeatPassword" class="form-control" />
       </div>
 
+      <% if (locals && locals.errors) { %>
+        <% if (locals.errors[0].param=="registerName") { %>
+          <h3 style="color:red"> <%= locals.errors[0].msg %>  </h3> 
+        <% } %>
+      <% } %>
 
                 <!-- DATOS DEL PERRO
 

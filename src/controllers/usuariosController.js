@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { validationResult } = require('express-validator');
 
 const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
 const registroUsuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
@@ -14,6 +15,11 @@ const controller = {
 
     // Guardar un usuario nuevo en JSON
     guardarUsuarioNuevo: (req, res) => {
+
+        let errors = validationResult(req);
+        console.log("errors ", errors); //no sé si esto hace falta o era de prueba
+
+        if (errors.isEmpty()) {
 	
         let idUsuarioNuevo;
         
@@ -38,6 +44,11 @@ const controller = {
 		fs.writeFileSync(usuariosFilePath, JSON.stringify(registroUsuarios, null, " "));
 
 		res.redirect("/");
+        }
+
+        else {
+            res.render('registro', {errors: errors.array()});
+        } 
     } 
 }
 
