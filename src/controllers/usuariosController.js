@@ -14,12 +14,13 @@ const controller = {
         res.render('registro')
     },
 
-    // Guardar o registrar un usuario nuevo en JSON
-    guardarUsuarioNuevo: (req, res) => {
+    // Procesar el REGISTRO
+    procesoRegistro: (req, res) => {
 
         let errors = validationResult(req);
         console.log("errors ", errors); //no sé si esto hace falta o era de prueba
-
+        
+        // Si el proceso de registro sale bien...
         if (errors.isEmpty()) {
 	
         let idUsuarioNuevo;
@@ -46,7 +47,7 @@ const controller = {
 
 		res.redirect("/");
         }
-
+        // Si el proceso de registro sale mal, pasale los errores como 2do parámetro...
         else {
             res.render('registro', {errors: errors.array()});
         } 

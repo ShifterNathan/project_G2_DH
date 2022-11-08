@@ -29,10 +29,12 @@ const uploadFile = multer({ storage: multerDiskStorage });
 let validacionesRegistro = [
     body('registerName').notEmpty().withMessage('Campo vacio'),
     body('registerSurname').notEmpty().withMessage('Campo vacio'),
-    body('registerEmail'),
+    body('registerEmail')
+        .notEmpty().withMessage('Campo vacio').bail()
+        .isEmail().withMessage('Formato de email inválido'),
     body('registerContactNumber'),
     body('registerAdress'),
-    body('registerPassword').isStrongPassword(str [options]), //acá no sé si falta ponerle las options o vienen tipo por default de esta libreria
+    body('registerPassword').isStrongPassword(str [options]), //no sé cómo usar la libreria claramente y sus parámetros, creo que cuando le pones options ya se lo hace por default no hace falta {ponerle toooodo acá}
     body('registerRepeatPassword'),
  ]
 
@@ -45,7 +47,7 @@ let validacionesRegistro = [
 
 /* Registro nuevo usuario y el guardado de sus datos */ 
 router.get('/registro', usuariosController.registro);
-router.post('/registro', validacionesRegistro, usuariosController.guardarUsuarioNuevo);
+router.post('/registro', validacionesRegistro, usuariosController.procesoRegistro);
 // no sólo tenemos que agregar el middleware de validaciones si no que también tenemos que agregar lo de auth y guest?
 
 /* Login usuario */
