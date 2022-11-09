@@ -24,8 +24,8 @@ const uploadFile = multer({ storage: multerDiskStorage });
 
 
 /* Registro nuevo usuario y el guardado de sus datos */ 
-router.get('/registro', usuariosController.registro);
-router.post('/registro', usuariosController.guardarUsuarioNuevo);
+
+router.post('/registro', usuariosController.registro);
 
 // ********** Exportación de las rutas. No tocar **********
 module.exports = router;

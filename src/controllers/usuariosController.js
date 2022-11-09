@@ -8,12 +8,9 @@ const registroUsuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
 const controller = {
 
-    registro: (req, res) => {
-        res.render('registro')
-    },
 
     // Guardar un usuario nuevo en JSON
-    guardarUsuarioNuevo: (req, res) => {
+    registro: (req, res) => {
 	
         let idUsuarioNuevo;
         
@@ -25,12 +22,12 @@ const controller = {
         
         let usuarioNuevo = {
 			id: idUsuarioNuevo, 
-			nombre: req.body.registerName,
-			apellido: req.body.registerSurname,
-			email: req.body.registerEmail,
-            telefono: req.body.registerContactNumber,
-            direccion: req.body.registerAdress,
-			contraseña: req.body.registerPassword
+			//nombre: req.body.registerName,
+			//apellido: req.body.registerSurname,
+			email: req.body.email,
+            //telefono: req.body.registerContactNumber,
+            //direccion: req.body.registerAdress,
+			contraseña: req.body.password
 		   };
 		
         registroUsuarios.push(usuarioNuevo);
