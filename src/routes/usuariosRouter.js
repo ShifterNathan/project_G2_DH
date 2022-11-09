@@ -51,7 +51,7 @@ router.post('/registro', validacionesRegistro, usuariosController.procesoRegistr
 // no sólo tenemos que agregar el middleware de validaciones si no que también tenemos que agregar lo de auth y guest?
 
 /* Login usuario */
-router.login('/login', usuariosController.login);
+router.get('/login', usuariosController.login);
 router.post('/login', validacionesLogin, usuariosController.procesoLogin);
 // en el video agrega tipo una ruta check, ¿vale la pena?
 // faltaría encriptar contraseña
