@@ -44,6 +44,7 @@ let validacionesRegistro = [
 // ********** RUTAS **********/
 
 /* Registro nuevo usuario y el guardado de sus datos */ 
+<<<<<<< HEAD
 router.get('/registro', usuariosController.registro);
 router.post('/registro', validacionesRegistro, usuariosController.guardarUsuarioNuevo);
 // no sólo tenemos que agregar el middleware de validaciones si no que también tenemos que agregar lo de auth y guest?
@@ -54,6 +55,10 @@ router.post('/login', validacionesLogin, usuariosController.procesoLogin);
 // en el video agrega tipo una ruta check, ¿vale la pena?
 // faltaría encriptar contraseña
 // dicen de hacer el middleware de recordame?
+=======
+
+router.post('/registro', usuariosController.registro);
+>>>>>>> d08aa45566a637a25b4861efec23de4eb6da7465
 
 // ********** Exportación de las rutas. No tocar **********
 module.exports = router;

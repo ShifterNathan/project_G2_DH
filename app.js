@@ -26,7 +26,7 @@ const usuariosRouter = require('./src/routes/usuariosRouter');
 
 app.use('/', mainRouter);
 app.use('/tienda', tiendaRouter);
-app.use('/usuarios', usuariosRouter);
+app.use('/usuario', usuariosRouter);
 
 
 // ********** Comprobación de que el servidor está funcionando (Hard coded) **********
