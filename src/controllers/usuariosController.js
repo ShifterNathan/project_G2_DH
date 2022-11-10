@@ -1,4 +1,5 @@
 const fs = require('fs');
+
 const path = require('path');
 const { validationResult } = require('express-validator');
 
@@ -33,12 +34,12 @@ const controller = {
         
         let usuarioNuevo = {
 			id: idUsuarioNuevo, 
-			nombre: req.body.registerName,
-			apellido: req.body.registerSurname,
-			email: req.body.registerEmail,
-            telefono: req.body.registerContactNumber,
-            direccion: req.body.registerAdress,
-			contraseña: req.body.registerPassword
+			//nombre: req.body.registerName,
+			//apellido: req.body.registerSurname,
+			email: req.body.email,
+            //telefono: req.body.registerContactNumber,
+            //direccion: req.body.registerAdress,
+			contraseña: req.body.password
 		   };
 		
         registroUsuarios.push(usuarioNuevo);

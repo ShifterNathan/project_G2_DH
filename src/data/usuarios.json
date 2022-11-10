@@ -7,5 +7,10 @@
   "telefono": "1123175335",
   "direccion": "Panamericana km 46 Ramal Pilar",
   "contraseña": "ju4n1"
+ },
+ {
+  "id": 2,
+  "email": "validar@express.com",
+  "contraseña": "12345"
  }
 ]
