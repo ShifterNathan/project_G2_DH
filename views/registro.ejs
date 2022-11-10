@@ -1,41 +1,186 @@
 <!DOCTYPE html>
 
 <html>
-    
-    <!-- Include Head -->
-    <%- include('partials/head', {title: 'Suscripción'}) %>
+        <!-- Include Head -->
+  
+    <%- include('partials/head', {title: 'registro.ejs'}) %>
 
+    <link rel="stylesheet" href="/css/create-edit-form.css">
 <body>
     
     <!-- Header -->
-    <%- include('./partials/header') %> 
-
+    
     <!-- Formulario de registro -->
-<form action="/usuario/registro" method="POST">
-    <div class="mb-3 mt-3">
-        <label for="email">Email</label>
-        <input type="email" name="email" class="form-control">
-    </div>
-    <div class="mb-3 mt-3">
-        <label for="email">Repetir email</label>
-        <input type="email" name="repeat_email" class="form-control">
-    </div>
-    <div class="mb-3 mt-3">
-        <label for="password">Contraseña</label>
-        <input type="password" name="password" class="form-control">
-    </div>
-    <div class="mb-3 mt-3">
-        <label for="password">Repetir contraseña</label>
-        <input type="password" name="repeat_password" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-light mt-3">Bienvenidos
-    <i class="fa-solid fa-paw"></i></button>
-</form>
+    
+    <div class="container">
+    <img src="/img/isologotipo.ico" style="width:100px ;">
 
-    <!-- Footer -->
-<div>
-    <%- include('./partials/footer') %>
+    <form action="/usuario/registro" method="POST" enctype="multipart/form-data" >
+        <h2>Registrate</h2>
+          
+<div class="container">
+ <form class="row mb-2 mt-3 g-4 needs-validation" novalidate> <!--Quitamos validaciones automáticas del navegador-->
+
+<div class="col-6">
+                      
+<div class="col-12 m-6">
+       
+<div class="row mb-3 g-2">
+    <div class="col-6">  
+        <label for="nombreUsuario" class="form-label"> Nombre</label>
+             <input type="text"  class="form-register" id="nombreUsuario" name="nombre" placeholder=" " class="form-input" required>
+</div>
+                                                  
+<!--<div class="valid-feedback">
+    ¡Se ve bien!
+</div>
+<div class="invalid-feedback">
+   Debes completar el nombre
+    </div>  -->
+     </div>
     </div>
+        
+ 
+    <div class="col-12 m-6">
+        <div class="row mb-3 g-2">
+        <div class="col-6">  
+     <label for="apellidoUsuario" class="form-label">Apellido</label>
+        <input type="text"  class="form-register" id="apellidoUsuario" name="apellido" placeholder="" class="form-input" required>
+            </div>
+                                          
+      <div class="valid-feedback">
+        ¡Se ve bien!
+    </div>
+    <div class="invalid-feedback">
+        Debes completar el nombre
+    </div>  
+    </div>
+    </div>
+    
+                      
+   <div class="col-12 m-6">
+   <div class="row mb-3 g-2">
+   <div class="col-6">  
+        <label for="emailUsuario" class="form-label">Email</label>
+             <input type="email"  class="form-register" id="emailUsuario" name="email" placeholder="" class="form-input" required>
+    </div>
+                                        
+    <!--<div class="valid-feedback">
+        ¡Se ve bien!
+    </div>
+    <div class="invalid-feedback">
+        Debes completar el nombre
+    </div> --> 
+    </div>
+    </div>
+
+    <div class="col-12 m-6">
+                                
+        <div class="row mb-3 g-2">
+        <div class="col-6">
+            <label for="clavelUsuario" class="form-label">Clave</label>
+             <input type="password"  class="form-register" id="clavelUsuario" name="clave" placeholder="" class="form-input" required>
+    </div>
+                                        
+    <div class="valid-feedback">
+        ¡Se ve bien!
+    </div>
+    <div class="invalid-feedback">
+        Debes completar el nombre
+    </div>  
+    </div>
+    </div>
+
+    <div class="col-12 m-6 mb-3">
+                                
+        <!--<div class="row mb-3 g-2">
+        <div class="col-12">-->
+            <label for="DirecciónlUsuario" class="form-label">Dirección</label>
+             <input type="text"  class="form-register" id="direccionlUsuario" name="direccion" placeholder="" class="form-input" required>
+    </div>
+                                        
+    <div class="valid-feedback">
+        ¡Se ve bien!
+    </div>
+    <div class="invalid-feedback">
+        Debes completar el nombre
+    </div>  
+    </div>
+    </div>
+
+    <div class="col-12 m-6 mb-3">
+    <!--<div class="row mb-2 g-2"></div>
+    <div class="col-12">-->
+        <label for="avatar" class="form-label">Imagen:</label>
+            <input type="file" name="avatar" class="form-input" required>
+                 </div>
+
+                      
+    <div class="valid-feedback">
+        ¡Se ve bien!
+    </div>
+    <div class="invalid-feedback">
+        Debes completar el nombre
+    </div>  
+    </div>
+    </div>
+
+                                  
+<div class="valid-feedback">
+¡Se ve bien!
+</div>
+<div class="invalid-feedback">
+Debes completar el nombre
+</div>  
+</div>
+</div>
+
+    
+    
+</imput>
+</div>
+
+<div class="col-6 m-10">                           
+    <div class="row mb-3 g-2">
+  
+
+       <!--Checkbox -->
+       <div class="col-6">
+        <div class="col-12 m-4">
+                                
+            <div class="row mb-3 g-2"> 
+       <div class="form-check mb-3 mb-md-0">
+        <input class="form-check-input" type="checkbox" id="enviar" checked>
+        <label for="enviar">Enviar </label>
+      </div>
+    </div>
+
+</form>
+<script>// Ejemplo de JavaScript inicial para deshabilitar el envío de formularios si hay campos no válidos
+    (function () {
+      'use strict'
+    
+      // Obtener todos los formularios a los que queremos aplicar estilos de validación de Bootstrap personalizados
+      var forms = document.querySelectorAll('.needs-validation')
+    
+      // Bucle sobre ellos y evitar el envío
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+    
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+    </script>
+
+    
+
+        </div>
     
     </body>
     
