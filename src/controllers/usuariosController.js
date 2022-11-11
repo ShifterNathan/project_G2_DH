@@ -27,7 +27,7 @@ const controller = {
 			email: req.body.email,
             //telefono: req.body.registerContactNumber,
             //direccion: req.body.registerAdress,
-			contraseña: req.body.password
+			contraseña: req.body.passwordxxx
 		   };
 		
         registroUsuarios.push(usuarioNuevo);
