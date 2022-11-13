@@ -1,42 +1,160 @@
 <!DOCTYPE html>
 
 <html>
-    
-    <!-- Include Head -->
-    <%- include('partials/head', {title: 'Suscripción'}) %>
+    <!-- Head -->
+  
+    <%- include('partials/head', {title: 'Registro'}) %>
+    <link rel="stylesheet" href="/css/create-edit-form.css">
 
-<body>
-    
-    <!-- Header -->
-    <%- include('./partials/header') %> 
-
+    <body>
+        
     <!-- Formulario de registro -->
-<form action="/usuario/registro" method="POST">
-    <div class="mb-3 mt-3">
-        <label for="email">Email</label>
-        <input type="email" name="email" class="form-control">
-    </div>
-    <div class="mb-3 mt-3">
-        <label for="email">Repetir email</label>
-        <input type="email" name="repeat_email" class="form-control">
-    </div>
-    <div class="mb-3 mt-3">
-        <label for="password">Contraseña</label>
-        <input type="password" name="password" class="form-control">
-    </div>
-    <div class="mb-3 mt-3">
-        <label for="password">Repetir contraseña</label>
-        <input type="password" name="repeat_password" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-light mt-3">Bienvenidos
-    <i class="fa-solid fa-paw"></i></button>
-</form>
+    
+    <div class="container">
+        
+        <img src="/img/isologotipo.ico" style="width:100px ;">
 
-    <!-- Footer -->
-<div>
-    <%- include('./partials/footer') %>
+        <form action="/usuario/registro" method="POST">
+            
+            <h2>Registrate</h2>
+          
+            <div class="container">
+
+                <div class="row mb-3 g-2">
+                    <div class="col-6">  
+                        <label for="nombreUsuario" class="form-label"> Nombre </label>
+                        <input 
+                            type="text"
+                            class="form-control <%= locals.errors && errors.nombreUsuario ? 'is-invalid': null%>"
+                            id="nombreUsuario"
+                            name="nombreUsuario"
+                            value="<%= locals.oldData ? oldData.nombreUsuario : null %>"
+                        >
+                        <%if (locals.errors && errors.nombreUsuario) {%>
+                            <div class="text-danger">
+                                <%= errors.nombreUsuario.msg%>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+
+                <div class="row mb-3 g-2">
+                    <div class="col-6">  
+                        <label for="apellidoUsuario" class="form-label"> Apellido </label>
+                        <input 
+                            type="text"
+                            class="form-control <%= locals.errors && errors.apellidoUsuario ? 'is-invalid': null%>"
+                            id="apellidoUsuario"
+                            name="apellidoUsuario"
+                            value="<%= locals.oldData ? oldData.apellidoUsuario : null %>"
+                        >
+                            <%if (locals.errors && errors.apellidoUsuario) {%>
+                                <div class="text-danger">
+                                    <%= errors.apellidoUsuario.msg%>
+                                </div>
+                            <% } %>
+                    </div>
+                </div>
+
+                <div class="row mb-3 g-2">
+                    <div class="col-6">  
+                        <label for="telefonoUsuario" class="form-label"> Teléfono </label>
+                        <input 
+                            type="phone"
+                            class="form-control <%= locals.errors && errors.telefonoUsuario ? 'is-invalid': null%>"
+                            id="telefonoUsuario"
+                            name="telefonoUsuario"
+                            value="<%= locals.oldData ? oldData.telefonoUsuario : null %>"
+                        >
+                            <%if (locals.errors && errors.telefonoUsuario) {%>
+                                <div class="text-danger">
+                                    <%= errors.telefonoUsuario.msg%>
+                                </div>
+                            <% } %>
+                    </div>
+                </div>
+
+                <div class="row mb-3 g-2">
+                    <div class="col-6">  
+                        <label for="emailUsuario" class="form-label"> Email </label>
+                        <input 
+                            type="email"
+                            class="form-control <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%>"
+                            id="emailUsuario"
+                            name="emailUsuario"
+                            value="<%= locals.oldData ? oldData.emailUsuario : null %>"
+                        >
+                            <%if (locals.errors && errors.emailUsuario) {%>
+                                <div class="text-danger">
+                                    <%= errors.emailUsuario.msg%>
+                                </div>
+                            <% } %>
+                    </div>
+                </div>
+
+                <div class="row mb-3 g-2">
+                    <div class="col-6">  
+                        <label for="claveUsuario" class="form-label"> Contraseña </label>
+                        <input 
+                            type="password"
+                            class="form-control <%= locals.errors && errors.claveUsuario ? 'is-invalid': null%>"
+                            id="claveUsuario"
+                            name="claveUsuario"
+                        >
+                            <%if (locals.errors && errors.claveUsuario) {%>
+                                <div class="text-danger">
+                                    <%= errors.claveUsuario.msg%>
+                                </div>
+                            <% } %>
+                    </div>
+                </div>
+
+                <div class="row mb-3 g-2">
+                    <div class="col-6">  
+                        <label for="direccionUsuario" class="form-label"> Dirección </label>
+                        <input 
+                            type="text"
+                            class="form-control <%= locals.errors && errors.direccionUsuario ? 'is-invalid': null%>"
+                            id="direccionUsuario"
+                            name="direccionUsuario"
+                            value="<%= locals.oldData ? oldData.direccionUsuario : null %>"
+                        >
+                            <%if (locals.errors && errors.direccionUsuario) {%>
+                                <div class="text-danger">
+                                    <%= errors.direccionUsuario.msg%>
+                                </div>
+                            <% } %>
+                    </div>
+                </div>
+
+                <!--<div class="row mb-3 g-2">
+                    <div class="col-6">  
+                        <label for="avatar" class="form-label"> Imagen de perfil: </label>
+                        <input 
+                            type="file" 
+                            name="avatar" 
+                            class="form-control"
+                        >
+                            <%//if (locals.errors && errors.avatar) {%>
+                                <div class="text-danger">
+                                    <%//= errors.avatar.msg%>
+                                </div>
+                            <%// } %>
+                    </div>
+                </div>-->
+
+                <div class="row mb-3 g-2">
+                    <div class="col-6">  
+                        <button type="submit" class="btn btn-primary"> Enviar </button>
+                    </div>
+                </div>  
+            
+            </div>
+
+        </form>
+
     </div>
     
     </body>
     
-    </html>
+</html>

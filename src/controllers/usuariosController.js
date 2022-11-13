@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 const path = require('path');
-const { validationResult } = require('express-validator');
+const {validationResult} = require('express-validator');
 
 const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
 const registroUsuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
@@ -19,10 +19,9 @@ const controller = {
     procesoRegistro: (req, res) => {
 
         let errors = validationResult(req);
-        console.log("errors ", errors); //no sé si esto hace falta o era de prueba
         
         // Si el proceso de registro sale bien...
-        if (errors.isEmpty()) {
+        if (errors.isEmpty()) { // if (errors.errors.length>0)...
 	
         let idUsuarioNuevo;
         
@@ -31,15 +30,18 @@ const controller = {
         } else {
             idUsuarioNuevo = 1;
         };
+
+        //let avatar = req.file.filename;
         
         let usuarioNuevo = {
 			id: idUsuarioNuevo, 
-			//nombre: req.body.registerName,
-			//apellido: req.body.registerSurname,
-			email: req.body.email,
-            //telefono: req.body.registerContactNumber,
-            //direccion: req.body.registerAdress,
-			contraseña: req.body.password
+			nombre: req.body.nombreUsuario,
+			apellido: req.body.apellidoUsuario,
+            telefono:req.body.telefonoUsuario,
+			email: req.body.emailUsuario,
+            contraseña: req.body.claveUsuario,
+            direccion: req.body.direccionUsuario,
+            //imagen: avatar
 		   };
 		
         registroUsuarios.push(usuarioNuevo);
@@ -48,10 +50,14 @@ const controller = {
 
 		res.redirect("/");
         }
+
         // Si el proceso de registro sale mal, pasale los errores como 2do parámetro...
         else {
-            res.render('registro', {errors: errors.array()});
-        } 
+            res.render('registro', {errors: 
+                errors.mapped(), // errors es un array que tiene varias cosas, justamente el método mapped lo convierte a un objeto literal
+                oldData: req.body // para la persistencia de los datos del formulario 
+            });     
+        }; 
     },
     
     // Vista LOGIN

@@ -10,7 +10,11 @@
  },
  {
   "id": 2,
-  "email": "validar@express.com",
-  "contraseña": "12345"
+  "nombre": "Nath",
+  "apellido": "Boyd",
+  "telefono": "11240354356",
+  "email": "nath@gmail.com",
+  "contraseña": "efjfapfjea",
+  "direccion": "Los aromos 456"
  }
 ]
