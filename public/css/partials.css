@@ -89,7 +89,7 @@ body {
   background-color: #3C9395;
 }
 
-.form-control {
+.header-form {
   background-color: inherit;
   border-radius: 0px;
   border: 0px;
@@ -97,7 +97,8 @@ body {
   
 }
 
-.form-control:focus {   
+
+.header-form:focus {   
   background-color: inherit;
   border-radius: 10px;
   transition: border-radius 0.1;

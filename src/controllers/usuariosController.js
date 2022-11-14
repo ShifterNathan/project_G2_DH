@@ -1,7 +1,6 @@
 const fs = require('fs');
-
 const path = require('path');
-const {validationResult} = require('express-validator');
+const { validationResult } = require('express-validator');
 
 const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
 const registroUsuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
@@ -18,10 +17,16 @@ const controller = {
     // Procesar el REGISTRO
     procesoRegistro: (req, res) => {
 
-        let errors = validationResult(req);
+        const resultValidation = validationResult(req);
         
-        // Si el proceso de registro sale bien...
-        if (errors.isEmpty()) { // if (errors.errors.length>0)...
+        
+        if (resultValidation.errors.length > 0) {
+            return res.render('registro', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            })}
+
+        else {
 	
         let idUsuarioNuevo;
         
@@ -31,7 +36,7 @@ const controller = {
             idUsuarioNuevo = 1;
         };
 
-        //let avatar = req.file.filename;
+        let avatar = req.file.filename;
         
         let usuarioNuevo = {
 			id: idUsuarioNuevo, 
@@ -41,7 +46,7 @@ const controller = {
 			email: req.body.emailUsuario,
             contraseña: req.body.claveUsuario,
             direccion: req.body.direccionUsuario,
-            //imagen: avatar
+            imagen: avatar
 		   };
 		
         registroUsuarios.push(usuarioNuevo);
@@ -50,19 +55,6 @@ const controller = {
 
 		res.redirect("/");
         }
-
-        // Si el proceso de registro sale mal, pasale los errores como 2do parámetro...
-        else {
-            res.render('registro', {errors: 
-                errors.mapped(), // errors es un array que tiene varias cosas, justamente el método mapped lo convierte a un objeto literal
-                oldData: req.body // para la persistencia de los datos del formulario 
-            });     
-        }; 
-    },
-    
-    // Vista LOGIN
-    login: (req, res) => {
-        res.render('...') //falta completar vista
     },
 
     // Proceso Login

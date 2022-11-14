@@ -3,22 +3,25 @@
 <html>
     <!-- Head -->
   
-    <%- include('partials/head', {title: 'Registro'}) %>
-    <link rel="stylesheet" href="/css/create-edit-form.css">
+    <!-- Include Head -->
+    <%- include('partials/head', {title: 'Crear producto'}) %>
 
     <body>
+    
+    <!-- Header -->
+    
         
     <!-- Formulario de registro -->
     
     <div class="container">
         
-        <img src="/img/isologotipo.ico" style="width:100px ;">
+        <a href="/"><img src="/img/isologotipo.ico"  style="width:100px ;"></a>
 
-        <form action="/usuario/registro" method="POST">
+        <form action="/usuario/registro" method="POST" enctype="multipart/form-data">
             
-            <h3>Registrate</h3>
-          <br>
-            <div class="container">
+            <h2>Registrate</h2>
+          
+            <div class="container ">
 
     <div class="row"></div>
                 <div class="row mb-2 g-3">
@@ -128,7 +131,7 @@
                     </div>
                 </div>
 
-                <!--<div class="row mb-3 g-2">
+                <div class="row mb-3 g-2">
                     <div class="col-6">  
                         <label for="avatar" class="form-label"> Imagen de perfil: </label>
                         <input 
@@ -136,13 +139,13 @@
                             name="avatar" 
                             class="form-control"
                         >
-                            <%//if (locals.errors && errors.avatar) {%>
+                            <%if (locals.errors && errors.avatar) {%>
                                 <div class="text-danger">
-                                    <%//= errors.avatar.msg%>
+                                    <%= errors.avatar.msg%>
                                 </div>
-                            <%// } %>
+                            <%} %>
                     </div>
-                </div>-->
+                </div>
 
                 <div class="row mb-3 g-2">
                     <div class="col-6">  
