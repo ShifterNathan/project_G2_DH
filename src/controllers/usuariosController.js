@@ -19,13 +19,14 @@ const controller = {
 
         const resultValidation = validationResult(req);
         
-        
+        // Si hay errores en el proceso de registro...
         if (resultValidation.errors.length > 0) {
             return res.render('registro', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             })}
-
+        
+        // Si no hay errores de validación, registrar el usuario nuevo en el JSON
         else {
 	
         let idUsuarioNuevo;
