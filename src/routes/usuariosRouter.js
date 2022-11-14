@@ -8,41 +8,35 @@ const usuariosController = require('../controllers/usuariosController');
 const { Router } = require('express');
 
 //***  Configuración de multer  ****/
-const multerDiskStorage = multer.diskStorage({
+const storage = multer.diskStorage({
     
     destination: function(req, file, cb) {       
-     cb(null, path.join(__dirname,"../../public/img/usuarios"));   
+        cb(null, path.join(__dirname,"../../public/img/avatars"));   
     },
     
     filename: function(req, file, cb) {          
-     let imageName = Date.now() + file.originalname;  
-     cb(null, imageName);         
+        let imageName = Date.now() + file.originalname;  
+        cb(null, imageName);         
     }
 });
 
-const uploadFile = multer({ storage: multerDiskStorage });
+const uploadFile = multer({ storage: storage});
+
+//***  Validaciones  ****/
 
 
-//***  Validaciones ¿las llevamos tipo a un middleware? ****/
 
-/* Registro 
-let validacionesRegistro = [
-    body('registerName').notEmpty().withMessage('Campo vacio'),
-    body('registerSurname').notEmpty().withMessage('Campo vacio'),
-    body('registerEmail')
-        .notEmpty().withMessage('Campo vacio').bail()
-        .isEmail().withMessage('Formato de email inválido'),
-    body('registerContactNumber'),
-    body('registerAdress'),
-    body('registerPassword').isStrongPassword(str [options]), //no sé cómo usar la libreria claramente y sus parámetros, creo que cuando le pones options ya se lo hace por default no hace falta {ponerle toooodo acá}
-    body('registerRepeatPassword'),
- ]*/ 
+//***  Middlewares  ****/
+
+const validacionesRegistro = require('../middlewares/validacionesRegistro')
+const {guestMw} = require('../middlewares/guestMw');
+const {authMw} = require('../middlewares/authMw');
 
 // ********** RUTAS **********/
 
 /* Registro nuevo usuario y el guardado de sus datos */ 
-router.get('/registro', usuariosController.registro);
-router.post('/registro', usuariosController.procesoRegistro);
+router.get('/registro', usuariosController.registro); // (Tiene que ser invitado para entrar a este formulario)
+router.post('/registro', uploadFile.single('avatar'), validacionesRegistro, usuariosController.procesoRegistro);
 
 // ********** Exportación de las rutas. No tocar **********
 module.exports = router;

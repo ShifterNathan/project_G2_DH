@@ -10,7 +10,21 @@
  },
  {
   "id": 2,
-  "email": "validar@express.com",
-  "contraseña": "12345"
+  "nombre": "Nath",
+  "apellido": "Boyd",
+  "telefono": "11240354356",
+  "email": "nath@gmail.com",
+  "contraseña": "efjfapfjea",
+  "direccion": "Los aromos 456"
+ },
+ {
+  "id": 3,
+  "nombre": "Pepito Grillo",
+  "apellido": "Con FULL validaciones",
+  "telefono": "52532325532",
+  "email": "fsdfsdfdfsdsdffds@kkkk.com",
+  "contraseña": "daggsgdsdg",
+  "direccion": "sdgsdgsdgsdgsd",
+  "imagen": "1668387000275312245485_1804500936595712_6791465078804603085_n.jpg"
  }
 ]

@@ -19,7 +19,7 @@
 
                 <ul class="nav navbar-nav ">
                     <li class="nav-item active">
-                        <a href="" class="nav-link text-white text-decoration-none">Inicio</a>
+                        <a href="/" class="nav-link text-white text-decoration-none">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link text-white text-decoration-none">Acerca De</a>
@@ -34,8 +34,8 @@
                 <div class="mx-auto"></div>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="" class="nav-link text-white text-decoration-none" 
-                        data-bs-toggle="modal" role="button">Regístrate</a>
+                        <a href="/usuario/registro" class="nav-link text-white text-decoration-none" 
+                        role="button">Regístrate</a>
                     </li>
                     <li class="nav-item">
                         <a href="#login" class="nav-link text-white text-decoration-none" 
@@ -73,11 +73,11 @@
                         <form action="/usuario/ingreso" method="POST">
                             <div class="mb-3 mt-3">
                                 <label for="email">Email</label>
-                                <input type="email" name="email" class="form-control">
+                                <input type="email" name="email" class="form-control header-form">
                             </div>
                             <div class="mb-3 mt-3">
                                 <label for="password">Contraseña</label>
-                                <input type="password" name="password" class="form-control">
+                                <input type="password" name="password" class="form-control header-form">
                             </div>
 
                             <div class="row mb-4">
@@ -97,7 +97,7 @@
                             <button type="submit" class="btn btn-light mt-3">Iniciar Sesión
                             <i class="fa-solid fa-paw"></i></button>
                         </form>
-                        <p class="pt-3 text-center">¿Aún no te has registrado? <a class="text-decoration-none" href="#register" 
+                        <p class="pt-3 text-center">¿Aún no te has registrado? <a class="text-decoration-none" href="/usuario/registro" 
                         data-bs-toggle="modal" data-bs-dismiss="modal">¡Hazlo ya!</a></p>
                     </div>
                 </div>

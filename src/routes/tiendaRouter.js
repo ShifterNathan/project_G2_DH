@@ -9,12 +9,12 @@ const tiendaController = require('../controllers/tiendaController');
 const multerDiskStorage = multer.diskStorage({
     
     destination: function(req, file, cb) {       
-     cb(null, path.join(__dirname,"../../public/img/tiendaProductos"));   
+        cb(null, path.join(__dirname,"../../public/img/tiendaProductos"));   
     },
     
     filename: function(req, file, cb) {          
-     let imageName = Date.now() + file.originalname;  
-     cb(null, imageName);         
+        let imageName = Date.now() + file.originalname;  
+        cb(null, imageName);         
     }
 });
 

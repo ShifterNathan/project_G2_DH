@@ -1,5 +1,4 @@
 const fs = require('fs');
-
 const path = require('path');
 const { validationResult } = require('express-validator');
 
@@ -18,11 +17,16 @@ const controller = {
     // Procesar el REGISTRO
     procesoRegistro: (req, res) => {
 
-        let errors = validationResult(req);
-        console.log("errors ", errors); //no sé si esto hace falta o era de prueba
+        const resultValidation = validationResult(req);
         
-        // Si el proceso de registro sale bien...
-        if (errors.isEmpty()) {
+        
+        if (resultValidation.errors.length > 0) {
+            return res.render('registro', {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            })}
+
+        else {
 	
         let idUsuarioNuevo;
         
@@ -31,15 +35,18 @@ const controller = {
         } else {
             idUsuarioNuevo = 1;
         };
+
+        let avatar = req.file.filename;
         
         let usuarioNuevo = {
 			id: idUsuarioNuevo, 
-			//nombre: req.body.registerName,
-			//apellido: req.body.registerSurname,
-			email: req.body.email,
-            //telefono: req.body.registerContactNumber,
-            //direccion: req.body.registerAdress,
-			contraseña: req.body.passwordxxx
+			nombre: req.body.nombreUsuario,
+			apellido: req.body.apellidoUsuario,
+            telefono:req.body.telefonoUsuario,
+			email: req.body.emailUsuario,
+            contraseña: req.body.claveUsuario,
+            direccion: req.body.direccionUsuario,
+            imagen: avatar
 		   };
 		
         registroUsuarios.push(usuarioNuevo);
@@ -48,15 +55,6 @@ const controller = {
 
 		res.redirect("/");
         }
-        // Si el proceso de registro sale mal, pasale los errores como 2do parámetro...
-        else {
-            res.render('registro', {errors: errors.array()});
-        } 
-    },
-    
-    // Vista LOGIN
-    login: (req, res) => {
-        res.render('...') //falta completar vista
     },
 
     // Proceso Login
