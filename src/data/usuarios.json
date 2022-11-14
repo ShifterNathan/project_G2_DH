@@ -26,5 +26,35 @@
   "contraseña": "daggsgdsdg",
   "direccion": "sdgsdgsdgsdgsd",
   "imagen": "1668387000275312245485_1804500936595712_6791465078804603085_n.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": "Alguien",
+  "apellido": "Por ahi",
+  "telefono": "14253267",
+  "email": "fassfasaffas@lllllsdsdsd.com",
+  "contraseña": "$2a$10$S.EPjeCMGuV.sfs5WIhkjeMtQJj3lU9Nuo7S78MqAfRsjR/UFd5dS",
+  "direccion": "sggsurtrrtugklglh",
+  "imagen": "1668398028916Screenshot_1.jpg"
+ },
+ {
+  "id": 5,
+  "nombre": "Alguien",
+  "apellido": "Con validaciones",
+  "telefono": "123456",
+  "email": "nath@gmail.com",
+  "contraseña": "$2a$10$boStoFIrQUy4FAov2POJmeJvSMt4P.J/y.R.WrXheYh6WJUCPn/MO",
+  "direccion": "dwhwehw",
+  "imagen": "1668401371898312245485_1804500936595712_6791465078804603085_n.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "Alguien",
+  "apellido": "Con validaciones",
+  "telefono": "52532325532",
+  "email": "nath@gmail.com",
+  "contraseña": "$2a$10$jt132s7l3wX/4AAMOLLvSu0dYTw2jRwUmRTb7vN7xTfk4V1CFbokm",
+  "direccion": "saasffaf",
+  "imagen": "1668402464640312245485_1804500936595712_6791465078804603085_n.jpg"
  }
 ]

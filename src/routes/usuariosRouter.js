@@ -28,7 +28,8 @@ const uploadFile = multer({ storage: storage});
 
 //***  Middlewares  ****/
 
-const validacionesRegistro = require('../middlewares/validacionesRegistro')
+const validacionesRegistro = require('../middlewares/validacionesRegistro');
+const validacionesLogin = require('../middlewares/validacionesLogin');
 const {guestMw} = require('../middlewares/guestMw');
 const {authMw} = require('../middlewares/authMw');
 
@@ -37,6 +38,9 @@ const {authMw} = require('../middlewares/authMw');
 /* Registro nuevo usuario y el guardado de sus datos */ 
 router.get('/registro', usuariosController.registro); // (Tiene que ser invitado para entrar a este formulario)
 router.post('/registro', uploadFile.single('avatar'), validacionesRegistro, usuariosController.procesoRegistro);
+
+router.get('/ingreso', usuariosController.login);
+router.post('/ingreso', usuariosController.loginProcess);
 
 // ********** Exportación de las rutas. No tocar **********
 module.exports = router;

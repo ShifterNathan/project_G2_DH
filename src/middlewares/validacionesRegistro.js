@@ -1,13 +1,21 @@
 const { body } = require('express-validator');
 const path = require('path');
 
+
+//const user = require ('../models/user')
+
 let validaciones = [
     body('nombreUsuario').notEmpty().withMessage('Debes completar tu nombre'),
     body('apellidoUsuario').notEmpty().withMessage('Debes completar tu apellido'),
     body('telefonoUsuario').notEmpty().withMessage('Debes completar tu teléfono de contacto'),
     body('emailUsuario')
         .notEmpty().withMessage('Debes completar tu email').bail()
-        .isEmail().withMessage('Formato de email inválido'),
+        .isEmail().withMessage('Formato de email inválido'),/*.custom(value => {
+            userInvalid = user.findByEmail(value)
+                if (userInvalid) {
+                    return Promise.reject('Este e-mail ya está en uso')
+                }
+        }),*/
     body('claveUsuario').notEmpty().withMessage('Debes completar tu clave'),
     body('direccionUsuario').notEmpty().withMessage('Debes completar tu dirección'),
     body('avatar').custom((value, { req }) => {

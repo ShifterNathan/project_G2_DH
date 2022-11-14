@@ -1,11 +1,10 @@
-const session = require('express-session');
 const { body } = require('express-validator');
 
-validations = [
-    body('email').notEmpty().isEmail().withMessage('Escribe un email'),
-    body('password').notEmpty.withMessage('Escribe una contraseña')
-]
+/* let validations = [
+    body('emailUsuario').notEmpty().isEmail().withMessage('Escribe un email'),
+    body('claveUsuario').notEmpty.withMessage('Escribe una contraseña')
+];
 
-module.exports = validations;
+module.exports = validations; */
 
 

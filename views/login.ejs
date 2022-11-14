@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <!-- Head -->
+  
+    <!-- Include Head -->
+    <%- include('partials/head', {title: 'Ingreso de usuario'}) %>
+
+    <body>
+    
+    <!-- Header -->
+    
+        
+    <!-- Formulario de registro -->
+    
+    <div class="container">
+        
+        <a href="/"><img src="/img/isologotipo.ico"  style="width:100px ;"></a>
+
+        <form action="/usuario/ingreso" method="POST">
+            
+            <h2>Ingresa</h2>
+          
+            <div class="container ">
+
+
+                <div class="row mb-3 g-2">
+                    <div class="col-6">  
+                        <label for="emailUsuario" class="form-label"> Email </label>
+                        <input type="email" class="form-control 
+                            <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%>"
+                            id="emailUsuario"
+                            name="emailUsuario"
+                            value="<%= locals.oldData ? oldData.emailUsuario : null %>">
+                        <%if (locals.errors && errors.emailUsuario) {%>
+                            <div class="text-danger">
+                                <%= errors.emailUsuario.msg%>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+
+                <div class="row mb-3 g-2">
+                    <div class="col-6">  
+                        <label for="claveUsuario" class="form-label"> Contraseña </label>
+                        <input type="password" class="form-control 
+                            <%= locals.errors && errors.claveUsuario ? 'is-invalid': null%>"
+                            id="claveUsuario"
+                            name="claveUsuario">
+                        <%if (locals.errors && errors.claveUsuario) {%>
+                            <div class="text-danger">
+                                <%= errors.claveUsuario.msg%>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3 g-2">
+                    <div class="col-6">  
+                        <button type="submit" class="btn btn-primary"> Enviar </button>
+                    </div>
+                </div>  
+            
+            </div>
+
+        </form>
+
+    </div>
+    
+    </body>
+    
+</html>

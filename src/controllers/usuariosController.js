@@ -1,9 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
 
 const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
 const registroUsuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+const user = require ('../models/user')
 
 // -------------------- CONTROLADOR USUARIOS --------------------
 
@@ -19,12 +21,12 @@ const controller = {
 
         const resultValidation = validationResult(req);
         
-        
         if (resultValidation.errors.length > 0) {
             return res.render('registro', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
-            })}
+            });
+        }
 
         else {
 	
@@ -44,7 +46,7 @@ const controller = {
 			apellido: req.body.apellidoUsuario,
             telefono:req.body.telefonoUsuario,
 			email: req.body.emailUsuario,
-            contraseña: req.body.claveUsuario,
+            contraseña: bcrypt.hashSync(req.body.claveUsuario, 10),
             direccion: req.body.direccionUsuario,
             imagen: avatar
 		   };
@@ -57,46 +59,36 @@ const controller = {
         }
     },
 
+    login: (req, res) => {
+        res.render('login')
+    },
+
     // Proceso Login
-    procesoLogin: (req, res) => {
+    loginProcess: (req, res) => {
+
+    const resultValidation = validationResult(req);
 
     let errors = validationResult (req); 
+
+    if (resultValidation.errors.length > 0) {
+        return res.render('login', {
+            errors: resultValidation.mapped(),
+            oldData: req.body
+        });
+    }
 	
-	if (errors.isEmpty()) {
-	// primero traigo a los usuarios
-	let usuariosJSON = fs.readFileSync('usuarios.json', {encoding: 'utf-8'});
-	let usuarios;
-	    if (usuariosJSON == '') { 
-	        usuarios = [ ];
-        } else { 
-	        usuarios = JSON.parse (usuariosJSON);
-          }
-
-    // empiezo a recorrer a estos usuarios y veo si está el que quiere ingresar
-    for (let i=0; i<usuarios.length; i++) {
-	    if (usuarios[i].email == req.body.email) { 
-            if (bcrypt.compareSync (req.body.password, usuarios[i].password)) {
-	            usuarioALoguearse = usuarios[i];
- 	            break;
+        else {
+        // primero traigo a los usuarios
+            let userToLogin = user.findByEmail(req.body.email);
+            if (userToLogin) {
+                let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.contraseña);
+                if (isOkThePassword) {
+                    res.send('Ok puedes ingresar');
+                }
             }
-        }
-    };
-        // Si no está el usuarioALoguearse --> conviene redirigirlo a la vista de registro?
-        if (usuarioALoguearse == undefined) {
-		    return res.render ('login', {errors: [
-			    {msg: "Credenciales inválidas"}
-            ]});
-        };
 
-    // Para que se mantenga en memoria del navegador (con session)
-    req.session.usuarioLogueado = usuarioALoguearse;
-
-    // Si hay errores de base
-    } else {
-	    return res.render ('login', {errors: errors.errors} );
-      }
-
-    res.render ('login'); //¿?
+            
+        } 
     }
 }
 
