@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const multer = require('multer');
-const { body } = require('express-validator');
 
 const usuariosController = require('../controllers/usuariosController');
 const { Router } = require('express');
@@ -22,15 +21,11 @@ const storage = multer.diskStorage({
 
 const uploadFile = multer({ storage: storage});
 
-//***  Validaciones  ****/
-
-
-
 //***  Middlewares  ****/
 
 const validacionesRegistro = require('../middlewares/validacionesRegistro')
-const {guestMw} = require('../middlewares/guestMw');
-const {authMw} = require('../middlewares/authMw');
+const guestMw = require('../middlewares/guestMw');
+const authMw = require('../middlewares/authMw');
 
 // ********** RUTAS **********/
 

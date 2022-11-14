@@ -8,5 +8,5 @@ function guestMw(req,res,next) {
             };
 };
 
-module.exports = {guestMw}; 	
+module.exports = guestMw; 	
 

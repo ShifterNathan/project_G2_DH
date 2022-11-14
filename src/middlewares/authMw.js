@@ -8,4 +8,4 @@ function authMw(req,res,next) {
     }
 };
 
-module.exports = {authMw}; 
+module.exports = authMw; 
