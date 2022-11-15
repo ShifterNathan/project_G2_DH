@@ -1,7 +1,11 @@
+// Middleware de ruta
+
+// Función MW: sirve para validar con express-validator el registro
+
 const { body } = require('express-validator');
 const path = require('path');
 
-let validaciones = [
+let validacionesRegistro = [
     body('nombreUsuario').notEmpty().withMessage('Debes completar tu nombre'),
     body('apellidoUsuario').notEmpty().withMessage('Debes completar tu apellido'),
     body('telefonoUsuario').notEmpty().withMessage('Debes completar tu teléfono de contacto'),
@@ -27,4 +31,4 @@ let validaciones = [
 ];
 
 
-module.exports = validaciones;
+module.exports = validacionesRegistro;

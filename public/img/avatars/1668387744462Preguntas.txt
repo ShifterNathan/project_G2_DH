@@ -1,4 +1,0 @@
-json: como hace el this para reconocer el scope del objeto?
-
-arrow function, como sabe la funcion hasta donde va a permitir 
-el scope de los elementos de la función?

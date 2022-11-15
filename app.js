@@ -3,6 +3,9 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const methodOverride =  require('method-override'); // Para poder usar los métodos PUT y DELETE
+const session = require('express-session');
+const cookies = require('cookie-parser');
+// const userLoggedMw = require('./src/middlewares/userLoggedMw');
 
 // ---------- Motor de plantillas ----------
 app.set('view engine', 'ejs');
@@ -13,10 +16,16 @@ app.set('views', './views');
 app.use(express.static(path.join(__dirname, './public')));  // Necesario para los archivos estáticos en el folder /public
 
 
-// ---------- Middlewares ----------
+// ---------- Middlewares de aplicación ----------
 app.use(express.urlencoded({ extended: false })); // para acceder a los datos del método POST
 app.use(express.json()); // para acceder a los datos del método POST
 app.use(methodOverride('_method')); // Para poder usar el method="POST" en el formulario por PUT y DELETE
+app.use(session({
+    secret: "Este es mi secreto", 
+    resave: false, 
+    saveUninitialized: false})); 
+app.use(cookies());
+// app.use(userLoggedMw);
 
 
 // ---------- Rutas ----------
