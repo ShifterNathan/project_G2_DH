@@ -25,6 +25,7 @@ router.post('/registro', uploadAvatar.single('avatar'), validacionesRegistro, us
 router.get('/ingreso', guestMw, usuariosController.login);
 router.post('/ingreso', validacionesLogin, usuariosController.procesoLogin);
 
+
 // ********** Exportación de las rutas. No tocar **********
 module.exports = router;
 

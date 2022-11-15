@@ -1,33 +1,12 @@
 [
  {
   "id": 1,
-  "nombreUsuario": "Juana",
-  "apellidoUsuario": "Colaneri",
-  "telefonoUsuario": "1123175335",
-  "emailUsuario": "juanacolaneri@hotmail.com",
-  "claveUsuario": "juana",
-  "direccionUsuario": "Panamericana km 46",
-  "avatar": "1668463054866.jpeg",
-  "password": "$2a$10$dz0sENPuimTKHkHSJeQooOKAZ/Qsk36deQ5eY7cZ4MIGNo/3nbnI6"
- },
- {
-  "id": 3,
-  "nombreUsuario": "Félix",
-  "apellidoUsuario": "Cartier",
-  "telefonoUsuario": "11231342665",
-  "emailUsuario": "felixcartier@hotmail.com",
-  "claveUsuario": "$2a$10$OA7BCd9X/KwKmpOLs4jXtuhoPuN9LTf.NxAHNR0AFVA/RUf68WFmi",
-  "direccionUsuario": "Los crisantemos 564",
-  "avatar": "1668463178173.png"
- },
- {
-  "id": 4,
-  "nombreUsuario": "Perro",
-  "apellidoUsuario": "Pepito",
-  "telefonoUsuario": "9836743",
-  "emailUsuario": "perropepito@gmail.com",
-  "claveUsuario": "$2a$10$UM6UAHEf9rDPjphKiVl5FOjh0KGOz6XijrcT.FX5KlsmF6qHpvlYG",
-  "direccionUsuario": "Los crisantemos 560",
-  "avatar": "1668464702828.png"
+  "nombreUsuario": "Nathaniel",
+  "apellidoUsuario": "Boyd",
+  "telefonoUsuario": "123456789",
+  "emailUsuario": "nath@gmail.com",
+  "claveUsuario": "$2a$10$NhIFDAHAKdO9XEUmce3YT.ZH7aZFXdCFmeZax6gUtjOFvz9YGMIEC",
+  "direccionUsuario": "Calle siempre viva 123",
+  "avatar": "1668478166569.jpg"
  }
 ]

@@ -4,7 +4,7 @@
     <!-- Head -->
   
     <!-- Include Head -->
-    <%- include('partials/head', {title: 'Crear producto'}) %>
+    <%- include('partials/head', {title: 'Registrar usuario'}) %>
 
     <body>
     
@@ -45,9 +45,8 @@
                     <div class="row mb-2 g-2">
                     <div class="col-6">  
                         <label for="apellidoUsuario" class="form-label"> Apellido </label>
-                        <input 
-                            type="text"
-                            class="form-control <%= locals.errors && errors.apellidoUsuario ? 'is-invalid': null%>"
+                        <input type="text" class="form-control 
+                            <%= locals.errors && errors.apellidoUsuario ? 'is-invalid': null%>"
                             id="apellidoUsuario"
                             name="apellidoUsuario" placeholder="Escribe tu apellido"class="form-input"
                             value="<%= locals.oldData ? oldData.apellidoUsuario : null %>"
@@ -63,9 +62,8 @@
                 <div class="row mb-2 g-2">
                     <div class="col-6">  
                         <label for="telefonoUsuario" class="form-label"> Teléfono </label>
-                        <input 
-                            type="phone"
-                            class="form-control <%= locals.errors && errors.telefonoUsuario ? 'is-invalid': null%>"
+                        <input type="phone" class="form-control 
+                            <%= locals.errors && errors.telefonoUsuario ? 'is-invalid': null%>"
                             id="telefonoUsuario"
                             name="telefonoUsuario" placeholder="Teléfono"class="form-input"
                             value="<%= locals.oldData ? oldData.telefonoUsuario : null %>"
@@ -81,9 +79,8 @@
                 <div class="row mb-2 g-2">
                     <div class="col-6">  
                         <label for="emailUsuario" class="form-label"> Email </label>
-                        <input 
-                            type="email"
-                            class="form-control <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%>"
+                        <input type="email" class="form-control 
+                            <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%>"
                             id="emailUsuario"
                             name="emailUsuario" placeholder="Escribe tu email"class="form-input"
                             value="<%= locals.oldData ? oldData.emailUsuario : null %>"
@@ -99,9 +96,8 @@
                 <div class="row mb-2 g-2">
                     <div class="col-6">  
                         <label for="claveUsuario" class="form-label"> Contraseña </label>
-                        <input 
-                            type="password"
-                            class="form-control <%= locals.errors && errors.claveUsuario ? 'is-invalid': null%>"
+                        <input type="password" class="form-control 
+                            <%= locals.errors && errors.claveUsuario ? 'is-invalid': null%>"
                             id="claveUsuario"
                             name="claveUsuario" placeholder="Escribe tu contraseña"class="form-input"
                         >
@@ -116,9 +112,8 @@
                 <div class="row mb-2 g-2">
                     <div class="col-6">  
                         <label for="direccionUsuario" class="form-label"> Dirección </label>
-                        <input 
-                            type="text"
-                            class="form-control <%= locals.errors && errors.direccionUsuario ? 'is-invalid': null%>"
+                        <input type="text" class="form-control 
+                            <%= locals.errors && errors.direccionUsuario ? 'is-invalid': null%>"
                             id="direccionUsuario"
                             name="direccionUsuario" placeholder="Dirección completa"class="form-input"
                             value="<%= locals.oldData ? oldData.direccionUsuario : null %>"
@@ -134,11 +129,7 @@
                 <div class="row mb-3 g-2">
                     <div class="col-6">  
                         <label for="avatar" class="form-label"> Imagen de perfil: </label>
-                        <input 
-                            type="file" 
-                            name="avatar" 
-                            class="form-control"
-                        >
+                        <input type="file" name="avatar" class="form-control">
                             <%if (locals.errors && errors.avatar) {%>
                                 <div class="text-danger">
                                     <%= errors.avatar.msg%>

@@ -11,7 +11,12 @@ let validacionesRegistro = [
     body('telefonoUsuario').notEmpty().withMessage('Debes completar tu teléfono de contacto'),
     body('emailUsuario')
         .notEmpty().withMessage('Debes completar tu email').bail()
-        .isEmail().withMessage('Formato de email inválido'),
+        .isEmail().withMessage('Formato de email inválido'),/*.custom(value => {
+            userInvalid = user.findByEmail(value)
+                if (userInvalid) {
+                    return Promise.reject('Este e-mail ya está en uso')
+                }
+        }),*/
     body('claveUsuario').notEmpty().withMessage('Debes completar tu clave'),
     body('direccionUsuario').notEmpty().withMessage('Debes completar tu dirección'),
     body('avatar').custom((value, { req }) => {
