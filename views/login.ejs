@@ -2,8 +2,6 @@
 
 <html>
     <!-- Head -->
-  
-    <!-- Include Head -->
     <%- include('partials/head', {title: 'Ingreso de usuario'}) %>
 
     <body>
@@ -21,44 +19,57 @@
             
             <h2>Ingresa</h2>
           
-            <div class="container ">
-
+            <div class="container">
 
                 <div class="row mb-3 g-2">
                     <div class="col-6">  
-                        <label for="emailUsuario" class="form-label"> Email </label>
-                        <input type="email" class="form-control 
-                            <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%>"
-                            id="emailUsuario"
-                            name="emailUsuario"
-                            value="<%= locals.oldData ? oldData.emailUsuario : null %>">
-                        <%if (locals.errors && errors.emailUsuario) {%>
-                            <div class="text-danger">
-                                <%= errors.emailUsuario.msg%>
-                            </div>
-                        <% } %>
+                        <label for="emailLogin" class="form-label"> Email </label>
+                        <input 
+                            type="email"
+                            class="form-control <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%>"
+                            id="emailLogin"
+                            name="emailLogin"
+                            value="<%= locals.oldData ? oldData.emailLogin : null %>">
+                            <%if (locals.errors && errors.emailLogin) {%>
+                                <div class="text-danger">
+                                    <%= errors.emailLogin.msg%>
+                                </div>
+                            <% } %>
                     </div>
                 </div>
 
                 <div class="row mb-3 g-2">
                     <div class="col-6">  
-                        <label for="claveUsuario" class="form-label"> Contraseña </label>
-                        <input type="password" class="form-control 
-                            <%= locals.errors && errors.claveUsuario ? 'is-invalid': null%>"
-                            id="claveUsuario"
-                            name="claveUsuario">
-                        <%if (locals.errors && errors.claveUsuario) {%>
-                            <div class="text-danger">
-                                <%= errors.claveUsuario.msg%>
-                            </div>
-                        <% } %>
+                        <label for="claveLogin" class="form-label"> Contraseña </label>
+                        <input 
+                            type="password" 
+                            class="form-control <%= locals.errors && errors.claveLogin ? 'is-invalid': null%>"
+                            id="claveLogin"
+                            name="claveLogin">
+                            <%if (locals.errors && errors.claveLogin) {%>
+                                <div class="text-danger">
+                                    <%= errors.claveLogin.msg%>
+                                </div>
+                            <% } %>
                     </div>
                 </div>
 
+                <div class="row mb-3 g-2">
+                    <div class="col-6"> 
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input 
+                            type="checkbox" 
+                            class="form-check-input" 
+                            name="recordame"> Recordarme
+                        </label>
+                    </div>
+                    </div>
+                </div>
 
                 <div class="row mb-3 g-2">
                     <div class="col-6">  
-                        <button type="submit" class="btn btn-primary"> Enviar </button>
+                        <button type="submit" class="btn btn-primary"> Login </button>
                     </div>
                 </div>  
             
