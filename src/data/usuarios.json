@@ -1,3 +1,12 @@
 [
- 
+ {
+  "id": 1,
+  "nombreUsuario": "Nathaniel",
+  "apellidoUsuario": "Boyd",
+  "telefonoUsuario": "123456789",
+  "emailUsuario": "nath@gmail.com",
+  "claveUsuario": "$2a$10$NhIFDAHAKdO9XEUmce3YT.ZH7aZFXdCFmeZax6gUtjOFvz9YGMIEC",
+  "direccionUsuario": "Calle siempre viva 123",
+  "avatar": "1668478166569.jpg"
+ }
 ]
