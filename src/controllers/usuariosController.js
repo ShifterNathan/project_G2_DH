@@ -1,9 +1,7 @@
-const fs = require('fs');
-const path = require('path');
-const { validationResult } = require('express-validator');
+const {validationResult} = require('express-validator');
+const bcrypt = require('bcryptjs');
 
-const usuariosFilePath = path.join(__dirname, "../data/usuarios.json");
-const registroUsuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+const User = require('../models/Users');
 
 // -------------------- CONTROLADOR USUARIOS --------------------
 
@@ -16,89 +14,106 @@ const controller = {
 
     // Procesar el REGISTRO
     procesoRegistro: (req, res) => {
-
         const resultValidation = validationResult(req);
         
-        
+        // Si hay errores de validación en el proceso de registro...
         if (resultValidation.errors.length > 0) {
             return res.render('registro', {
                 errors: resultValidation.mapped(),
                 oldData: req.body
-            })}
-
-        else {
-	
-        let idUsuarioNuevo;
+            });
+        };     
         
-        if (registroUsuarios.length > 0){
-            idUsuarioNuevo = (registroUsuarios[registroUsuarios.length-1].id)+1;    
-        } else {
-            idUsuarioNuevo = 1;
-        };
+        // Después tengo que hacer una mini-validación previa para que si ese mail ya está en mi DB
+        let userInDB = User.findByField('emailUsuario', req.body.emailUsuario);
 
-        let avatar = req.file.filename;
+            // Si el usuario a registrarse ya está en mi DB ... le voy a mostrar el error, porque no puede volver a registrarse
+            if(userInDB) {
+                return res.render('registro', {
+                    errors: {
+                        emailUsuario: {msg: 'Éste email ya está registrado'}
+                    },
+                    oldData: req.body,
+                });
+            }
+
+            // Si el usuario no está en mi DB... genero y registro la información de ese usuario, para después guardarla en mi DB (por ahora JSON)
+            let userToCreate = {
+                ...req.body,
+                avatar: req.file.filename,
+                claveUsuario: bcrypt.hashSync(req.body.claveUsuario, 10)
+            }
+
+            let userCreated = User.create(userToCreate);
+       
+            res.redirect("/usuario/ingreso");        
+    },
         
-        let usuarioNuevo = {
-			id: idUsuarioNuevo, 
-			nombre: req.body.nombreUsuario,
-			apellido: req.body.apellidoUsuario,
-            telefono:req.body.telefonoUsuario,
-			email: req.body.emailUsuario,
-            contraseña: req.body.claveUsuario,
-            direccion: req.body.direccionUsuario,
-            imagen: avatar
-		   };
-		
-        registroUsuarios.push(usuarioNuevo);
-
-		fs.writeFileSync(usuariosFilePath, JSON.stringify(registroUsuarios, null, " "));
-
-		res.redirect("/");
-        }
+    // Vista LOGIN
+    login: (req, res) => {
+        res.render('login')
     },
 
-    // Proceso Login
+    // Procesar el LOGIN
     procesoLogin: (req, res) => {
+        const resultValidationLogin = validationResult(req);
+        
+        // Si hay errores de validación en el proceso de registro...
+        if (resultValidationLogin.errors.length > 0) {
+            return res.render('login', {
+                errors: resultValidationLogin.mapped(),
+                oldData: req.body
+            });
+        };    
 
-    let errors = validationResult (req); 
-	
-	if (errors.isEmpty()) {
-	// primero traigo a los usuarios
-	let usuariosJSON = fs.readFileSync('usuarios.json', {encoding: 'utf-8'});
-	let usuarios;
-	    if (usuariosJSON == '') { 
-	        usuarios = [ ];
-        } else { 
-	        usuarios = JSON.parse (usuariosJSON);
-          }
+        // Si no hay errores de validación en el login, me fijo si el email que ponen en el login está en mi DB
+        let userToLogin = User.findByField("emailUsuario", req.body.emailLogin);
+            
+            // Si efectivamente quiere entrar alguien que ya tiene un email registrado...
+            if(userToLogin){
+                let contraseñaCorrecta = bcrypt.compareSync(req.body.claveLogin, userToLogin.claveUsuario);
+                if (contraseñaCorrecta) {
+                    // La persona ingresó con el email y la contraseña correcta, entonces...
+                    delete userToLogin.claveUsuario; // por seguridad que no se guarde la contraseña en memoria del navegador
+                    req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde yo voy a guardar justamente la información de este userToLogin
+                
+                    if(req.body.recordame) {
+                        res.cookie('emailUsuario', req.body.emailLogin, { maxAge: (1000 * 60) * 60 })
+                    }
+                
+                    return res.redirect('/'); //en el futuro la tenemos que redirigir al perfil del usuario --> (1:02 al del video de 2hs del Módulo 5)
+                }
+            
+                // Si es un usuario que quiere ingresar, pero está poniendo mal su contraseña... 
+                return res.render('login', {
+                    errors: {
+                        emailLogin: {msg: 'Las credenciales son inválidas'},
+                        claveLogin: {msg: 'Las credenciales son inválidas'}
+                    }
+                });
+            };
 
-    // empiezo a recorrer a estos usuarios y veo si está el que quiere ingresar
-    for (let i=0; i<usuarios.length; i++) {
-	    if (usuarios[i].email == req.body.email) { 
-            if (bcrypt.compareSync (req.body.password, usuarios[i].password)) {
-	            usuarioALoguearse = usuarios[i];
- 	            break;
-            }
-        }
-    };
-        // Si no está el usuarioALoguearse --> conviene redirigirlo a la vista de registro?
-        if (usuarioALoguearse == undefined) {
-		    return res.render ('login', {errors: [
-			    {msg: "Credenciales inválidas"}
-            ]});
-        };
-
-    // Para que se mantenga en memoria del navegador (con session)
-    req.session.usuarioLogueado = usuarioALoguearse;
-
-    // Si hay errores de base
-    } else {
-	    return res.render ('login', {errors: errors.errors} );
-      }
-
-    res.render ('login'); //¿?
+            // Si no se encuentra ese email registrado en nuestra DB...
+            return res.render('login', {
+                errors: {
+                    emailLogin: {msg: 'No se encuentra registrado este email, por favor verificar'}
+                }
+            });   
     }
-}
+    
+    // Perfil usuario
+    // perfilUsuario: (req, res) => {
+    //     res.render('/usuario/perfil_usuario', { user: req.session.userLogged });
+    // },
+
+
+    // Cerrar sesión usuario
+    // logout: (req, res) => {
+    //     res.clearCookie('emailUsuario');
+    //     req.session.destroy();
+    //     res.redirect('/');
+    // },
+}; 
 
 
 // ********** Exportación del controlador de usuario. No tocar **********
