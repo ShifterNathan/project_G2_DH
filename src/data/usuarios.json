@@ -8,5 +8,15 @@
   "claveUsuario": "$2a$10$NhIFDAHAKdO9XEUmce3YT.ZH7aZFXdCFmeZax6gUtjOFvz9YGMIEC",
   "direccionUsuario": "Calle siempre viva 123",
   "avatar": "1668478166569.jpg"
+ },
+ {
+  "id": 2,
+  "nombreUsuario": "Pepito",
+  "apellidoUsuario": "Grillo",
+  "telefonoUsuario": "222222222",
+  "emailUsuario": "peipito@gmail.com",
+  "claveUsuario": "$2a$10$KMhJSr5LehPfC/Al9lAoBOUuGy2/g.LzoxBSPwNmNr7zabO/ZycYK",
+  "direccionUsuario": "PPPPPP",
+  "avatar": "1668721709141.jpg"
  }
 ]

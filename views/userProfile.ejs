@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="">
+        <%- include('partials/head', {title: 'Perfil de usuario'}) %>
+        
+        <!-- CSS Inex -->
+        
+    </head>
+   
+    <body>
+        <%- include('./partials/header') %>
+
+        <br>
+        <br>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <p class="h2">Hola <%= user.nombreUsuario  %></p>
+                    <img src="/img/avatars/<%= user.avatar %>">
+                    <br>
+                    <br>
+                    <div class="alert alert-success"><%= user.emailUsuario  %></div>
+                </div>
+            </div>
+        </div>
+    
+</body>
+</html>

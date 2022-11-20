@@ -11,19 +11,23 @@ const { Router } = require('express');
 const uploadAvatar = require('../middlewares/multerUsuario');
 const validacionesRegistro = require('../middlewares/validacionesRegistro');
 const validacionesLogin = require('../middlewares/validacionesLogin')
-const guestMw = require('../middlewares/guestMw');
-// const authMw = require('../middlewares/authMw'); --> es para la ruta get del perfil del usuario
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 
 // ********** RUTAS **********/
 
 /* Registro nuevo usuario + el guardado de sus datos */ 
-router.get('/registro', guestMw, usuariosController.registro); 
+router.get('/registro', guestMiddleware, usuariosController.registro); 
 router.post('/registro', uploadAvatar.single('avatar'), validacionesRegistro, usuariosController.procesoRegistro);
 
 /* Login + proceso login */ 
-router.get('/ingreso', guestMw, usuariosController.login);
+router.get('/ingreso', guestMiddleware, usuariosController.login);
 router.post('/ingreso', validacionesLogin, usuariosController.procesoLogin);
+
+router.get('/perfil', authMiddleware, usuariosController.profile)
+
+router.get('/salir', usuariosController.logout)
 
 
 // ********** Exportación de las rutas. No tocar **********
