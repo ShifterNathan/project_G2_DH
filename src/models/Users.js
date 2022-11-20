@@ -9,6 +9,7 @@ const path = require('path');
 
 const usuariosFilePath = path.join(__dirname, '../data/usuarios.json');
 
+
 const User = {
     fileName: usuariosFilePath,
 
@@ -52,6 +53,7 @@ const User = {
         return newUser;
     }
 };
+
 
 module.exports = User;
 
