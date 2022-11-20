@@ -1,26 +1,14 @@
 require('dotenv').config();
+//esto está en la clase 32 en 1:32 minutos y lo de env. igual
 
 module.exports ={
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "doghousefood_",
-    "host": "mysql-doghousefood.alwaysdata.net",
-    "dialect": "mysql",
-    "port": 3306
+    "username": process.env. DB_USER,
+    "password": process.env. DB-PASSWORD, 
+    "database": process.env. DB_DATABASE,
+    "host": process.env. DB_HOST,
+    "dialect": process.env. DB_DIALECT, 
+    "port": process.env. DB_PORT  
   },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "doghousefood_test",
-    "host": "mysql-doghousefood.alwaysdata.net",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "doghousefood_web",
-    "host": "mysql-doghousefood.alwaysdata.net",
-    "dialect": "mysql"
-  }
+  
 }
