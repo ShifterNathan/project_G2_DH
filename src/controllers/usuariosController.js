@@ -76,12 +76,13 @@ const controller = {
                     // La persona ingresó con el email y la contraseña correcta, entonces...
                     delete userToLogin.claveUsuario; // por seguridad que no se guarde la contraseña en memoria del navegador
                     req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde yo voy a guardar justamente la información de este userToLogin
-                
+                    
+
                     if(req.body.recordame) {
                         res.cookie('emailUsuario', req.body.emailLogin, { maxAge: (1000 * 60) * 60 })
                     }
                 
-                    return res.redirect('/'); //en el futuro la tenemos que redirigir al perfil del usuario --> (1:02 al del video de 2hs del Módulo 5)
+                    return res.redirect('/usuario/perfil');//en el futuro la tenemos que redirigir al perfil del usuario --> (1:02 al del video de 2hs del Módulo 5)
                 }
             
                 // Si es un usuario que quiere ingresar, pero está poniendo mal su contraseña... 
@@ -99,20 +100,20 @@ const controller = {
                     emailLogin: {msg: 'No se encuentra registrado este email, por favor verificar'}
                 }
             });   
-    }
+    },
     
-    // Perfil usuario
-    // perfilUsuario: (req, res) => {
-    //     res.render('/usuario/perfil_usuario', { user: req.session.userLogged });
-    // },
+    
+    profile: (req, res) => {
+        res.render('userProfile', { user: req.session.userLogged });
+    },
 
 
-    // Cerrar sesión usuario
-    // logout: (req, res) => {
-    //     res.clearCookie('emailUsuario');
-    //     req.session.destroy();
-    //     res.redirect('/');
-    // },
+    
+    logout: (req, res) => {
+        res.clearCookie('emailUsuario');
+        req.session.destroy();
+        res.redirect('/');
+    },
 }; 
 
 
