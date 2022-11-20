@@ -1,24 +1,26 @@
+require('dotenv').config();
+
 module.exports ={
   "development": {
     "username": "root",
     "password": null,
-    "database": "mydb_db",
-    "host": "127.0.0.1",
+    "database": "doghousefood_",
+    "host": "mysql-doghousefood.alwaysdata.net",
     "dialect": "mysql",
     "port": 3306
   },
   "test": {
     "username": "root",
     "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
+    "database": "doghousefood_test",
+    "host": "mysql-doghousefood.alwaysdata.net",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
     "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "database": "doghousefood_web",
+    "host": "mysql-doghousefood.alwaysdata.net",
     "dialect": "mysql"
   }
 }
