@@ -1,7 +1,8 @@
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 
-const User = require('../models/Users');
+const User = require('../services/Users');
+//const db = require('../database/models');
 
 // -------------------- CONTROLADOR USUARIOS --------------------
 
@@ -51,6 +52,7 @@ const controller = {
         
     // Vista LOGIN
     login: (req, res) => {
+        //console.log(db.usuario.findAll({include: [{association: 'local'}]}));
         res.render('login')
     },
 
@@ -102,12 +104,9 @@ const controller = {
             });   
     },
     
-    
     profile: (req, res) => {
         res.render('userProfile', { user: req.session.userLogged });
     },
-
-
     
     logout: (req, res) => {
         res.clearCookie('emailUsuario');

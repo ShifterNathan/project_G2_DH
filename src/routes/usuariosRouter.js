@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path');
 
 const usuariosController = require('../controllers/usuariosController');
-const { Router } = require('express');
+// const { Router } = require('express');
 
 
 //***  Middlewares  ****/
@@ -25,9 +24,9 @@ router.post('/registro', uploadAvatar.single('avatar'), validacionesRegistro, us
 router.get('/ingreso', guestMiddleware, usuariosController.login);
 router.post('/ingreso', validacionesLogin, usuariosController.procesoLogin);
 
-router.get('/perfil', authMiddleware, usuariosController.profile)
+router.get('/perfil', authMiddleware, usuariosController.profile);
 
-router.get('/salir', usuariosController.logout)
+router.get('/salir', usuariosController.logout);
 
 
 // ********** Exportación de las rutas. No tocar **********
