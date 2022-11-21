@@ -25,7 +25,8 @@ body {
 }
 
 .nav-item .nav-link:hover{
-  background-color: #EF863D;
+    background-color: #ef863d;
+    background-color:#ef873d ;
   transition: background-color 0.8s;
 
 }
@@ -80,7 +81,7 @@ body {
 
 
 .form .btn-primary {
-  background-color: #EF863D;
+  background-color: #ef863d;
   border: none;
   border-radius: 50%;
 }
