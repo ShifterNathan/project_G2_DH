@@ -17,6 +17,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 // ********** RUTAS **********/
 
 /* Registro nuevo usuario + el guardado de sus datos */ 
+router.get('/check', usuariosController.check);
 router.get('/registro', guestMiddleware, usuariosController.registro); 
 router.post('/registro', uploadAvatar.single('avatar'), validacionesRegistro, usuariosController.procesoRegistro);
 

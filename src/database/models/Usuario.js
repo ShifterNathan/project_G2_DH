@@ -1,4 +1,4 @@
-module.exports = function UsersData(sequelize, Datatypes){
+module.exports = (sequelize, Datatypes) => {
  
     let alias = 'Usuario'; 
     
@@ -16,14 +16,14 @@ module.exports = function UsersData(sequelize, Datatypes){
     
     let config = {camelCase: false, timestamps: false};
     
-    const Users = sequelize.define(alias,cols,config)
+    const Usuario = sequelize.define(alias,cols,config)
 
-    Users.associate = function (models){
+    Usuario.associate = function (models){
 
-       Users.belongsTo(models.Local, {   
+        Usuario.belongsTo(models.Local, {   
             as: "local", 
             foreignKey: "Local_id"
            });   
    }
-   return Users;
+   return Usuario;
 }

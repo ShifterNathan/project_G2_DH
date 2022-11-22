@@ -2,13 +2,22 @@ const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 
 const User = require('../services/Users');
-//const db = require('../database/models');
+const db = require('../database/models');
 
 // -------------------- CONTROLADOR USUARIOS --------------------
 
 const controller = {
     
     // Vista REGISTRO
+    check: async(req, res) => {
+        await db.Usuario
+        .findAll()
+        .then(usuario => {
+            res.send(usuario)
+        })
+        .catch(err => {res.send(err)})
+    },
+
     registro: (req, res) => {
         res.render('registro')
     },
