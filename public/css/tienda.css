@@ -6,7 +6,7 @@ body {
 .banner {
     background-image: url('/img/tienda/banner.jpg');
     background-size: cover;
-    min-height: 60vh;
+    min-height: 40vh;
     position: relative;
 }
 

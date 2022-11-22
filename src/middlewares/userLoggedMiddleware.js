@@ -2,7 +2,7 @@
 
 // Función MW: sirve para ver si hay alguien en session y mostrarle tal o cual cosa.
 
-const User = require('../models/Users');
+const User = require('../services/Users');
 
 function userLoggedMiddleware (req, res, next) {
     

@@ -16,7 +16,7 @@ const controller = {
     // ---------- CARGAR PRODUCTOS EN LA TIENDA ----------
     
     crearProducto: (req, res) => {
-        res.render('tiendaCreateForm');
+        res.render('formulario');
     }, 
 
     formulario: (req, res) => {
