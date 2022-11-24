@@ -23,7 +23,12 @@ module.exports = (sequelize, Datatypes) => {
         Usuario.belongsTo(models.Local, {   
             as: "local", 
             foreignKey: "Local_id"
-           });   
+      });  
+           
+      //  Usuario.hasMany(models.Venta, {
+       //     as: "Venta",
+       //     foreignKey: "Usuario_id"
+     // });   
    }
    return Usuario;
 }
