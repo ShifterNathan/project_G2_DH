@@ -22,6 +22,7 @@ const controller = {
         res.render('registro')
     },
 
+
     // Procesar el REGISTRO
     procesoRegistro: (req, res) => {
         const resultValidation = validationResult(req);
