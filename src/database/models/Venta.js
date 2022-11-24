@@ -2,7 +2,7 @@ module.exports = (sequelize, Datatypes) => {
  
     let alias = 'Venta'; 
     
-   let cols = {
+    let cols = {
     id: {type: Datatypes.INTEGER(11), primaryKey: true, autoIncrement: true, allowNull: false},
     cantidad: {type: Datatypes.TINYINT(255), allowNull: false},//TINYINT(255) en mysql???
     monto_unitario: {type: Datatypes.DECIMAL(10,0), allowNull: false},
@@ -17,18 +17,17 @@ module.exports = (sequelize, Datatypes) => {
 
     Venta.associate = function (models){
 
-       //Venta.belongsTo(models.Usuario, {   
-         //   as: "usuario", 
-         //   foreignKey: "Usuario_id"
-         //  })
+    Venta.belongsTo(models.Usuario, {   
+        as: "Usuario", 
+        foreignKey: "Usuario_id"
+        })
            
-       //Venta.belongsTo(models.Detalle_venta, {   
-         //   as: "detalle_venta", 
-         //   foreignKey: "Detalle_venta_id"/
+     Venta.belongsTo(models.Detalle_venta, {   
+        as: "Detalle_venta", 
+        foreignKey: "Detalle_venta_id"
+    })          
 
-      //  })          
-
-        }
+    }
            
     return Venta;
 

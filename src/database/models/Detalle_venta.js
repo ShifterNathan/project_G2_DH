@@ -1,4 +1,4 @@
-module.exports = function Detalle_ventaData(sequelize, Datatypes){
+module.exports = (sequelize, Datatypes) => {
  
     let alias = 'Detalle_venta'; 
     
@@ -6,7 +6,6 @@ module.exports = function Detalle_ventaData(sequelize, Datatypes){
       id: {type: Datatypes.INTEGER(11), primaryKey: true, autoIncrement: true, allowNull: false},
       fecha: {type: Datatypes.DATE(6), allowNull: false},
       monto_total: {type: Datatypes.DECIMAL(10,0), allowNull: false}
-
     }
     
     let config = {camelCase: false, timestamps: false};
@@ -20,5 +19,5 @@ module.exports = function Detalle_ventaData(sequelize, Datatypes){
            foreignKey: "Detalle_venta_id"
             });
    }
-   return Local;
+   return Detalle_venta;
 }
