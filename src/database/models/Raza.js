@@ -1,3 +1,5 @@
+
+
 module.exports = function LocalData(sequelize, Datatypes){
  
     let alias = 'Raza'; 

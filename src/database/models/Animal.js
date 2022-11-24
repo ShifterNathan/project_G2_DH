@@ -1,3 +1,5 @@
+
+
 module.exports = (sequelize, Datatypes) => {
 
     let alias = 'Animal'; 
@@ -21,13 +23,19 @@ module.exports = (sequelize, Datatypes) => {
             Animal.belongsTo(models.Raza, {   
                 as: "raza", 
                 foreignKey: "Raza_id"
-               }),
+               })
                
-               Animal.belongsTo(models.Servicio, {   
+    /*           Animal.belongsTo(models.Servicio, {   
                 as: "servicio", 
                 foreignKey: "Servicio_id"
                })
+
+                */
                   
        }
+
+      
        return Animal;
     }
+
+   
