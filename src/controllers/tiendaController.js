@@ -4,6 +4,7 @@ const path = require('path');
 const tiendaFilePath = path.join(__dirname, '../data/tiendaData.json');
 const tiendaProductos = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
 
+
 // -------------------- EL CONTROLADOR DE TIENDA --------------------
 const controller = {
 
