@@ -76,7 +76,7 @@ body {
   }
   
   .producto:hover p {
-    height: 40px;
+    height: auto;
     margin-top: 15px;
   }
   
