@@ -51,3 +51,12 @@ const User = {
 
 module.exports = User;
 
+
+// const user = {
+    
+//     findByEmail: function(email){
+//         let userFound = registeredUsers.find(oneUser => oneUser.email == email)
+//         return userFound;
+//     },
+// }
+
