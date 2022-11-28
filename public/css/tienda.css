@@ -63,24 +63,36 @@ body {
     width:75%;
     float: left;
   }
+
+  img[alt~="producto"] {
+    width:280px;
+    height:280px;
+  }
   
   .producto a {
-    display: block;
+    display:block;
+    text-decoration: none;
   }
   
   .infoProducto {
     border-bottom: 1px solid var(--light-gray);
-
   }
+
+  .Descuento {
+    color: #00a650;
+    margin-top: -38px; 
+    margin-left:170px;
+  }
+
   
 
   
   .producto:hover {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   }
-  
+  /*
   .producto:hover p {
-    height: auto;
     margin-top: 15px;
   }
+  */
   
