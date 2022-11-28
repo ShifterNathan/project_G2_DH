@@ -65,8 +65,8 @@ body {
   }
 
   img[alt~="producto"] {
-    width:280px;
-    height:280px;
+    width:300px;
+    height:300px;
   }
   
   .producto a {
