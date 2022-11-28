@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
+const Product = require('../services/Product');
+const db = require('../database/models');
+
 const tiendaFilePath = path.join(__dirname, '../data/tiendaData.json');
 const tiendaProductos = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
 
@@ -16,38 +19,24 @@ const controller = {
     // ---------- CARGAR PRODUCTOS EN LA TIENDA ----------
     
     crearProducto: (req, res) => {
-        res.render('formulario');
+        res.render('tiendaCreateForm');
     }, 
+    
 
-    formulario: (req, res) => {
-        res.render('formulario');
-    }, 
+    create: async(req, res) => {
 
-    guardarProducto: (req, res) => {
-        
-        let nombreImagen = req.file.filename;
-        let idProductoNuevo;
-        
-        if (tiendaProductos.length > 0){
-            idProductoNuevo = (tiendaProductos[tiendaProductos.length-1].id)+1;    
-        } else {
-            idProductoNuevo = 1;
-        }
-        
-        let productoNuevo = {
-			id: idProductoNuevo, 
+        await db.Producto.create (
+        {
 			nombre: req.body.nombre,
 			precio: req.body.precio,
 			descuento: req.body.descuento,
 			categoria: req.body.categoria,
 			descripcion: req.body.descripcion,
-			imagen: nombreImagen
-		   };
-		
-        tiendaProductos.push(productoNuevo);
-
-		res.redirect("/tienda");
-    }, 
+			imagen: req.file.filename
+        }).then((resultados) => {
+			res.redirect('/tienda');
+		}).catch(err => {res.send(err)})
+    },
 
     // ---------- BUSCADOR DE PRODUCTOS EN LA TIENDA ----------
     detalleProducto: (req, res) => {
