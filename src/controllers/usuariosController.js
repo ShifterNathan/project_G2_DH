@@ -9,15 +9,6 @@ const db = require('../database/models');
 const controller = {
     
     // Vista REGISTRO
-    check: async(req, res) => {
-        await db.Usuario
-        .findAll()
-        .then(usuario => {
-            res.send(usuario)
-        })
-        .catch(err => {res.send(err)})
-    },
-
     registro: (req, res) => {
         res.render('registro')
     },
@@ -62,7 +53,6 @@ const controller = {
         
     // Vista LOGIN
     login: (req, res) => {
-        //console.log(db.usuario.findAll({include: [{association: 'local'}]}));
         res.render('login')
     },
 
@@ -132,19 +122,11 @@ module.exports = controller;
 
 //****const db = require('../database/models');
 
-//const controller ={
-  //  index: (req,res)=>
-
-//db.servicio.findAll()
-//.then((resultados)=>{
-    
-  //  let servicios=[];
-    //console.log(resultados)
-
-   // for (servicio of servicios){
-  //      servicios.push(servicio.nombre);
-  //  }
-  //  res.render('producto', {Allservicios: servicios})
-//});
-   // },
-//};
+// check: async(req, res) => {
+//     await db.Usuario
+//     .findAll()
+//     .then(usuario => {
+//         res.send(usuario)
+//     })
+//     .catch(err => {res.send(err)})
+// },

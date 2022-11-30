@@ -25,10 +25,10 @@ module.exports = (sequelize, Datatypes) => {
             foreignKey: "Local_id"
       });  
            
-      //  Usuario.hasMany(models.Venta, {
-       //     as: "Venta",
-       //     foreignKey: "Usuario_id"
-     // });   
+      Usuario.hasMany(models.Venta, {
+            as: "Venta",
+            foreignKey: "Usuario_id"
+      });   
    }
    return Usuario;
 }
