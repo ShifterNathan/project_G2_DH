@@ -1,20 +1,16 @@
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 
-const User = require('../services/Users');
 const db = require('../database/models');
 
 // -------------------- CONTROLADOR USUARIOS --------------------
 
 const controller = {
     
-    // Vista REGISTRO
     registro: (req, res) => {
         res.render('registro')
     },
 
-
-    // Procesar el REGISTRO
     procesoRegistro: (req, res) => {
         const resultValidation = validationResult(req);
         
@@ -27,7 +23,17 @@ const controller = {
         };     
         
         // Después tengo que hacer una mini-validación previa para que si ese mail ya está en mi DB
-        let userInDB = User.findByField('emailUsuario', req.body.emailUsuario);
+        //let userInDB = User.findByField('emailUsuario', req.body.emailUsuario);
+        let userInDB = async(req, res) => {
+            await db.Usuario
+            .findAll ()
+            .then((resultados) => {                
+                if (resultados.email == req.body.emailUsuario) {return userInDB = resultados} 
+                else {}
+                }
+            )
+            .catch(err => {res.send(err)})
+        }
 
             // Si el usuario a registrarse ya está en mi DB ... le voy a mostrar el error, porque no puede volver a registrarse
             if(userInDB) {
@@ -40,23 +46,31 @@ const controller = {
             }
 
             // Si el usuario no está en mi DB... genero y registro la información de ese usuario, para después guardarla en mi DB (por ahora JSON)
-            let userToCreate = {
-                ...req.body,
-                avatar: req.file.filename,
-                claveUsuario: bcrypt.hashSync(req.body.claveUsuario, 10)
+            let userToCreate = async(req, res) => {
+                await db.Usuario
+                .create (
+                    {
+	         		nombre: req.body.nombreUsuario,
+	         		apellido: req.body.apellidoUsuario,
+	         		email: req.body.emailUsuario,
+	         		clave: bcrypt.hashSync(req.body.claveUsuario, 10),
+	         		direccion: req.body.direccionUsuario,
+	         		imagen: req.file.filename,
+                    //rol: 0
+                    //Local_id:
+                    }
+                )
+                .then((resultados) => {res.redirect('/usuario/perfil')})
+                .catch(err => {res.send(err)})
             }
 
-            let userCreated = User.create(userToCreate);
-       
-            res.redirect("/usuario/ingreso");        
+        res.redirect("/usuario/ingreso");        
     },
         
-    // Vista LOGIN
     login: (req, res) => {
         res.render('login')
     },
 
-    // Procesar el LOGIN
     procesoLogin: (req, res) => {
         const resultValidationLogin = validationResult(req);
         
@@ -79,7 +93,6 @@ const controller = {
                     delete userToLogin.claveUsuario; // por seguridad que no se guarde la contraseña en memoria del navegador
                     req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde yo voy a guardar justamente la información de este userToLogin
                     
-
                     if(req.body.recordame) {
                         res.cookie('emailUsuario', req.body.emailLogin, { maxAge: (1000 * 60) * 60 })
                     }
@@ -118,15 +131,3 @@ const controller = {
 
 // ********** Exportación del controlador de usuario. No tocar **********
 module.exports = controller;
-
-
-//****const db = require('../database/models');
-
-// check: async(req, res) => {
-//     await db.Usuario
-//     .findAll()
-//     .then(usuario => {
-//         res.send(usuario)
-//     })
-//     .catch(err => {res.send(err)})
-// },

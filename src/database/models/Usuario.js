@@ -10,7 +10,7 @@ module.exports = (sequelize, Datatypes) => {
       clave: {type: Datatypes.STRING(45), allowNull: false},
       direccion: {type: Datatypes.STRING(45), allowNull: false},
       imagen: {type: Datatypes.STRING(45)},
-      rol: {type: Datatypes.ENUM('Común', 'Admin', 'Super Admin'), allowNull: false},
+      rol: {type: Datatypes.ENUM('COMUN', 'ADMIN', 'SUPADMIN'), allowNull: false},
       Local_id: {type: Datatypes.INTEGER(11), allowNull: false}
     }
     
@@ -29,6 +29,11 @@ module.exports = (sequelize, Datatypes) => {
             as: "Venta",
             foreignKey: "Usuario_id"
       });   
+
+      Usuario.hasMany(models.Producto, {
+        as: "producto_y_rol",
+        foreignKey: "rol_id"
+      });
    }
    return Usuario;
 }
