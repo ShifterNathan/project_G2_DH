@@ -13,7 +13,7 @@ const controller = {
 
     tienda: (req, res) => {
         const tiendaProductos = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
-        res.render('tienda', {productos: tiendaProductos});
+        res.render('tienda', {productos: tiendaProductos, categorias: db.Categoria});
     },
 
     // ---------- CARGAR PRODUCTOS EN LA TIENDA ----------
@@ -24,7 +24,7 @@ const controller = {
     
 
     create: async(req, res) => {
-
+    
         await db.Producto.create (
         {
 			nombre: req.body.nombre,
@@ -32,7 +32,8 @@ const controller = {
 			descuento: req.body.descuento,
 			categoria: req.body.categoria,
 			descripcion: req.body.descripcion,
-			imagen: req.file.filename
+			imagen: req.file.filename,
+
         }).then((resultados) => {
 			res.redirect('/tienda');
 		}).catch(err => {res.send(err)})

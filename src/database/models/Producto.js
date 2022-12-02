@@ -10,8 +10,8 @@ module.exports = (sequelize, Datatypes) => {
     fecha_creacion: {type: Datatypes.DATE(6), defaulValue: Datatypes.NOW},
     fecha_baja: {type: Datatypes.DATE(6), allowNull: true},
     imagen: {type: Datatypes.STRING(45), allowNull: false},
-    rol_id: {type: Datatypes.INTEGER(2), allowNull: false},
-    Categoria_id: {type: Datatypes.INTEGER(11), allowNull: false}
+    Usuario_id: {type: Datatypes.INTEGER(11), allowNull: true},
+    Categoria_id: {type: Datatypes.INTEGER(11), allowNull: true}
   }
     
   let config = {camelCase: false, timestamps: false};
@@ -27,7 +27,7 @@ module.exports = (sequelize, Datatypes) => {
 
     Producto.belongsTo(models.Usuario, {   
       as: "Usuario", 
-      foreignKey: "rol_id"
+      foreignKey: "Usuario_id"
     });   
 
     Producto.hasMany(models.Venta, {
