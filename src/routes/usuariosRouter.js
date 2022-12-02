@@ -16,11 +16,11 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 // ********** RUTAS **********/
 
-/* Registro nuevo usuario + el guardado de sus datos */ 
+/* Registro */ 
 router.get('/registro', guestMiddleware, usuariosController.registro); 
 router.post('/registro', uploadAvatar.single('avatar'), validacionesRegistro, usuariosController.procesoRegistro);
 
-/* Login + proceso login */ 
+/* Login */ 
 router.get('/ingreso', guestMiddleware, usuariosController.login);
 router.post('/ingreso', validacionesLogin, usuariosController.procesoLogin);
 
