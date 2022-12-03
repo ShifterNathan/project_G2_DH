@@ -61,23 +61,6 @@
 
                 <div class="row mb-2 g-2">
                     <div class="col-6">  
-                        <label for="telefonoUsuario" class="form-label"> Teléfono </label>
-                        <input type="phone" class="form-control 
-                            <%= locals.errors && errors.telefonoUsuario ? 'is-invalid': null%>"
-                            id="telefonoUsuario"
-                            name="telefonoUsuario" placeholder="Teléfono"class="form-input"
-                            value="<%= locals.oldData ? oldData.telefonoUsuario : null %>"
-                        >
-                            <%if (locals.errors && errors.telefonoUsuario) {%>
-                                <div class="text-danger">
-                                    <%= errors.telefonoUsuario.msg%>
-                                </div>
-                            <% } %>
-                    </div>
-                </div>
-
-                <div class="row mb-2 g-2">
-                    <div class="col-6">  
                         <label for="emailUsuario" class="form-label"> Email </label>
                         <input type="email" class="form-control 
                             <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%>"
