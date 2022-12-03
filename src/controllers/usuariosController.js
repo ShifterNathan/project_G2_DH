@@ -53,7 +53,7 @@ const controller = {
                 .catch(err => {res.send(err)})
                 }
                 }                  
-            )     
+            )
     },
         
     login: (req, res) => {
@@ -62,7 +62,6 @@ const controller = {
 
     procesoLogin: (req, res) => {
         const resultValidationLogin = validationResult(req);
-        
         // Si hay errores de validación en el proceso de registro...
         if (resultValidationLogin.errors.length > 0) {
             return res.render('login', {
@@ -72,42 +71,44 @@ const controller = {
         };    
 
         // Si no hay errores de validación en el login, me fijo si el email que ponen en el login está en mi DB
-    //     db.Usuario
-    //         .findOne ({where:{email: req.body.emailUsuario}})
-    //         .then(userToLogin => { 
-    //             // Si efectivamente quiere entrar alguien que ya tiene un email registrado...
-    //             if(userToLogin){
-    //                 let contraseñaCorrecta = bcrypt.compareSync(req.body.claveLogin, userToLogin.clave);
-    //                 if (contraseñaCorrecta) {
-    //                     // La persona ingresó con el email y la contraseña correcta, entonces...
-    //                     delete userToLogin.claveUsuario; // por seguridad que no se guarde la contraseña en memoria del navegador
-    //                     req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde yo voy a guardar justamente la información de este userToLogin
+         db.Usuario
+             .findOne ({where:{email: req.body.emailUsuario}})
+             .then(userToLogin => { 
+                 // Si efectivamente quiere entrar alguien que ya tiene un email registrado...
+                 if(userToLogin){
+                    console.log(req.body.claveLogin)
+                     let contraseñaCorrecta = bcrypt.compareSync(req.body.claveLogin, userToLogin.clave);
+
+                     if (contraseñaCorrecta) {
+                         // La persona ingresó con el email y la contraseña correcta, entonces...
+                         delete userToLogin.claveUsuario; // por seguridad que no se guarde la contraseña en memoria del navegador
+                         req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde yo voy a guardar justamente la información de este userToLogin
                         
-    //                     if(req.body.recordame) {
-    //                         res.cookie('emailUsuario', req.body.emailLogin, { maxAge: (1000 * 60) * 60 })
-    //                     }
+                         if(req.body.recordame) {
+                             res.cookie('emailUsuario', req.body.emailUsuario, { maxAge: (1000 * 60) * 60 })
+                         }
                     
-    //                     return res.redirect('/usuario/perfil');//en el futuro la tenemos que redirigir al perfil del usuario --> (1:02 al del video de 2hs del Módulo 5)
-    //                 }
-    //             }
+                         return res.redirect('/usuario/perfil');//en el futuro la tenemos que redirigir al perfil del usuario --> (1:02 al del video de 2hs del Módulo 5)
+                     }
+                 }
                 
-    //                 // Si es un usuario que quiere ingresar, pero está poniendo mal su contraseña... 
-    //                 return res.render('login', {
-    //                     errors: {
-    //                         emailLogin: {msg: 'Las credenciales son inválidas'},
-    //                         claveLogin: {msg: 'Las credenciales son inválidas'}
-    //                     }
-    //                 });
-    //             };
+                     // Si es un usuario que quiere ingresar, pero está poniendo mal su contraseña... 
+                     return res.render('login', {
+                         errors: {
+                             emailUsuario: {msg: 'Las credenciales son inválidas'},
+                             claveLogin: {msg: 'Las credenciales son inválidas'}
+                         }
+                     });
+                 }).catch(err => (console.log(err)))
                 
-    //             if (userOK) {
-    //                 return res.render('registro', {
-    //                     errors: {
-    //                         emailUsuario: {msg: 'Éste email ya está registrado'}
-    //                     },
-    //                     oldData: req.body,
-    //                 });
-    //             })
+                 /* if (userOK) {
+                     return res.render('registro', {
+                         errors: {
+                             emailUsuario: {msg: 'Éste email ya está registrado'}
+                         },
+                         oldData: req.body,
+                     });
+                 } */
         
         
         

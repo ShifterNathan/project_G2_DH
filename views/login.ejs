@@ -23,16 +23,16 @@
 
                 <div class="row mb-3 g-2">
                     <div class="col-6">  
-                        <label for="emailLogin" class="form-label"> Email </label>
+                        <label for="emailUsuario" class="form-label"> Email </label>
                         <input 
                             type="email"
                             class="form-control <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%>"
-                            id="emailLogin"
-                            name="emailLogin"
-                            value="<%= locals.oldData ? oldData.emailLogin : null %>">
-                            <%if (locals.errors && errors.emailLogin) {%>
+                            id="emailUsuario"
+                            name="emailUsuario"
+                            value="<%= locals.oldData ? oldData.emailUsuario : null %>">
+                            <%if (locals.errors && errors.emailUsuario) {%>
                                 <div class="text-danger">
-                                    <%= errors.emailLogin.msg%>
+                                    <%= errors.emailUsuario.msg%>
                                 </div>
                             <% } %>
                     </div>
