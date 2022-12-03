@@ -6,11 +6,11 @@
                 <img src="/img/isologotipoNav.png" class="img-fluid">
             </a>
             <button type="button" class="navbar-toggler"
-             data-bs-target="#navbarNav" 
-             data-bs-toggle="collapse" 
-             aria-controls="navbarNav" 
-             aria-expanded="false"
-             aria-label="Toggle Navbar"
+                data-bs-target="#navbarNav" 
+                data-bs-toggle="collapse" 
+                aria-controls="navbarNav" 
+                aria-expanded="false"
+                aria-label="Toggle Navbar"
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,14 +35,20 @@
                 <ul class="navbar-nav">
                     <% if (locals.isLogged) { %>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" 
-                                href="#" id="ddropUser" role="button"
+                            <a class="nav-link dropdown-toggle text-white " 
+                                 id="dropUser" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <img class="userIMG" src="/img/avatars/user_orange.png" alt="">
-                                Hola usuario!
+                                <% if (user.avatar) { %>
+                                    <img class="userIMG" src="/img/avatars/<%= user.avatar %>">
+                                <% } else { %>
+                                    <img class="userIMG" src="/img/avatars/user_orange.png">
+                                <% } %>
+                                Hola <%= user.nombreUsuario %>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href=""></a>
+                                <a class="dropdown-item" href="/usuario/perfil">Perfil</a>
+                                <li><hr class="dropdown-divider"> </li>
+                                <a class="dropdown-item" href="/usuario/salir">Salir</a>
                             </ul>
                         </li>
 

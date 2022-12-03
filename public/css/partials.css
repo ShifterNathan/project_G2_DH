@@ -38,7 +38,11 @@ body {
 
 .bg-black {
   background-color: rgba(0, 0, 0, 0.6) !important;
+  color: white;
 }
+
+
+
 
 /******************** MODAL INGRESO/REGISTRO ********************/
 

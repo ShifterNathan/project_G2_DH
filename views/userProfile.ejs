@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="">
-        <%- include('partials/head', {title: 'Perfil de usuario'}) %>
+<head>
         
-        <!-- CSS Inex -->
+    <%- include('partials/head', {title: 'Perfil de usuario'}) %>
+    <link rel="stylesheet" href="">
         
-    </head>
+</head>
    
     <body>
         <%- include('./partials/header') %>
@@ -18,6 +17,7 @@
             <div class="row">
                 <div class="col-md-3">
                     <p class="h2">Hola <%= user.nombreUsuario  %></p>
+                    
                     <img src="/img/avatars/<%= user.avatar %>">
                     <br>
                     <br>
@@ -25,6 +25,9 @@
                 </div>
             </div>
         </div>
+
+        <%- include('./partials/footer') %>
+        
     
 </body>
 </html>

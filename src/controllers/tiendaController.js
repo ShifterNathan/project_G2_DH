@@ -10,7 +10,7 @@ const controller = {
 
     tienda: (req, res) => {
         const tiendaProductos = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
-        res.render('tienda', {productos: tiendaProductos});
+        res.render('tienda', {productos: tiendaProductos, user: req.session.userLogged });
     },
 
     // ---------- CARGAR PRODUCTOS EN LA TIENDA ----------
