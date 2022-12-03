@@ -71,35 +71,32 @@ const controller = {
         };    
 
         // Si no hay errores de validación en el login, me fijo si el email que ponen en el login está en mi DB
-         db.Usuario
-             .findOne ({where:{email: req.body.emailUsuario}})
-             .then(userToLogin => { 
+        db.Usuario.findOne({where:{email: req.body.emailUsuario}}).then(userToLogin => { 
                  // Si efectivamente quiere entrar alguien que ya tiene un email registrado...
-                 if(userToLogin){
-                    console.log(req.body.claveLogin)
-                     let contraseñaCorrecta = bcrypt.compareSync(req.body.claveLogin, userToLogin.clave);
-
-                     if (contraseñaCorrecta) {
-                         // La persona ingresó con el email y la contraseña correcta, entonces...
-                         delete userToLogin.claveUsuario; // por seguridad que no se guarde la contraseña en memoria del navegador
-                         req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde yo voy a guardar justamente la información de este userToLogin
-                        
-                         if(req.body.recordame) {
-                             res.cookie('emailUsuario', req.body.emailUsuario, { maxAge: (1000 * 60) * 60 })
-                         }
-                    
-                         return res.redirect('/usuario/perfil');//en el futuro la tenemos que redirigir al perfil del usuario --> (1:02 al del video de 2hs del Módulo 5)
-                     }
-                 }
+            if(userToLogin){
                 
-                     // Si es un usuario que quiere ingresar, pero está poniendo mal su contraseña... 
-                     return res.render('login', {
-                         errors: {
-                             emailUsuario: {msg: 'Las credenciales son inválidas'},
-                             claveLogin: {msg: 'Las credenciales son inválidas'}
-                         }
-                     });
-                 }).catch(err => (console.log(err)))
+                let contraseñaCorrecta = bcrypt.compareSync(req.body.claveLogin, userToLogin.clave);
+                
+                if (contraseñaCorrecta) {
+                    delete userToLogin.claveUsuario; // por seguridad que no se guarde la contraseña en memoria del navegador
+                    req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde vamos a guardar la información de userToLogin
+                        
+                    if(req.body.recordame) {
+                        res.cookie('emailUsuario', req.body.emailUsuario, { maxAge: (1000 * 60) * 60 })
+                    }
+                    
+                    return res.redirect('/usuario/perfil');//en el futuro la tenemos que redirigir al perfil del usuario --> (1:02 al del video de 2hs del Módulo 5)
+                }
+            }
+                
+            // Si es un usuario que quiere ingresar, pero está poniendo mal su contraseña... 
+            return res.render('login', {
+                errors: {
+                    emailUsuario: {msg: 'Las credenciales son inválidas'},
+                    claveLogin: {msg: 'Las credenciales son inválidas'}
+                    }
+            });
+        }).catch(err => (console.log(err)))
                 
                  /* if (userOK) {
                      return res.render('registro', {
