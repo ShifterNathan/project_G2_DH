@@ -7,7 +7,7 @@ module.exports = (sequelize, Datatypes) => {
       nombre: {type: Datatypes.STRING(45), allowNull: false},
       apellido: {type: Datatypes.STRING(45), allowNull: false},
       email: {type: Datatypes.STRING(60), allowNull: false},
-      clave: {type: Datatypes.STRING(45), allowNull: false},
+      clave: {type: Datatypes.STRING(255), allowNull: false},
       direccion: {type: Datatypes.STRING(45), allowNull: false},
       imagen: {type: Datatypes.STRING(45)},
       rol: {type: Datatypes.ENUM('COMUN', 'ADMIN', 'SUPADMIN'), allowNull: false},

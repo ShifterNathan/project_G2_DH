@@ -27,7 +27,7 @@ const controller = {
             .findOne ({where:{email: req.body.emailUsuario}})
             .then(userInDB => { 
                 // Si el usuario a registrarse ya está en mi DB ... le voy a mostrar el error, porque no puede volver a registrarse
-                if (userInDB) {
+                if (userInDB != null) {
                     return res.render('registro', {
                         errors: {
                             emailUsuario: {msg: 'Éste email ya está registrado'}
@@ -71,13 +71,13 @@ const controller = {
         };    
 
         // Si no hay errores de validación en el login, me fijo si el email que ponen en el login está en mi DB
-         db.Usuario
+        db.Usuario
             .findOne ({where:{email: req.body.emailUsuario}})
             .then(userToLogin => { 
                 // Si efectivamente quiere entrar alguien que ya tiene un email registrado...
-                if(userToLogin){
-                    console.log(req.body.claveLogin)
+                if(userToLogin != null){
                     let contraseñaCorrecta = bcrypt.compareSync(req.body.claveLogin, userToLogin.clave);
+                    console.log(contraseñaCorrecta)
 
                     if (contraseñaCorrecta) {
                         // La persona ingresó con el email y la contraseña correcta, entonces...
@@ -99,50 +99,16 @@ const controller = {
                         }
                         });    
                     }
-                } 
-            })
-            .then(userToLogin => {
-            // Si no se encuentra ese email registrado en nuestra DB...
-            return res.render('login', {
-                errors: {
-                    emailUsuario: {msg: 'No se encuentra registrado este email, por favor verificar'}
+                } else {
+                    // Si no se encuentra ese email registrado en nuestra DB...
+                    return res.render('login', {
+                        errors: {
+                            emailUsuario: {msg: 'No se encuentra registrado este email, por favor verificar'}
+                        }
+                    });
                 }
-            });
-            }) 
+            })
             .catch(err => (console.log(err)))
-        
-    //     //let userToLogin = User.findByField("emailUsuario", req.body.emailLogin);
-            
-    //         // Si efectivamente quiere entrar alguien que ya tiene un email registrado...
-    //         if(userToLogin){
-    //             let contraseñaCorrecta = bcrypt.compareSync(req.body.claveLogin, userToLogin.claveUsuario);
-    //             if (contraseñaCorrecta) {
-    //                 // La persona ingresó con el email y la contraseña correcta, entonces...
-    //                 delete userToLogin.claveUsuario; // por seguridad que no se guarde la contraseña en memoria del navegador
-    //                 req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde yo voy a guardar justamente la información de este userToLogin
-                    
-    //                 if(req.body.recordame) {
-    //                     res.cookie('emailUsuario', req.body.emailLogin, { maxAge: (1000 * 60) * 60 })
-    //                 }
-                
-    //                 return res.redirect('/usuario/perfil');//en el futuro la tenemos que redirigir al perfil del usuario --> (1:02 al del video de 2hs del Módulo 5)
-    //             }
-            
-    //             // Si es un usuario que quiere ingresar, pero está poniendo mal su contraseña... 
-    //             return res.render('login', {
-    //                 errors: {
-    //                     emailLogin: {msg: 'Las credenciales son inválidas'},
-    //                     claveLogin: {msg: 'Las credenciales son inválidas'}
-    //                 }
-    //             });
-    //         };
-
-    //         // Si no se encuentra ese email registrado en nuestra DB...
-    //         return res.render('login', {
-    //             errors: {
-    //                 emailLogin: {msg: 'No se encuentra registrado este email, por favor verificar'}
-    //             }
-    //         });   
      },
     
     profile: (req, res) => {
