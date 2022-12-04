@@ -1,29 +1,16 @@
 const {validationResult} = require('express-validator');
 const bcrypt = require('bcryptjs');
 
-const User = require('../services/Users');
 const db = require('../database/models');
 
 // -------------------- CONTROLADOR USUARIOS --------------------
 
 const controller = {
     
-    // Vista REGISTRO
-    check: async(req, res) => {
-        await db.Usuario
-        .findAll()
-        .then(usuario => {
-            res.send(usuario)
-        })
-        .catch(err => {res.send(err)})
-    },
-
     registro: (req, res) => {
         res.render('registro')
     },
 
-
-    // Procesar el REGISTRO
     procesoRegistro: (req, res) => {
         const resultValidation = validationResult(req);
         
@@ -36,40 +23,45 @@ const controller = {
         };     
         
         // Después tengo que hacer una mini-validación previa para que si ese mail ya está en mi DB
-        let userInDB = User.findByField('emailUsuario', req.body.emailUsuario);
-
-            // Si el usuario a registrarse ya está en mi DB ... le voy a mostrar el error, porque no puede volver a registrarse
-            if(userInDB) {
-                return res.render('registro', {
-                    errors: {
-                        emailUsuario: {msg: 'Éste email ya está registrado'}
-                    },
-                    oldData: req.body,
-                });
-            }
-
-            // Si el usuario no está en mi DB... genero y registro la información de ese usuario, para después guardarla en mi DB (por ahora JSON)
-            let userToCreate = {
-                ...req.body,
-                avatar: req.file.filename,
-                claveUsuario: bcrypt.hashSync(req.body.claveUsuario, 10)
-            }
-
-            let userCreated = User.create(userToCreate);
-       
-            res.redirect("/usuario/ingreso");        
+        db.Usuario
+            .findOne ({where:{email: req.body.emailUsuario}})
+            .then(userInDB => { 
+                // Si el usuario a registrarse ya está en mi DB ... le voy a mostrar el error, porque no puede volver a registrarse
+                if (userInDB != null) {
+                    return res.render('registro', {
+                        errors: {
+                            emailUsuario: {msg: 'Éste email ya está registrado'}
+                        },
+                        oldData: req.body,
+                    });
+                } else {
+                // Si el usuario no está en mi DB, lo guardo en mi DB 
+                db.Usuario
+                .create (
+                    {
+	         		nombre: req.body.nombreUsuario,
+	         		apellido: req.body.apellidoUsuario,
+	         		email: req.body.emailUsuario,
+	         		clave: bcrypt.hashSync(req.body.claveUsuario, 10),
+	         		direccion: req.body.direccionUsuario,
+	         		imagen: req.file.filename,
+                    rol: "COMUN",
+                    Local_id: "1"
+                    }
+                )
+                .then(results => {res.redirect("/usuario/ingreso")})
+                .catch(err => {res.send(err)})
+                }
+                }                  
+            )
     },
         
-    // Vista LOGIN
     login: (req, res) => {
-        //console.log(db.usuario.findAll({include: [{association: 'local'}]}));
         res.render('login')
     },
 
-    // Procesar el LOGIN
     procesoLogin: (req, res) => {
         const resultValidationLogin = validationResult(req);
-        
         // Si hay errores de validación en el proceso de registro...
         if (resultValidationLogin.errors.length > 0) {
             return res.render('login', {
@@ -79,40 +71,45 @@ const controller = {
         };    
 
         // Si no hay errores de validación en el login, me fijo si el email que ponen en el login está en mi DB
-        let userToLogin = User.findByField("emailUsuario", req.body.emailLogin);
-            
-            // Si efectivamente quiere entrar alguien que ya tiene un email registrado...
-            if(userToLogin){
-                let contraseñaCorrecta = bcrypt.compareSync(req.body.claveLogin, userToLogin.claveUsuario);
-                if (contraseñaCorrecta) {
-                    // La persona ingresó con el email y la contraseña correcta, entonces...
-                    delete userToLogin.claveUsuario; // por seguridad que no se guarde la contraseña en memoria del navegador
-                    req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde yo voy a guardar justamente la información de este userToLogin
+        db.Usuario
+            .findOne ({where:{email: req.body.emailUsuario}})
+            .then(userToLogin => { 
+                // Si efectivamente quiere entrar alguien que ya tiene un email registrado...
+                if(userToLogin != null){
+                    let contraseñaCorrecta = bcrypt.compareSync(req.body.claveLogin, userToLogin.clave);
+                    console.log(contraseñaCorrecta)
+
+                    if (contraseñaCorrecta) {
+                        // La persona ingresó con el email y la contraseña correcta, entonces...
+                        delete userToLogin.clave; // por seguridad que no se guarde la contraseña en memoria del navegador
+                        req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde yo voy a guardar justamente la información de este userToLogin
+                        
+                        if(req.body.recordame) {
+                            res.cookie('emailUsuario', req.body.emailUsuario, { maxAge: (1000 * 60) * 60 })
+                        }
                     
-
-                    if(req.body.recordame) {
-                        res.cookie('emailUsuario', req.body.emailLogin, { maxAge: (1000 * 60) * 60 })
+                        return res.redirect('/usuario/perfil');
+                    } 
+                    else {
+                        // Si es un usuario que quiere ingresar, pero está poniendo mal su contraseña... 
+                        return res.render('login', {
+                        errors: {
+                            emailUsuario: {msg: 'Las credenciales son inválidas'},
+                            claveLogin: {msg: 'Las credenciales son inválidas'}
+                        }
+                        });    
                     }
-                
-                    return res.redirect('/usuario/perfil');//en el futuro la tenemos que redirigir al perfil del usuario --> (1:02 al del video de 2hs del Módulo 5)
+                } else {
+                    // Si no se encuentra ese email registrado en nuestra DB...
+                    return res.render('login', {
+                        errors: {
+                            emailUsuario: {msg: 'No se encuentra registrado este email, por favor verificar'}
+                        }
+                    });
                 }
-            
-                // Si es un usuario que quiere ingresar, pero está poniendo mal su contraseña... 
-                return res.render('login', {
-                    errors: {
-                        emailLogin: {msg: 'Las credenciales son inválidas'},
-                        claveLogin: {msg: 'Las credenciales son inválidas'}
-                    }
-                });
-            };
-
-            // Si no se encuentra ese email registrado en nuestra DB...
-            return res.render('login', {
-                errors: {
-                    emailLogin: {msg: 'No se encuentra registrado este email, por favor verificar'}
-                }
-            });   
-    },
+            })
+            .catch(err => (console.log(err)))
+     },
     
     profile: (req, res) => {
         res.render('userProfile', { user: req.session.userLogged });
@@ -128,23 +125,3 @@ const controller = {
 
 // ********** Exportación del controlador de usuario. No tocar **********
 module.exports = controller;
-
-
-//****const db = require('../database/models');
-
-//const controller ={
-  //  index: (req,res)=>
-
-//db.servicio.findAll()
-//.then((resultados)=>{
-    
-  //  let servicios=[];
-    //console.log(resultados)
-
-   // for (servicio of servicios){
-  //      servicios.push(servicio.nombre);
-  //  }
-  //  res.render('producto', {Allservicios: servicios})
-//});
-   // },
-//};

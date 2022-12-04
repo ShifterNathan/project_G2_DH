@@ -38,12 +38,12 @@
                             <a class="nav-link dropdown-toggle text-white " 
                                  id="dropUser" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                <% if (user.avatar) { %>
-                                    <img class="userIMG" src="/img/avatars/<%= user.avatar %>">
+                                <% if (user.imagen) { %>
+                                    <img class="userIMG" src="/img/avatars/<%= user.imagen %>">
                                 <% } else { %>
-                                    <img class="userIMG" src="/img/avatars/user_orange.png">
+                                    <img class="userIMG" src="/img/avatars/default_user.png">
                                 <% } %>
-                                Hola <%= user.nombreUsuario %>
+                                Hola <%= user.nombre %>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/usuario/perfil">Perfil</a>
