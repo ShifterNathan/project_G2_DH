@@ -23,22 +23,18 @@ const controller = {
         };     
         
         // Después tengo que hacer una mini-validación previa para que si ese mail ya está en mi DB
-        db.Usuario
-            .findOne ({where:{email: req.body.emailUsuario}})
-            .then(userInDB => { 
-                // Si el usuario a registrarse ya está en mi DB ... le voy a mostrar el error, porque no puede volver a registrarse
-                if (userInDB != null) {
-                    return res.render('registro', {
-                        errors: {
-                            emailUsuario: {msg: 'Éste email ya está registrado'}
-                        },
-                        oldData: req.body,
-                    });
-                } else {
+        db.Usuario.findOne ({where:{email: req.body.emailUsuario}}).then(userInDB => { 
+            // Si el usuario a registrarse ya está en mi DB ... le voy a mostrar el error, porque no puede volver a registrarse
+            if (userInDB != null) {
+                return res.render('registro', {
+                    errors: {
+                        emailUsuario: {msg: 'Éste email ya está registrado'}
+                    },
+                    oldData: req.body,
+                });
+            } else {
                 // Si el usuario no está en mi DB, lo guardo en mi DB 
-                db.Usuario
-                .create (
-                    {
+                db.Usuario.create ({
 	         		nombre: req.body.nombreUsuario,
 	         		apellido: req.body.apellidoUsuario,
 	         		email: req.body.emailUsuario,
@@ -47,13 +43,9 @@ const controller = {
 	         		imagen: req.file.filename,
                     rol: "COMUN",
                     Local_id: "1"
-                    }
-                )
-                .then(results => {res.redirect("/usuario/ingreso")})
-                .catch(err => {res.send(err)})
-                }
-                }                  
-            )
+                }).then(results => {res.redirect("/usuario/ingreso")}).catch(err => {res.send(err)})
+            }
+        })
     },
         
     login: (req, res) => {
@@ -71,45 +63,41 @@ const controller = {
         };    
 
         // Si no hay errores de validación en el login, me fijo si el email que ponen en el login está en mi DB
-        db.Usuario
-            .findOne ({where:{email: req.body.emailUsuario}})
-            .then(userToLogin => { 
-                // Si efectivamente quiere entrar alguien que ya tiene un email registrado...
-                if(userToLogin != null){
-                    let contraseñaCorrecta = bcrypt.compareSync(req.body.claveLogin, userToLogin.clave);
-                    console.log(contraseñaCorrecta)
+        db.Usuario.findOne ({where:{email: req.body.emailUsuario}}).then(userToLogin => {
+            // Si efectivamente quiere entrar alguien que ya tiene un email registrado...
+            if(userToLogin != null){
+                let contraseñaCorrecta = bcrypt.compareSync(req.body.claveLogin, userToLogin.clave);
+                console.log(contraseñaCorrecta)
 
-                    if (contraseñaCorrecta) {
-                        // La persona ingresó con el email y la contraseña correcta, entonces...
-                        delete userToLogin.clave; // por seguridad que no se guarde la contraseña en memoria del navegador
-                        req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde yo voy a guardar justamente la información de este userToLogin
-                        
-                        if(req.body.recordame) {
-                            res.cookie('emailUsuario', req.body.emailUsuario, { maxAge: (1000 * 60) * 60 })
-                        }
+                if (contraseñaCorrecta) {
+                    // La persona ingresó con el email y la contraseña correcta, entonces...
+                    delete userToLogin.clave; // por seguridad que no se guarde la contraseña en memoria del navegador
+                    req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde yo voy a guardar justamente la información de este userToLogin
                     
-                        return res.redirect('/usuario/perfil');
-                    } 
-                    else {
-                        // Si es un usuario que quiere ingresar, pero está poniendo mal su contraseña... 
-                        return res.render('login', {
-                        errors: {
-                            emailUsuario: {msg: 'Las credenciales son inválidas'},
-                            claveLogin: {msg: 'Las credenciales son inválidas'}
-                        }
-                        });    
+                    if(req.body.recordame) {
+                        res.cookie('emailUsuario', req.body.emailUsuario, { maxAge: (1000 * 60) * 60 })
                     }
+                
+                    return res.redirect('/usuario/perfil');
                 } else {
-                    // Si no se encuentra ese email registrado en nuestra DB...
+                    // Si es un usuario que quiere ingresar, pero está poniendo mal su contraseña... 
                     return res.render('login', {
-                        errors: {
-                            emailUsuario: {msg: 'No se encuentra registrado este email, por favor verificar'}
-                        }
-                    });
+                    errors: {
+                        emailUsuario: {msg: 'Las credenciales son inválidas'},
+                        claveLogin: {msg: 'Las credenciales son inválidas'}
+                    }
+                    });    
                 }
-            })
-            .catch(err => (console.log(err)))
-     },
+            } else {
+                // Si no se encuentra ese email registrado en nuestra DB...
+                return res.render('login', {
+                    errors: {
+                        emailUsuario: {msg: 'No se encuentra registrado este email, por favor verificar'}
+                    }
+                });
+            }
+        }).catch(err => (console.log(err)))
+    },
     
     profile: (req, res) => {
         res.render('userProfile', { user: req.session.userLogged });
