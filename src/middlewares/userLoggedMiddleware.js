@@ -2,25 +2,23 @@
 
 // Función MW: sirve para ver si hay alguien en session y mostrarle tal o cual cosa.
 
-const User = require('../services/Users');
-
-function userLoggedMiddleware (req, res, next) {
+// function userLoggedMiddleware (req, res, next) {
     
-    res.locals.isLogged = false;
+//     res.locals.isLogged = false;
 
-    let emailInCookie = req.cookies.emailUsuario;
-	let userFromCookie = User.findByField('emailUsuario', emailInCookie);
+//     let emailInCookie = req.cookies.emailUsuario;
+// 	let userFromCookie = User.findByField('emailUsuario', emailInCookie);
 
-	if (userFromCookie) {
-		req.session.userLogged = userFromCookie;
-	}
+// 	if (userFromCookie) {
+// 		req.session.userLogged = userFromCookie;
+// 	}
 
-    if(req.session.userLogged){
-        res.locals.isLogged = true;
-        res.locals.userLogged = req.session.userLogged; // se pasa lo que tenes en session a variable local
-    }
+//     if(req.session.userLogged){
+//         res.locals.isLogged = true;
+//         res.locals.userLogged = req.session.userLogged; // se pasa lo que tenes en session a variable local
+//     }
 
-    next();
-};
+//     next();
+// };
 
-module.exports = userLoggedMiddleware;
+//module.exports = userLoggedMiddleware;
