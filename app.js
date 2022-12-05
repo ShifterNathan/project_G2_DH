@@ -5,7 +5,7 @@ const app = express();
 const methodOverride =  require('method-override'); // Para poder usar los métodos PUT y DELETE
 const session = require('express-session');
 const cookies = require('cookie-parser');
-//const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
+const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
 
 // ---------- Motor de plantillas ----------
 app.set('view engine', 'ejs');
@@ -25,7 +25,7 @@ app.use(session({
     resave: false, 
     saveUninitialized: false})); 
 app.use(cookies());
-//app.use(userLoggedMiddleware);
+app.use(userLoggedMiddleware);
 
 
 // ---------- Rutas ----------

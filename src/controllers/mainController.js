@@ -2,11 +2,11 @@ const path = require('path');
 
 const controller = {
     index: (req, res) => {
-        res.render('index')
+        res.render('index', { user: req.session.userLogged })
     },
 
     faq: (req, res) => {
-        res.render('preguntas_frecuentes')
+        res.render('preguntas_frecuentes', { user: req.session.userLogged })
     }
 
 }
