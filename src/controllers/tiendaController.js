@@ -1,19 +1,10 @@
-const fs = require('fs');
-const path = require('path');
-
-const Product = require('../services/Product');
-const db = require('../database/models');
-
-const tiendaFilePath = path.join(__dirname, '../data/tiendaData.json');
-const tiendaProductos = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
 
 
 // -------------------- EL CONTROLADOR DE TIENDA --------------------
 const controller = {
 
     tienda: (req, res) => {
-        const tiendaProductos = JSON.parse(fs.readFileSync(tiendaFilePath, 'utf-8'));
-        res.render('tienda', {productos: tiendaProductos, categorias: db.Categoria});
+        res.render('tienda', {productos: tiendaProductos});
     },
 
     // ---------- CARGAR PRODUCTOS EN LA TIENDA ----------

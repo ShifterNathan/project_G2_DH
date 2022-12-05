@@ -1,26 +1,29 @@
-// Middleware de aplicación
+const db = require('../database/models');
 
-// Función MW: sirve para ver si hay alguien en session y mostrarle tal o cual cosa.
+async function userLoggedMiddleware(req, res, next) {
 
-const User = require('../services/Users');
-
-function userLoggedMiddleware (req, res, next) {
-    
     res.locals.isLogged = false;
 
-    let emailInCookie = req.cookies.emailUsuario;
-	let userFromCookie = User.findByField('emailUsuario', emailInCookie);
-
-	if (userFromCookie) {
-		req.session.userLogged = userFromCookie;
-	}
-
-    if(req.session.userLogged){
+    if (req.session.userLogged) {
         res.locals.isLogged = true;
-        res.locals.userLogged = req.session.userLogged; // se pasa lo que tenes en session a variable local
+        res.locals.userLogged = req.session.userLogged;
     }
 
+    if (req.cookies.emailUsuario != undefined) {
+
+        let userFromCookie = await db.Usuario.findOne({
+            where: {
+                email: req.cookies.emailUsuario
+            }
+        })
+
+        if (userFromCookie) {
+            req.session.userLogged = userFromCookie;
+        }
+
+
+    }
     next();
-};
+}
 
 module.exports = userLoggedMiddleware;

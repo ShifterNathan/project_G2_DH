@@ -8,10 +8,10 @@ const path = require('path');
 let validacionesRegistro = [
     body('nombreUsuario').notEmpty().withMessage('Debes completar tu nombre'),
     body('apellidoUsuario').notEmpty().withMessage('Debes completar tu apellido'),
-    body('telefonoUsuario').notEmpty().withMessage('Debes completar tu teléfono de contacto'),
     body('emailUsuario')
         .notEmpty().withMessage('Debes completar tu email').bail()
-        .isEmail().withMessage('Formato de email inválido'),/*.custom(value => {
+        .isEmail().withMessage('Formato de email inválido'),
+        /*.custom(value => {
             userInvalid = user.findByEmail(value)
                 if (userInvalid) {
                     return Promise.reject('Este e-mail ya está en uso')
