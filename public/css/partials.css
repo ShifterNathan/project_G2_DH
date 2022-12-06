@@ -8,7 +8,9 @@ body {
 .navbar-brand img {
     height: 4vw;
 }
-
+.navbar{
+  background-color:darkslategrey ;
+}
 .nav-item {
   font-weight: bold;
 }

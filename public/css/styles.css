@@ -36,41 +36,41 @@
   
   #titParteA {
     font-family: "baloo 2";
-    color:#EF863D;
+    color:black;
     font-weight: bold;
     font-size: 40px;
   }
 
   #subtParteA {
     font-family: "baloo 2";  
-    color:#EF863D;
+    color:black;
     font-size: 1.2vw;
     line-height: 35px;  
   } 
 
   #li1 {
-    background-color: #EF863D;
+    background-color:darkolivegreen;
     font-family: "baloo 2";
     color: #FDFAF2;
     opacity: 0.9;
   }
 
   #li2 {
-    background-color: #EF863D;
+    background-color: darkolivegreen;
     font-family: "baloo 2";
     color: #FDFAF2;
     opacity: 0.9;
   }
 
   #li3 {
-    background-color: #EF863D;
+    background-color:darkolivegreen;
     font-family: "baloo 2";
     color: #FDFAF2;
     opacity: 0.9;
   }
 
   #li4 {
-    background-color: #EF863D;
+    background-color:darkolivegreen;
     font-family: "baloo 2";
     color: #FDFAF2;
     opacity: 0.9;
