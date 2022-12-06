@@ -2,12 +2,10 @@
 
 <html>
     
-    <!-- Include Head -->
     <%- include('partials/head', {title: 'Crear producto'}) %>
 
     <body>
     
-    <!-- Header -->
     <%- include('./partials/header') %> 
 
     <!-- Formulario de creación de productos de la tienda de DogHouse -->
@@ -35,13 +33,12 @@
                             <input type="number" id="discount" name="descuento" placeholder="5" class="form-input">
                         </div>
                         <div class="col-12">
-                            <label for="category" class="form-label"> Categoría:</label>
-                            <select name="categoria" id="categoria" class="form-input">
-                                <option value="">Elegí</option>
-                                <option value="todos"> Todos los productos </option>
-                                <option value="snacks"> Snacks naturales </option>
-                                <option value="suplementos"> Suplementos nutricionales </option>
-                                <option value="ultimos"> Últimos agregados</option>
+                            <label for="category" class="form-label">Categoría:</label>
+                            <select name="categoria" id="categoriaID" class="form-input">
+                                <option value="">Selecciona</option>
+                                <% for (let categoria of categorias) { %>
+                                    <option value="<%=categoria.id %>"><%=categoria.nombre %></option>
+                                <% } %>
                             </select>
                         </div>
                         <div class="col-12">

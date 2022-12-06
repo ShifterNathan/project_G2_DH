@@ -1,16 +1,56 @@
+const db = require("../database/models");
 
 
 // -------------------- EL CONTROLADOR DE TIENDA --------------------
 const controller = {
 
     tienda: (req, res) => {
-        res.render('tienda', {productos: tiendaProductos});
+        db.Producto.findAll({include: [{association: 'Categoria'}, {association: 'Usuario'}]})
+        .then((products) => {
+
+            let productList = [];
+
+            for (product of products) {
+
+                let objectProduct = {
+                    id: product.id,
+                    imagen: product.imagen,
+                    nombre: product.nombre,
+                    descripcion: product.descripcion,
+                    precio: product.precio,
+                    descuento: product.descuento,
+                    categoria: product.categoria
+                } 
+
+                productList.push(objectProduct);
+
+            }
+            
+            res.render('tienda', {productos: productList, user: req.session.userLogged});
+        })
+        
     },
 
     // ---------- CARGAR PRODUCTOS EN LA TIENDA ----------
     
     crearProducto: (req, res) => {
-        res.render('tiendaCreateForm');
+        db.Categoria.findAll().then((categories) => {
+            let categoriesList = [];
+
+            for(category of categories){
+
+                let objectCategories = {
+                    id: category.id,
+                    nombre: category.nombre
+                }
+                categoriesList.push(objectCategories);
+            }
+            
+
+            res.render('tiendaCreateForm', {categorias: categoriesList, user: req.session.userLogged});
+            
+        })
+        
     }, 
     
 
@@ -21,9 +61,10 @@ const controller = {
 			nombre: req.body.nombre,
 			precio: req.body.precio,
 			descuento: req.body.descuento,
-			categoria: req.body.categoria,
-			descripcion: req.body.descripcion,
 			imagen: req.file.filename,
+            descripcion: req.body.descripcion,
+            Usuario_id: req.session.userLogged.id,
+            Categoria_id: req.body.categoria
 
         }).then((resultados) => {
 			res.redirect('/tienda');
@@ -33,65 +74,36 @@ const controller = {
     // ---------- BUSCADOR DE PRODUCTOS EN LA TIENDA ----------
     detalleProducto: (req, res) => {
 
-        let idURL = req.params.id;
-        let producto;
-
-		for (let x of tiendaProductos) {
-			if (idURL == x.id) {
-				producto = x;
-				break;
-			}
-		};
-
-        res.render('tiendaDetalle', {productoDetalle: producto});
+        db.Producto.findAll({
+            where: {
+                id: req.params.id
+            }
+        }).then((producto) => {
+            res.render('tiendaDetalle', {productoDetalle: producto[0], user: req.session.userLogged});
+        })   
     },
 
 
     editar: (req, res) => {
 
-		let id = req.params.id;
-		let productoEncontrado;
-
-		for (let p of tiendaProductos){
-			if (id == p.id){
-				productoEncontrado = p;
-			}
-		}
-		res.render('tiendaEditForm',{ProductoaEditar: productoEncontrado});
+		db.Producto.findAll({
+            where: {
+                id: req.params.id
+            }
+        }).then((producto) => {
+            res.render('tiendaEditForm', { user: req.session.userLogged})
+        })
 	},
 
     actualizar: (req, res) => {
 
-        console.log(req.file)
-        let id = req.params.id;
-        let nombreImagen = req.file.filename;
-
-		for (let p of tiendaProductos){
-			if (id == p.id){
-				p.nombre = req.body.nombre;
-                p.precio = req.body.precio;
-                p.descuento = req.body.descuento;
-                p.categoria = req.body.categoria;
-				p.descripcion = req.body.descripcion;
-				p.imagen = nombreImagen;
-				break;
-			}
-		}
-		fs.writeFileSync(tiendaFilePath, JSON.stringify(tiendaProductos, null, ' '));
-		res.redirect('/tienda');
+        
     },
 
     
     destroy : (req, res) => {
 
-    let idProductoNuevo = req.params.id;
-
-    let arregloProducto = tiendaProductos.filter(function(elemento){
-        return elemento.id != idProductoNuevo
-    })
-
-    fs.writeFileSync(tiendaFilePath, JSON.stringify(arregloProducto,null, " "));
-	res.redirect("/tienda");   
+    
 
     }
 

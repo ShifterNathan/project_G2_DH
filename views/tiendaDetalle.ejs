@@ -2,7 +2,7 @@
 
 <html>
     <!-- Include Head -->
-    <%- include('partials/head', {title: productoDetalle.nombre}) %>
+    <%- include('partials/head', {title: 'producto'}) %>
 
 <body>
 
@@ -19,8 +19,8 @@
 			</div>
 
             <div class="col-sm-12 col-md-6 col-lg-6 text-center">
-					    <h2 ><%= productoDetalle.nombre %></h2>
-                        <p > <%= productoDetalle.descripcion %> </p>
+					    <h2 ><%=productoDetalle.nombre %></h2>
+                        <p > <%=productoDetalle.descripcion %> </p>
 
 					    <p>
 							<span>$<%= productoDetalle.precio %></span>

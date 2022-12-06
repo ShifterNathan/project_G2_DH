@@ -7,10 +7,11 @@ module.exports = (sequelize, Datatypes) => {
     nombre: {type: Datatypes.STRING(45), allowNull: false},
     precio: {type: Datatypes.DECIMAL(10,0), allowNull: false},
     descuento: {type: Datatypes.INTEGER(100), allowNull: true},
-    fecha_creacion: {type: Datatypes.DATE(6), defaulValue: Datatypes.NOW},
-    fecha_baja: {type: Datatypes.DATE(6), allowNull: true},
+    //fecha_creacion: {type: Datatypes.DATE(6), defaulValue: Datatypes.NOW},
+    //fecha_baja: {type: Datatypes.DATE(6), allowNull: true},
     imagen: {type: Datatypes.STRING(45), allowNull: false},
-    rol_id: {type: Datatypes.ENUM('COMUN', 'ADMIN', 'SUPADMIN'), allowNull: false},
+    descripcion: {type: Datatypes.STRING(255), allowNull: false},
+    Usuario_id: {type: Datatypes.INTEGER(11), allowNull: false},
     Categoria_id: {type: Datatypes.INTEGER(11), allowNull: false}
   }
     
@@ -27,7 +28,7 @@ module.exports = (sequelize, Datatypes) => {
 
     Producto.belongsTo(models.Usuario, {   
       as: "Usuario", 
-      foreignKey: "rol_id"
+      foreignKey: "Usuario_id"
     });   
 
     Producto.hasMany(models.Venta, {
