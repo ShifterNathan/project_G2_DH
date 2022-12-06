@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="">
-        <%- include('partials/head', {title: 'Perfil de usuario'}) %>
+<head>
         
-        <!-- CSS Inex -->
+    <%- include('partials/head', {title: 'Perfil de usuario'}) %>
+    <link rel="stylesheet" href="">
         
-    </head>
+</head>
    
     <body>
         <%- include('./partials/header') %>
@@ -17,14 +16,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <p class="h2">Hola <%= user.nombreUsuario  %></p>
-                    <img src="/img/avatars/<%= user.avatar %>">
+                    <p class="h2">Hola <%= user.nombre  %></p>
+                    
+                    <img src="/img/avatars/<%= user.imagen %>">
                     <br>
                     <br>
-                    <div class="alert alert-success"><%= user.emailUsuario  %></div>
+                    <div class="alert alert-success"><%= user.email  %></div>
                 </div>
             </div>
         </div>
+        <div class="col-12">
+            <button type="button" class="btn btn-link btn-outline-dark"> <a href="/tienda/crear"> Crear nuevo producto </a> </button>
+        </div>
+
+        <%- include('./partials/footer') %>
+        
     
 </body>
 </html>

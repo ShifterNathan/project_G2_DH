@@ -27,9 +27,8 @@ router.get('/', tiendaController.tienda);
 
 /* Crear un producto que va a la tienda y guardarlo */ 
 router.get('/crear', tiendaController.crearProducto);
-router.post('/crear', uploadFile.single('imagenProducto'), tiendaController.guardarProducto);
+router.post('/crear', uploadFile.single('imagenProducto'), tiendaController.create);
 
-router.get('/formulario', tiendaController.formulario);
 
 /* Detalle de un producto cuando lo tocas particularmente en la tienda */ 
 router.get('/detalle/:id', tiendaController.detalleProducto)
