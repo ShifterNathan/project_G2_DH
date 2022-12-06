@@ -42,7 +42,7 @@ const controller = {
 	         		direccion: req.body.direccionUsuario,
 	         		imagen: req.file.filename,
                     rol: "COMUN",
-                    Local_id: "1"
+                    Local_id: null
                 }).then(results => {res.redirect("/usuario/ingreso")}).catch(err => {res.send(err)})
             }
         })
@@ -67,12 +67,12 @@ const controller = {
             // Si efectivamente quiere entrar alguien que ya tiene un email registrado...
             if(userToLogin != null){
                 let contraseñaCorrecta = bcrypt.compareSync(req.body.claveLogin, userToLogin.clave);
-                console.log(contraseñaCorrecta)
+                
 
                 if (contraseñaCorrecta) {
                     // La persona ingresó con el email y la contraseña correcta, entonces...
                     delete userToLogin.clave; // por seguridad que no se guarde la contraseña en memoria del navegador
-                    req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde yo voy a guardar justamente la información de este userToLogin
+                    req.session.userLogged = userToLogin; //.userLogged es una propiedad de session donde se va a guardar la información de este userToLogin
                     
                     if(req.body.recordame) {
                         res.cookie('emailUsuario', req.body.emailUsuario, { maxAge: (1000 * 60) * 60 })
