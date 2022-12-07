@@ -4,7 +4,9 @@ body {
   }
 
 /******************** NAVBAR ********************/
-
+.navbar {
+  background-color:#556B2F ;
+}
 .navbar-brand img {
     height: 4vw;
 }
@@ -25,8 +27,8 @@ body {
 }
 
 .nav-item .nav-link:hover{
-    background-color: #ef863d;
-    background-color:#ef873d ;
+    background-color: #531b07;
+    background-color: #ef873d; ;
   transition: background-color 0.8s;
 
 }

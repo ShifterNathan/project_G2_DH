@@ -1,10 +1,11 @@
 /******************** CARRUSEL ********************/
+
 .carousel-item {
     height: 100%;
     background: no-repeat center center scroll;
 
   }
-  
+ 
   .carousel-item::before{
     content: "";
     display: block;
@@ -22,6 +23,7 @@
   .carousel-caption {
     font-size: 2vw;
     text-shadow: .1vw .1vw .8vw black;
+   
   }
   
   /*--- Efecto de transición del carrusel --*/
@@ -36,41 +38,41 @@
   
   #titParteA {
     font-family: "baloo 2";
-    color:#EF863D;
+    color:#556B2F;
     font-weight: bold;
     font-size: 40px;
   }
 
   #subtParteA {
     font-family: "baloo 2";  
-    color:#EF863D;
+    color:#556B2F;
     font-size: 1.2vw;
     line-height: 35px;  
   } 
 
   #li1 {
-    background-color: #EF863D;
+    background-color: #556B2F;
     font-family: "baloo 2";
     color: #FDFAF2;
     opacity: 0.9;
   }
 
   #li2 {
-    background-color: #EF863D;
+    background-color: #556B2F;
     font-family: "baloo 2";
     color: #FDFAF2;
     opacity: 0.9;
   }
 
   #li3 {
-    background-color: #EF863D;
+    background-color:#556B2F;
     font-family: "baloo 2";
     color: #FDFAF2;
     opacity: 0.9;
   }
 
   #li4 {
-    background-color: #EF863D;
+    background-color: #556B2F;
     font-family: "baloo 2";
     color: #FDFAF2;
     opacity: 0.9;
