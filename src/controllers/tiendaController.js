@@ -104,7 +104,7 @@ const controller = {
                     id: req.params.id
                 }
             }).then((product) => {
-                res.render('tiendaEditForm', {categorias: categoriesList, productEdit: product, user: req.session.userLogged})
+                res.render('tiendaEditForm', {categorias: categoriesList, productEdit: `product`, user: req.session.userLogged})
             })
         })
 	},
