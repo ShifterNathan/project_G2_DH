@@ -34,8 +34,8 @@ router.post('/crear', uploadFile.single('imagenProducto'), tiendaController.crea
 router.get('/detalle/:id', tiendaController.detalleProducto)
 
 /* Para editar un producto de la tienda */ 
-router.get('/editar/:id', tiendaController.editar)
-router.put('/editar/:id', uploadFile.single('imagenProductoEditar'), tiendaController.actualizar)
+router.get('/editar/:id', tiendaController.edit)
+router.put('/editar/:id', uploadFile.single('imagenProductoEditar'), tiendaController.update)
 
 /*** Para eliminar un producto de la tienda ***/ 
 router.delete('/eliminar/:id', tiendaController.destroy); 
