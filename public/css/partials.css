@@ -23,11 +23,25 @@ body {
   text-transform: uppercase;
   border-radius: 1vh;
   letter-spacing: .3vh;
-
+ 
 }
-
+.btn-primary{
+background-color: #efa23d;
+ border-color: hsl(18, 85%, 59%);
+ border-color: rgba(235, 102, 56, 0.8);
+ cursor: pointer;
+ 
+}
+a{
+  background-color: powderorange;
+  transition: background-color .2s ;
+}
+  a:hover {
+   background-color: #ef873d;
+    
+}
 .nav-item .nav-link:hover{
-    background-color: #ef863d;
+    background-color: #efa23d;
     background-color:#ef873d ;
   transition: background-color 0.8s;
 
@@ -149,6 +163,12 @@ a{
 a:hover{
   color: #3C9395;
 }
+/******Nuestros Menús****/
+
+
+
+
+
 
 
 /******************** FOOTER ********************/
