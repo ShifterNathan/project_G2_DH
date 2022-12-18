@@ -1,138 +1,119 @@
 <!DOCTYPE html>
-
 <html>
-    <!-- Head -->
-  
-    <!-- Include Head -->
+<head>
+
     <%- include('partials/head', {title: 'Registrar usuario'}) %>
+    <link rel="stylesheet" href="/css/login-register.css">
 
-    <body>
-    
-    <!-- Header -->
-    
+</head>
+<body>
+
+    <%- include('./partials/header') %>
+
+    <div class="container-fluid bg-login-register">
         
-    <!-- Formulario de registro -->
-    
-    <div class="container">
-        
-        <a href="/"><img src="/img/isologotipo.ico"  style="width:100px ;"></a>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 mt-5">
 
-        <form action="/usuario/registro" method="POST" enctype="multipart/form-data">
-            
-            <h2>Registrate</h2>
-          
-            <div class="container ">
-
-    <div class="row"></div>
-                <div class="row mb-2 g-3">
-                    <div class="col-6 ">  
-                        <label for="nombreUsuario" class="form-label"> Nombre </label>
-                        <input 
-                            type="text"
-                            class="form-control  <%= locals.errors && errors.nombreUsuario ? 'is-invalid': null%>"
-                            id="nombreUsuario"
-                            name="nombreUsuario" placeholder="Escribe tu nombre"class="form-input"
-                            value="<%= locals.oldData ? oldData.nombreUsuario : null %>"
-                        >
-                        <%if (locals.errors && errors.nombreUsuario) {%>
-                            <div class="text-danger">
-                                <%= errors.nombreUsuario.msg%>
-                            </div>
-                        <% } %>
-                    </div>
-                </div>
-            
-                    <div class="row mb-2 g-2">
-                    <div class="col-6">  
-                        <label for="apellidoUsuario" class="form-label"> Apellido </label>
-                        <input type="text" class="form-control 
-                            <%= locals.errors && errors.apellidoUsuario ? 'is-invalid': null%>"
-                            id="apellidoUsuario"
-                            name="apellidoUsuario" placeholder="Escribe tu apellido"class="form-input"
-                            value="<%= locals.oldData ? oldData.apellidoUsuario : null %>"
-                        >
+                <form action="/usuario/registro" method="POST" class="loginRegisterForm mt-5 text-white" enctype="multipart/form-data">
+                    
+                    <i class="fa-solid fa-user text-white"></i>
+                    <p class="h2 text-center">Registrate</p>
+                
+                    <div class="row">
+                        <div class="col-lg-6 mb-3 ">
+                            <label for="nombreUsuario" class="form-label"> Nombre </label>
+                            <input type="text" name="nombreUsuario" class="form-control
+                                <%= locals.errors && errors.nombreUsuario ? 'is-invalid': null%>"
+                                value="<%= locals.oldData ? oldData.nombreUsuario : null %>"
+                            >
+                            <%if (locals.errors && errors.nombreUsuario) {%>
+                                <div class="text-danger">
+                                    <%= errors.nombreUsuario.msg%>
+                                </div>
+                            <% } %>
+                        </div>
+                        
+                        <div class="col-lg-6 mb-3 ">
+                            <label for="apellidoUsuario" class="form-label"> Apellido </label>
+                            <input type="text" name="apellidoUsuario" class="form-control 
+                                <%= locals.errors && errors.apellidoUsuario ? 'is-invalid': null%>"
+                                value="<%= locals.oldData ? oldData.apellidoUsuario : null %>"
+                            >
                             <%if (locals.errors && errors.apellidoUsuario) {%>
                                 <div class="text-danger">
                                     <%= errors.apellidoUsuario.msg%>
                                 </div>
                             <% } %>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row mb-2 g-2">
-                    <div class="col-6">  
-                        <label for="emailUsuario" class="form-label"> Email </label>
-                        <input type="email" class="form-control 
-                            <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%>"
-                            id="emailUsuario"
-                            name="emailUsuario" placeholder="Escribe tu email"class="form-input"
-                            value="<%= locals.oldData ? oldData.emailUsuario : null %>"
-                        >
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">  
+                            <label for="emailUsuario" class="form-label"> Email </label>
+                            <input type="email" name="emailUsuario" class="form-control 
+                                <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%>"
+                                value="<%= locals.oldData ? oldData.emailUsuario : null %>"
+                            >
                             <%if (locals.errors && errors.emailUsuario) {%>
                                 <div class="text-danger">
                                     <%= errors.emailUsuario.msg%>
                                 </div>
                             <% } %>
-                    </div>
-                </div>
+                        </div>
 
-                <div class="row mb-2 g-2">
-                    <div class="col-6">  
-                        <label for="claveUsuario" class="form-label"> Contraseña </label>
-                        <input type="password" class="form-control 
-                            <%= locals.errors && errors.claveUsuario ? 'is-invalid': null%>"
-                            id="claveUsuario"
-                            name="claveUsuario" placeholder="Escribe tu contraseña"class="form-input"
-                        >
+                        <div class="col-lg-6 mb-3"> 
+                            <label for="claveUsuario" class="form-label"> Contraseña </label>
+                            <input type="password" name="claveUsuario" class="form-control 
+                                <%= locals.errors && errors.claveUsuario ? 'is-invalid': null%>"
+                            >
                             <%if (locals.errors && errors.claveUsuario) {%>
                                 <div class="text-danger">
                                     <%= errors.claveUsuario.msg%>
                                 </div>
                             <% } %>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row mb-2 g-2">
-                    <div class="col-6">  
-                        <label for="direccionUsuario" class="form-label"> Dirección </label>
-                        <input type="text" class="form-control 
-                            <%= locals.errors && errors.direccionUsuario ? 'is-invalid': null%>"
-                            id="direccionUsuario"
-                            name="direccionUsuario" placeholder="Dirección completa"class="form-input"
-                            value="<%= locals.oldData ? oldData.direccionUsuario : null %>"
-                        >
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <label for="direccionUsuario" class="form-label"> Dirección </label>
+                            <input type="text" name="direccionUsuario" class="form-control 
+                                <%= locals.errors && errors.direccionUsuario ? 'is-invalid': null%>"
+                                value="<%= locals.oldData ? oldData.direccionUsuario : null %>"
+                            >
                             <%if (locals.errors && errors.direccionUsuario) {%>
                                 <div class="text-danger">
                                     <%= errors.direccionUsuario.msg%>
                                 </div>
                             <% } %>
-                    </div>
-                </div>
+                        </div>
 
-                <div class="row mb-3 g-2">
-                    <div class="col-6">  
-                        <label for="avatar" class="form-label"> Imagen de perfil: </label>
-                        <input type="file" name="avatar" class="form-control">
+                        <div class="col-lg-6 mb-3">
+                            <label for="avatar" class="form-label"> Imagen de perfil: </label>
+                            <input type="file" name="avatar" class="form-control">
                             <%if (locals.errors && errors.avatar) {%>
                                 <div class="text-danger">
                                     <%= errors.avatar.msg%>
                                 </div>
                             <%} %>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row mb-3 g-2">
-                    <div class="col-6">  
-                        <button type="submit" class="btn btn-primary"> Enviar </button>
+
+                    <div class="col-12">  
+                        <button type="submit" class="btn btn-primary form-control"> Enviar </button>
                     </div>
-                </div>  
-            
+                    
+                    
+
+                </form>
             </div>
-
-        </form>
+        </div>
 
     </div>
+    <%- include('./partials/footer') %>
     
-    </body>
+</body>
     
 </html>
