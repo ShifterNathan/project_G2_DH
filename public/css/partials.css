@@ -1,12 +1,13 @@
 body {
-    background-color: #FDFAF2;
-    font-family: "baloo 2";
-  }
+  background-color: #FDFAF2;
+  font-family: "baloo 2";
+
+}
 
 /******************** NAVBAR ********************/
 
 .navbar-brand img {
-    height: 4vw;
+  height: 4vw;
 }
 
 .nav-item {
@@ -25,8 +26,8 @@ body {
 }
 
 .nav-item .nav-link:hover{
-    background-color: #ef863d;
-    background-color:#ef873d ;
+  background-color: #ef863d;
+  background-color:#ef873d ;
   transition: background-color 0.8s;
 
 }
@@ -68,12 +69,7 @@ body {
   padding: 1vw;
 }
 
-.fa-user {
-  position: absolute;
-  left: 0px;
-  padding: 1vw;
-  font-size: 24px;
-}
+
 
 .form {
   max-width: 100%;
@@ -87,17 +83,6 @@ body {
   }
 }
 
-
-
-.form .btn-primary {
-  background-color: #ef863d;
-  border: none;
-  border-radius: 50%;
-}
-
-.form .btn-primary:hover{
-  background-color: #3C9395;
-}
 
 .header-form {
   background-color: inherit;
