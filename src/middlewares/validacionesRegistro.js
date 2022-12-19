@@ -6,8 +6,12 @@ const { body } = require('express-validator');
 const path = require('path');
 
 let validacionesRegistro = [
-    body('nombreUsuario').notEmpty().withMessage('Ingresa tu nombre'),
-    body('apellidoUsuario').notEmpty().withMessage('Ingresa tu apellido'),
+    body('nombreUsuario')
+        .notEmpty().withMessage('Ingresa tu nombre').bail()
+        .isLength({min:2}).withMessage('Debe contener al menos 2 caracteres'),
+    body('apellidoUsuario')
+        .notEmpty().withMessage('Ingresa tu apellido').bail()
+        .isLength({min:2}).withMessage('Debe contener al menos 2 caracteres'),
     body('emailUsuario')
         .notEmpty().withMessage('Ingresa tu email').bail()
         .isEmail().withMessage('Formato de email inválido'),
