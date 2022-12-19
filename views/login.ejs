@@ -1,84 +1,71 @@
 <!DOCTYPE html>
-
 <html>
-    <!-- Head -->
+<head>
+
     <%- include('partials/head', {title: 'Ingreso de usuario'}) %>
+    <link rel="stylesheet" href="/css/login-register.css">
+    
+</head>
+<body>
+    
+    <%- include('./partials/header') %>
 
-    <body>
-    
-    <!-- Header -->
-    
+    <div class="container-fluid bg-login-register">
         
-    <!-- Formulario de registro -->
-    
-    <div class="container">
-        
-        <a href="/"><img src="/img/isologotipo.ico"  style="width:100px ;"></a>
-
-        <form action="/usuario/ingreso" method="POST">
-            
-            <h2>Ingresa</h2>
-          
-            <div class="container">
-
-                <div class="row mb-3 g-2">
-                    <div class="col-6">  
-                        <label for="emailUsuario" class="form-label"> Email </label>
-                        <input 
-                            type="email"
-                            class="form-control <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%>"
-                            id="emailUsuario"
-                            name="emailUsuario"
-                            value="<%= locals.oldData ? oldData.emailUsuario : null %>">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 mt-5">
+                
+                <form action="/usuario/ingreso" method="POST" class="loginRegisterForm mt-5 text-black">
+                    <i class="fa-solid fa-user text-black"></i>
+                    <p class="h2 text-center">Ingresa</p>
+                    <div class="mb-3 ">
+                        <label for="emailUsuario"> Email </label>
+                        <input type="email" name="emailUsuario"
+                            class="form-control <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%> "
+                            value="<%= locals.oldData ? oldData.emailUsuario : null %>"
+                        >
                             <%if (locals.errors && errors.emailUsuario) {%>
                                 <div class="text-danger">
                                     <%= errors.emailUsuario.msg%>
                                 </div>
                             <% } %>
                     </div>
-                </div>
 
-                <div class="row mb-3 g-2">
-                    <div class="col-6">  
+                    <div class="mb-3"> 
                         <label for="claveLogin" class="form-label"> Contraseña </label>
-                        <input 
-                            type="password" 
+                        <input type="password" name="claveLogin"
                             class="form-control <%= locals.errors && errors.claveLogin ? 'is-invalid': null%>"
-                            id="claveLogin"
-                            name="claveLogin">
+                        >
                             <%if (locals.errors && errors.claveLogin) {%>
                                 <div class="text-danger">
                                     <%= errors.claveLogin.msg%>
                                 </div>
                             <% } %>
                     </div>
-                </div>
 
-                <div class="row mb-3 g-2">
-                    <div class="col-6"> 
-                    <div class="form-group form-check">
+                    <div class="mb-3 g-2">
                         <label class="form-check-label">
-                            <input 
-                            type="checkbox" 
-                            class="form-check-input" 
-                            name="recordame"> Recordarme
+                            <input type="checkbox" class="form-check-input" name="recordame"> Recordarme
                         </label>
                     </div>
-                    </div>
-                </div>
 
-                <div class="row mb-3 g-2">
-                    <div class="col-6">  
-                        <button type="submit" class="btn btn-primary"> Login </button>
+                    <div class="pb-2">
+                        <div class="col-12">  
+                            <button type="submit" class="btn btn-primary form-control"> Login </button>
+                        </div>
                     </div>
-                </div>  
-            
+                    <p class="pt-3 text-center">¿Aún no te has registrado? 
+                        <a class="text-decoration-none" href="/usuario/registro">¡Hazlo ya!</a>
+                    </p>
+                </form>
+                    
             </div>
-
-        </form>
+        </div>
 
     </div>
+    <%- include('./partials/footer') %>
     
-    </body>
+</body>
+
     
 </html>

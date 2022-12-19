@@ -1,0 +1,8 @@
+
+.bg-profile {
+    background-image: url('/img/profile-bg1.jpg');
+    background-size: cover;
+    position: relative;
+    height: 36vh;
+    
+}

@@ -38,7 +38,8 @@
                 <ul class="navbar-nav">
                     <% if (locals.isLogged) { %>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-white " id="dropUser" role="button"
+                            <a class="nav-link dropdown-toggle  text-white " 
+                                 id="dropUser" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 <% if (user.imagen) { %>
                                     <img class="userIMG" src="/img/avatars/<%= user.imagen %>">
@@ -47,25 +48,26 @@
                                         <% } %>
                                             Hola <%= user.nombre %>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/usuario/perfil">Perfil</a>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <a class="dropdown-item" href="/usuario/salir">Salir</a>
+                            <ul class="dropdown-menu dropdown-menu-end " aria-labelledby="navbarDropdown">
+                                <div class=" dropdown-header noti-title">
+                                    <h6 class="text-overflow m-0">Bienvenido!</h6>
+                                </div>
+                                <a class="dropdown-item" href="/usuario/perfil"><i class="fa-solid fa-user"></i> Mi cuenta</a>
+                                
+                                <a class="dropdown-item" href="/usuario/salir"><i class="fa-solid fa-right-from-bracket"></i> Salir</a>
                             </ul>
                         </li>
 
-                        <% } else { %>
-                            <li class="nav-item ">
-                                <a href="/usuario/registro" class="nav-link text-white text-decoration-none"
-                                    role="button">Regístrate</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="/usuario/ingreso" class="nav-link text-white text-decoration-none"
-                                    role="button">Ingresa</a>
-                            </li>
-                            <% } %>
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a href="/usuario/registro" class="nav-link text-white text-decoration-none" 
+                            role="button">Regístrate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/usuario/ingreso" class="nav-link text-white text-decoration-none" 
+                            role="button">Ingresa</a>
+                        </li>
+                    <% } %>
                 </ul>
             </div>
         </div>
