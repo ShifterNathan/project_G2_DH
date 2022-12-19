@@ -42,7 +42,7 @@ const controller = {
 	         		direccion: req.body.direccionUsuario,
 	         		imagen: req.file.filename,
                     rol: "COMUN",
-                    Local_id: null
+                    Local_id: "1"
                 }).then(results => {res.redirect("/usuario/ingreso")}).catch(err => {res.send(err)})
             }
         })

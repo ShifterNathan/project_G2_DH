@@ -20,6 +20,10 @@ const multerDiskStorage = multer.diskStorage({
 
 const uploadFile = multer({ storage: multerDiskStorage });
 
+//***  Middlewares  ****/
+
+const validacionesCreacionProductos = require('../middlewares/validacionesProductos');
+
 // ********** RUTAS **********
 
 /* La tienda */ 
@@ -27,7 +31,7 @@ router.get('/', tiendaController.tienda);
 
 /* Crear un producto que va a la tienda y guardarlo */ 
 router.get('/crear', tiendaController.crearProducto);
-router.post('/crear', uploadFile.single('imagenProducto'), tiendaController.create);
+router.post('/crear', uploadFile.single('imagenProducto'), validacionesCreacionProductos, tiendaController.create);
 
 
 /* Detalle de un producto cuando lo tocas particularmente en la tienda */ 
