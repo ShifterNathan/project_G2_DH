@@ -20,7 +20,7 @@
                     <p class="h2 text-center">Ingresa</p>
                     <div class="mb-3 ">
                         <label for="emailUsuario"> Email </label>
-                        <input type="email" name="emailUsuario"
+                        <input type="email" name="emailUsuario" id="emailUsuario"
                             class="form-control <%= locals.errors && errors.emailUsuario ? 'is-invalid': null%> "
                             value="<%= locals.oldData ? oldData.emailUsuario : null %>"
                         >
@@ -33,7 +33,7 @@
 
                     <div class="mb-3"> 
                         <label for="claveLogin" class="form-label"> Contraseña </label>
-                        <input type="password" name="claveLogin"
+                        <input type="password" name="claveLogin" id="claveLogin"
                             class="form-control <%= locals.errors && errors.claveLogin ? 'is-invalid': null%>"
                         >
                             <%if (locals.errors && errors.claveLogin) {%>
@@ -65,7 +65,7 @@
     </div>
     <%- include('./partials/footer') %>
     
-    <script src="../public/js/login.js"> </script>
+    <script src="/js/login.js"> </script>
 
 </body>
 
