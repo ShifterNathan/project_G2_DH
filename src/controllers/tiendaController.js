@@ -1,6 +1,6 @@
 const { where } = require("sequelize");
 const db = require("../database/models");
-
+const {validationResult} = require('express-validator');
 
 // -------------------- EL CONTROLADOR DE TIENDA --------------------
 const controller = {
@@ -27,14 +27,14 @@ const controller = {
 
             }
             
-            res.render('tienda', {productos: productList, user: req.session.userLogged});
+            res.render('tienda', {productos: productList, user: req.session.userLogged}); 
         })
         
     },
 
     // ---------- CARGAR PRODUCTOS EN LA TIENDA ----------
     
-    crearProducto: (req, res) => {
+    tiendaCreateForm: (req, res) => {
         db.Categoria.findAll().then((categories) => {
             let categoriesList = [];
 
@@ -47,16 +47,38 @@ const controller = {
                 categoriesList.push(objectCategories);
             }
             
-
             res.render('tiendaCreateForm', {categorias: categoriesList, user: req.session.userLogged});
             
         })
-        
     }, 
-    
 
     create: async(req, res) => {
-    
+        
+        db.Categoria.findAll().then((categories) => {
+            let categoriesList = [];
+
+            for(category of categories){
+
+                let objectCategories = {
+                    id: category.id,
+                    nombre: category.nombre
+                }
+                categoriesList.push(objectCategories);
+            }
+        })
+
+        const resultValidation = validationResult(req);
+
+        // Si hay errores de validación en el proceso de creación de productos...
+        if (resultValidation.errors.length > 0) {
+            return res.render('tiendaCreateForm', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                categorias: categoriesList,
+                user: req.session.userLogged
+            });
+        };
+
         await db.Producto.create (
         {
 			nombre: req.body.nombre,
