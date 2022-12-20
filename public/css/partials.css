@@ -1,5 +1,5 @@
 body {
-  background-color: #FDFAF2;
+  background-color: #f2fdf4;
   font-family: "baloo 2";
 
 }
@@ -34,7 +34,7 @@ background-color: #efa23d;
  
 }
 a{
-  background-color: powderorange;
+  background-color: rgba;
   transition: background-color .2s ;
 }
   a:hover {

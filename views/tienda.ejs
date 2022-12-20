@@ -12,19 +12,24 @@
    
     <body>
 
-	    <%- include('./partials/header') %>
-
-        <div class="banner">
+	    <%/*- include('./partials/header')*/ %>
+        
+                
+       <!-- <div class="banner">
             <div class="h1 d-flex justify-content-center align-items-center text-white">
                 <p>TIENDA</p>
             </div>
-        </div>
+        </div>-->
 
         <head>
             <link rel="stylesheet" href="/css/tienda.css">
             <%- include('partials/head', {title: 'tienda'}) %>
                                    
-       
+            <div class="container-fluid">
+                <div class="row p-5 bg-default success background text-black">
+                    <div class="col-xs-12 col-md-2 col-sm-2">
+                        <img src="/img/isologotipoConSlogan.png" alt="" class="img-fluid mb-3">
+                    </div>
         
        
 
@@ -33,8 +38,11 @@
                 <div class="col-12">
                     <p class="h2">Mucho más que comida sana para tu mascota</h2>
                         <p class="h5">Descubre todo lo que DogHouse tiene para ofrecerte</p>
-                                               
+
+                       
+                                                    
                 </div>
+                <img src="/img/imgperros.png"  alt="MDN" class="img-fluid sm" alt=""/>   
                 <!-- Show the "visited" products -->
                 <% for(let producto of productos) { %>
                 <div class="col-12 col-sm-6 col-lg-4">
