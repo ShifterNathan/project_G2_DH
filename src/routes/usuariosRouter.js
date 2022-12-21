@@ -6,16 +6,13 @@ const usuariosController = require('../controllers/usuariosController');
 
 
 //***  Middlewares  ****/
-
 const uploadAvatar = require('../middlewares/multerUsuario');
 const validacionesRegistro = require('../middlewares/validacionesRegistro');
 const validacionesLogin = require('../middlewares/validacionesLogin')
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
 
-
 // ********** RUTAS **********/
-
 /* Registro */ 
 router.get('/registro', guestMiddleware, usuariosController.registro); 
 router.post('/registro', uploadAvatar.single('avatar'), validacionesRegistro, usuariosController.procesoRegistro);

@@ -2,10 +2,10 @@
 
 // Función MW: sirve para validar con express-validator la creación de productos que hace el administrador 
 
-const { body } = require('express-validator');
+const {body} = require('express-validator');
 const path = require('path');
 
-validacionesCreacionProductos = [
+validacionesProducto = [
     body('nombre')
         .notEmpty().withMessage('Ingresa el nombre del producto').bail()
         .isLength({min:5}).withMessage('Debe contener al menos 5 caracteres'),
@@ -15,7 +15,7 @@ validacionesCreacionProductos = [
         let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
             
         if (!file) { //cuando no suben un archivo
-            throw new Error ('Carga una imágen');
+            throw new Error ('Carga una imagen');
         } else {  //cuando suben un archivo, verificar la extensión del mismo
             let fileExtension = path.extname(file.originalname);
             if (!acceptedExtensions.includes(fileExtension)){
@@ -29,4 +29,4 @@ validacionesCreacionProductos = [
         .isLength({min:20}).withMessage('Debe contener al menos 20 caracteres'),
 ];
 
-module.exports = validacionesCreacionProductos;
+module.exports = validacionesProducto;

@@ -14,7 +14,7 @@
             <div class="row m-2 justify-content-md-center">
 
                 <div class="col-12">
-                    <h2> Formulario de creación de productos para la tienda Doghouse </h2>
+                    <h2> Edición producto </h2>
                 </div>
 
                 <div class="col-12 m-4">
@@ -22,15 +22,28 @@
                     <div class="row">
                         <div class="col-12">
                             <label for="name" class="form-label"> Nombre del producto:</label>
-                            <input type="text" id="name" name="nombre" placeholder="Sticks de cerdo" class="form-input">
+                            <input type="text" id="name" name="nombre" class="form-input <%= locals.errors && errors.nombreUsuario ? 'is-invalid': null%>"
+                            value="<%= locals.oldData ? oldData.nombre : null %>">
+                            <%if (locals.errors && errors.nombre) {%>
+                                <div class="text-danger">
+                                    <%= errors.nombre.msg%>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="col-12">
                             <label for="price" class="form-label"> Precio del producto:</label>
-                            <input type="number" id="price" name="precio" class="form-input">
+                            <input type="number" id="price" name="precio" class="form-input <%= locals.errors && errors.precio ? 'is-invalid': null%>"
+                            value="<%= locals.oldData ? oldData.precio : null %>">
+                            <%if (locals.errors && errors.precio) {%>
+                                <div class="text-danger">
+                                    <%= errors.precio.msg%>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="col-12">
                             <label for="discount" class="form-label"> Descuento:</label>
-                            <input type="number" id="discount" name="descuento" placeholder="5" class="form-input">
+                            <input type="number" id="discount" name="descuento" class="form-input <%= locals.errors && errors.descuento ? 'is-invalid': null%>"
+                            value="<%= locals.oldData ? oldData.descuento : null %>">
                         </div>
                         <div class="col-12">
                             <label for="category" class="form-label">Categoría:</label>
@@ -42,15 +55,26 @@
                             </select>
                         </div>
                         <div class="col-12">
-                            <label for="imagenProductoEditar" class="form-label"> Seleccionar imagen:</label>
-                            <input type="file" name="imagenProductoEditar">
+                            <label for="imagenProducto" class="form-label"> Seleccionar imagen:</label>
+                            <input type="file" name="imagenProducto">
+                            <%if (locals.errors && errors.imagenProducto) {%>
+                                <div class="text-danger">
+                                    <%= errors.imagenProducto.msg%>
+                                </div>
+                            <%} %>
                         </div>
                         <div class="col-12">
                             <label for="descripcion" class="form-label"> Descripción:</label>
-                            <textarea name="descripcion" id="descripcion" class="form-input"></textarea>
+                            <textarea name="descripcion" id="descripcion" class="form-input <%= locals.errors && errors.descripcion ? 'is-invalid': null%>"
+                            value="<%= locals.oldData ? oldData.descripcion : null %>"></textarea>
+                            <%if (locals.errors && errors.descripcion) {%>
+                                <div class="text-danger">
+                                    <%= errors.descripcion.msg%>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="buy-now-button"> Guardar producto</button>
+                            <button type="submit" class="buy-now-button"> Editar producto</button>
                         </div>
                     </div>
                 </form>
