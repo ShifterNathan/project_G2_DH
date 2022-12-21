@@ -6,7 +6,7 @@ const tiendaController = require('../controllers/tiendaController');
 
 //***  Middlewares  ****/
 const uploadFile = require('../middlewares/multerTienda');
-const validacionesCreacionProductos = require('../middlewares/validacionesProductos');
+const validacionesProducto = require('../middlewares/validacionesProductos');
 const authMiddleware = require('../middlewares/authMiddleware');
 
 
@@ -16,14 +16,14 @@ router.get('/', tiendaController.tienda);
 
 /* Crear un producto que va a la tienda y guardarlo */ 
 router.get('/crear', authMiddleware, tiendaController.tiendaCreateForm);
-router.post('/crear', authMiddleware, uploadFile.single('imagenProducto'), validacionesCreacionProductos, tiendaController.create);
+router.post('/crear', authMiddleware, uploadFile.single('imagenProducto'), validacionesProducto, tiendaController.create);
 
 /* Detalle de un producto cuando lo tocas particularmente en la tienda */ 
 router.get('/detalle/:id', authMiddleware, tiendaController.detalleProducto)
 
 /* Para editar un producto de la tienda */ 
 router.get('/editar/:id', authMiddleware, tiendaController.edit)
-router.put('/editar/:id', authMiddleware, uploadFile.single('imagenProductoEditar'), tiendaController.update)
+router.put('/editar/:id', authMiddleware, uploadFile.single('imagenProducto'), validacionesProducto, tiendaController.update)
 
 /*** Para eliminar un producto de la tienda ***/ 
 router.delete('/eliminar/:id', authMiddleware, tiendaController.destroy); 

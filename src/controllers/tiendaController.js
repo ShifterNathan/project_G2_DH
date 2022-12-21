@@ -1,4 +1,4 @@
-const { where } = require("sequelize");
+const {where} = require("sequelize");
 const db = require("../database/models");
 const {validationResult} = require('express-validator');
 
@@ -52,10 +52,11 @@ const controller = {
         })
     }, 
 
-    create: async(req, res) => {
+    create: (req, res) => {
         
+        const categoriesList = [];
+
         db.Categoria.findAll().then((categories) => {
-            let categoriesList = [];
 
             for(category of categories){
 
@@ -65,6 +66,7 @@ const controller = {
                 }
                 categoriesList.push(objectCategories);
             }
+            
         })
 
         const resultValidation = validationResult(req);
@@ -79,7 +81,7 @@ const controller = {
             });
         };
 
-        await db.Producto.create (
+        db.Producto.create (
         {
 			nombre: req.body.nombre,
 			precio: req.body.precio,
@@ -126,13 +128,49 @@ const controller = {
                     id: req.params.id
                 }
             }).then((product) => {
-                res.render('tiendaEditForm', {categorias: categoriesList, productEdit: `product`, user: req.session.userLogged})
+                res.render('tiendaEditForm', {categorias: categoriesList, productEdit: product, user: req.session.userLogged})
             })
         })
 	},
 
-    update: async(req, res) => {
-        await db.Producto.update({ 
+    update: (req, res) => {
+
+        const categoriesList = [];
+
+        db.Categoria.findAll().then((categories) => {
+
+            for(category of categories){
+
+                let objectCategories = {
+                    id: category.id,
+                    nombre: category.nombre
+                }
+                categoriesList.push(objectCategories);
+            }
+            
+        })
+
+        const resultValidation = validationResult(req);
+
+        // Si hay errores de validación en el proceso de editar algún producto...
+        if (resultValidation.errors.length > 0) {
+            
+            db.Producto.findOne({
+                where: {
+                    id: req.params.id
+                }
+            }).then((product) => {
+                res.render('tiendaEditForm', {
+                    errors: resultValidation.mapped(),
+                    oldData: req.body,
+                    categorias: categoriesList,
+                    user: req.session.userLogged,
+                    productEdit: product
+                })
+            })
+        };
+
+        db.Producto.update({ 
             nombre: req.body.nombre,
 			precio: req.body.precio,
 			descuento: req.body.descuento,
@@ -142,11 +180,10 @@ const controller = {
             Categoria_id: req.body.categoria,   
         }, {
             where: { id: req.params.id },
-        }).then((resultados) => {
-			res.redirect('/tienda');
-		}).catch(err => {res.send(err)})
+        })
+        .then((resultados) => {res.redirect('/tienda')})
+        .catch(err => {res.send(err)})
     },
-
     
     destroy : (req, res) => {
 
@@ -154,10 +191,9 @@ const controller = {
         where: {
             id: req.params.id
         }
-    }).then((resultado) => {
-        res.redirect('/tienda')
-    }).catch(err => {res.send(err)})
-
+    })
+    .then((resultado) => {res.redirect('/tienda')})
+    .catch(err => {res.send(err)})
     }
 
 }
