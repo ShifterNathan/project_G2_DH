@@ -18,6 +18,7 @@ body {
   padding-right: 2vh;
 }
 
+
 .nav-item .nav-link{
   text-transform: uppercase;
   border-radius: 1vh;
@@ -32,6 +33,12 @@ body {
 
 }
 
+.nav-item a i {
+  padding-top: 3vh;
+  font-size: 2vw;
+}
+
+
 .userIMG{
   width: 4vw;
   border-radius: 100%;
@@ -45,93 +52,6 @@ body {
 
 
 
-/******************** MODAL INGRESO/REGISTRO ********************/
-
-.fade {
-  background-color: rgba(0, 0, 0, 0.85);
-}
-
-
-.modal-content {
-  border-radius: 10px;
-  background-color: rgba(25, 25, 25, 0.2);
-  width: 80%;
-  margin: 0px auto;
-}
-
-.modal-body {
-  padding: 0px;
-}
-
-.btn-close {
-  position: absolute;
-  right: 0px;
-  padding: 1vw;
-}
-
-
-
-.form {
-  max-width: 100%;
-  padding: 2vw;
-  color: white;
-  box-shadow: 0px 2px 4px 1px rgba(60, 149, 148, 1);
-  border-radius: 10px;
-  @media (max-width: 576px){
-    max-width: 90%;
-    margin: 0px auto;
-  }
-}
-
-
-.header-form {
-  background-color: inherit;
-  border-radius: 0px;
-  border: 0px;
-  border-bottom: 1px solid white;
-  
-}
-
-
-.header-form:focus {   
-  background-color: inherit;
-  border-radius: 10px;
-  transition: border-radius 0.1;
-  color: white;
-  border-color: rgba(235, 102, 56, 0.8);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(239, 134, 61, 0.6);
-  outline: none;
-}
-
-.form-check-input:focus{
-  background-color: inherit;
-  border-color: rgba(235, 102, 56, 0.8);
-  box-shadow: none;
-  outline: none;
-}
-
-.form .btn-light {
-  width: 100%;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: .1vh;
-}
-
-
-.form .btn:hover{
-  background-color: #3C9395;
-  border-color: #3C9395;
-  color: white;
-  
-}
-
-a{
-  color: #EF863D;
-}
-
-a:hover{
-  color: #3C9395;
-}
 
 
 /******************** FOOTER ********************/
