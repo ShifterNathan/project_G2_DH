@@ -6,10 +6,11 @@ const {validationResult} = require('express-validator');
 const controller = {
 
     tienda: (req, res) => {
+        const productList = [];
         db.Producto.findAll({include: [{association: 'Categoria'}, {association: 'Usuario'}]})
         .then((products) => {
 
-            let productList = [];
+            
 
             for (product of products) {
 
@@ -28,6 +29,7 @@ const controller = {
             }
             
             res.render('tienda', {productos: productList, user: req.session.userLogged}); 
+            module.exports = productList;
         })
         
     },
@@ -194,6 +196,10 @@ const controller = {
     })
     .then((resultado) => {res.redirect('/tienda')})
     .catch(err => {res.send(err)})
+    },
+
+    cart: (req, res) => {
+        res.render('cart.ejs')
     }
 
 }
