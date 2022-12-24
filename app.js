@@ -39,7 +39,7 @@ app.use('/usuario', usuariosRouter);
 
 
 // ********** Comprobación de que el servidor está funcionando (Hard coded) **********
-app.listen(port, function () {
+app.listen(port /3000, function () {
     console.log(`Servidor corriendo en puerto ${port}`)
 });
 
