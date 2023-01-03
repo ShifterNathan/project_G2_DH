@@ -4,9 +4,9 @@ body {
 }
 
 .banner {
-    background-image: url('/img/tienda/banner.jpg');
+    background-image: url('/img/tienda/perro-banner2.jpg');
     background-size: cover;
-    min-height: 40vh;
+    min-height: 60vh;
     position: relative;
 }
 
