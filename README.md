@@ -1,5 +1,5 @@
 ## Resumen   
-- [Temática](#Tema)
+- [Temática](#Presentación del Proyecto)
 - [Descripción](#Descripción)
 - [Publico de Objetivo](#Público-de-Objetivo)
 - [Fundamentación](#Fundamentación)
@@ -8,44 +8,63 @@
 - [Tablero de trabajo](#Tablero-de-trabajo) 
 <br  />
 
-# Tema 
-### e-commerce para vender comida casera y natural para los perros.
-#### E-Commerce cuyo objetivo principal será la venta de packs de alimento fresco para perros de elaboración propia, con entrega a domicilio.
+# Presentación del Proyecto
+#### Desarrollo, diseño y funcionalidades para la creación de una tienda online o e-commerce para la empresa de producción y comercialización de alimento animal.
+#### Dicha empresa produce alimento fresco, elaborado con productos de calidad, sin aditivos ni conservantes. Utilizan el método de cocción lenta que garantiza la conservación de las propiedades y nutrientes de los productos tanto vegetales como animales que componen las distintas recetas. 
+#### En una primera etapa la empresa establece como proyección de negocio la venta a través del canal online de:
+#### -3 recetas diferentes: carne, pollo y mix de carnes y verduras; en sobres de 100, 250 y 500 gramos.
+#### -Snacks
+#### -Suplementos
+#### Esperan establecerse en el mercado y agregar productos de cosmética natural y complementos alimenticios destinadas al cuidado de las mascotas. 
+ # Fundamentación del Negocio
+#### Existe un nicho en crecimiento para el desarrollo y comercialización de este tipo de alimento para mascotas. El modelo de negocio está probado y aceptado por lo que  perfectamente se puede implementar en nuestro mercado. Los datos obtenidos a través de diferentes estudios de campo demuestran que existe una tendencia a adoptar una alimentación sana y natural para las mascotas. El alimento DogHouse cumple con todos los requisitos para posicionarse en el mercado y lograr un sostenido volúmen de ventas a través del canal online y la entrega a domicilio. 
+
 <br  />
 
-# Descripción
+# Descripción 
 
-#### Crearemos un sitio web de venta online de comida para perros preparada con productos frescos, mediante cocción lenta (que asegura la conservación de los nutrientes de cada ingrediente). El producto se elabora en base a recetas diseñadas por profesionales veterinarios y se presenta en packs de raciones diarias de diferentes sabores.         
-###                               **“DogHouse”**
-###         **´Comida para perros hecha por amantes de los perros’**
+## Se establece el nombre comercial de: **"DogHouse"** y se trabaja en el diseño del logo de la marca "/img/isologotipo.ico".
+### Nuestro equipo-**"Grupo 2"** de **"Digital House"** desarrollo para el e-commerce ## **DogHouse** tanto el front-end, conocido como el "lado del usuario" como el Back-end o "lado del servidor".
+#### Se trabajó la página web a través del código HTML, CSS , se implementó lo necesario para que el usuario pueda interactuar con el sitio gracias a Javascript.
+#### Aplicamos **HTML**; fundamental para que la web exista ya que su función es codificar la estructura y el contenido para poder mostrarlo.
+#### **CSS** para definir estilos(colores, fuentes, márgenes, disposición de los distintos elementos, efectos, etc.) y Javascript cuyo lenguaje convierte una web en interactiva (Formularios, botones, etc.).
+ 
+#### Dentro de la Página web el usuario podrá interactuar a través de los distintos botones de la barra de inicio, donde tendrá acceso a la tienda, a la historia de la empresa, a los formularios de Registro y de Login.
+#### Una vez logueado tendrá acceso al carrito de compras.
+#### Se decidió optar por formularios simples con los datos mínimos necesarios y se instrumentaron las validaciones necesarias para asegurarnos un llenado correcto de los diferentes campos. 
+#### Tratandose de un e-commerce se trabajaron las validaciones tanto desde el front como desde el back para proteger al máximo la integridad de datos.
+#### Se trabajó con las herramientas necesarias como session o cookies para lograr que el usuario se mantenga logueado. 
+#### Dentro del front el usuario podrá acceder al carrito de compras fundamental para la conversión a compra. La facilidad del uso de éste, como en el resto de los procesos de la tienda, juegan un papel muy importante. Por lo que,tanto la edición y modificación de productos, así como la actualización de importes o descuentos, deben funcionar a la perfección.
+
+#### Se creo un carrito de compras que ofrece la posibilidad de añadir, eliminar o modificar productos
+
+#### Para que la experiencia del usuario sea buena es necesario contar con un Motor interno de búsqueda o base de datos. Entendiendo que uno de los principales aspectos a la hora de poder facilitar la búsqueda de productos dentro de nuestra tienda es la base de datos y que el motor de búsqueda o buscador es eficaz cuando la base de datos de productos tiene los atributos necesarios y suficientes. Al igual que ocurre con las búsquedas de un buscador genérico (Google, Bing, etc.) los primeros resultados son cruciales para que los usuarios de la tienda puedan encontrar lo que buscan.
+
+#### Si el buscador no funciona correctamente, es posible que el usuario piense que no tenemos el producto y por tanto hayamos perdido una venta.
+
+#### Como hicimos referencia anteriormente el Back-end  es el "lado del servidor" por tanto no es lo que va a verse, sin embargo será el encargado de llevar a cabo todas las funciones que hagan más simple el proceso de desarrollo; las acciones de lógica y las conexiones con las bases de datos.
+#### Es desde el Back-End donde se usan las librerías del servidor web, ya sea para comprimir las imágenes de la web, para implementar temas de caché u otras.
+#### Desde el Back-end También se mantiene la seguridad de los sitios web y gracias a éste se pueden optimizar los recursos a fin de que las páginas resulten más ligeras.
+
+
+#### El sitio cuenta con un apartado para **Preguntas Frecuentes**, con información detallada acompañada de imagenes de los productos que se comercializa y lo que es fundamental con los datos que facilitan la **Atención al Cliente**.
+
+#### Se deja las bases para trabajar en un futuro con las redes sociales, dichos canales serán un canal a explotar en la segunda etapa del proyecto. 
+
+# CONCLUSIONES
+#### Con todas las herramientas y conocimientos adquiridos a lo largo de toda la cursada hemos ido dando vida a este proyecto. Hoy podemos ver como la Tienda "DogHouse" presenta un front-end con un diseño simple, con imágenes atractivas, un carrusel que le otorga un sutil movimiento a la página, contenido acorde a lo que se pretende ofrecer y fundamentalmente se logró otorgarle funcionalidad a los distintos componentes del sitio. 
+#### Hemos logrado obtener un código ordenado aplicando los distintos métodos y funciones. El trabajo realizado tanto en la implementacion de middlewares, multer, validaciones ha sido minucioso y se logró dejar funcionando una base de datos perfectamente conectada. 
+#### Seguramente podríamos seguir incorporando diseño y contenido a nuestra página, es probable que de contar con tiempo sería interesante aplicar lo aprendido con React, pero nos sentimos muy orgullosos de haber llegado hasta aquí, los conocimientos que hemos adquirido y aplicado a lo largo de estos meses serán sin dudas la base para un desarrollo futuro.
+## Agradecemos a nuestros profesores por el apoyo brindado, a nuestros compañeros por haber compartido la aventura de este curso intensivo y por momentos abrumador y muy especialmente a nuestro profesor y guía JERONIMO, "Jero", su dedicación y paciencia hicieron posible incorporar un mundo de conocimientos, su invalorable acompañamiento y su predisposición nos facilitaron llegar hasta este punto. 
+
 <br />
-
-#### A través del E-Commerce se procesarán pedidos, aceptarán pagos, se administrarán los envíos, se atenderán devoluciones o cambios, se brindará servicio al cliente permanente por diferentes canales o herramientas. 
-#### El sitio contará con un blog interactivo…..
-
-#### Trabajaremos para diseñar y crear un sitio atractivo y fácil de navegar que contemple:
-- Aceptar y gestionar pedidos
-- Registrar información del cliente
-- Obtener la aceptación del cliente de nuestras condiciones de venta
-- Generar número de pedido y seguimiento del mismo
-- Compartir detalles de entrega
-- Procesar la información de facturación
-- Proporcionar acceso a una pasarela de pago(forma de pago, formulario para realizar el pago, etc.)
-- Atención al cliente
-- Logística inversa(aceptar cambios o devoluciones- condiciones claras)
-<br />
-
-#### Se venden porciones a medida para tu perro, cocinado con amor y 100% natural. Es importante que tu mascota tenga asegurada una dieta sana y equilibrada a lo largo de todas las etapas de su vida.
-
-#### Además, pensamos generar una comunidad a través de un….. blog interactivo con contenido donde los usuarios podrán interactuar con la información publicada en el blog/ foro y hacer consultas a nuestro equipo de asesoramiento nutricional.
 
 
 # Público de Objetivo
 #### personas de alto/ medio poder adquisitivo en Argentina (Provincia de Buenos Aires) con perros como mascota.
 <br  />
 
-# Fundamentación 
-#### Existe un nicho para el desarrollo y comercialización de este tipo de alimento para mascotas en crecimiento, el modelo de negocio está probado y aceptado por lo que consideramos que es un excelente modelo de negocio y que perfectamente se puede implementar en nuestro mercado. 
+
 
 - https://www.worldanimalprotection.cr/noticias/latinoamericanos-el-95-ven-sus-mascotas-como-hijos-o-parte-de-sus-familias
 
@@ -79,10 +98,6 @@
 #### Entiendo particularmente a la tecnología como una aliada de las personas, que permite optimizar la calidad del trabajo sin perder tiempo, practicidad y eficacia.
 
 <br  />
-
-### Federico Nieva:
-#### Durante mi etapa de estudiante en Comercio Internacional estuve trabajando como comprador en una empresa autopartista durante 7 años en Buenos Aires. 
-#### Actualmente viviendo en Köln, Alemania he decidido cambiar mi perfil laboral. Siempre estuve interesado en nuevas tecnologías y entiendo que este curso que ofrece DH es una muy buena oportunidad para poder poner en práctica estas nuevas habilidades y empezar a pensar como programador. 
 
 <br  />
 
