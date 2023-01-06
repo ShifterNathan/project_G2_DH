@@ -7,6 +7,10 @@ const controller = {
 
     faq: (req, res) => {
         res.render('preguntas_frecuentes', { user: req.session.userLogged })
+    },
+
+    nosotros: (req, res) => {
+        res.render('nosotros', { user: req.session.userLogged })
     }
 
 }
