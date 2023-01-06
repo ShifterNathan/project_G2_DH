@@ -41,7 +41,7 @@ let addToCart = document.querySelector('#addToCart');
 
 addToCart.addEventListener('click', (event) => {
 
-    let precio = event.target.parentNode.parentNode.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.innerText.substring(1)
+    let  precio= event.target.parentNode.parentNode.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.innerText.substring(1)
     console.log(precio)
     console.log(typeof(precio))
     let descuento = event.target.parentNode.parentNode.firstElementChild.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.firstElementChild.innerText

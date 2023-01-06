@@ -2,71 +2,79 @@
 
 <html>
     
-    <head>
-        <link rel="stylesheet" href="/css/tienda.css">
-        <%- include('partials/head', {title: 'Tienda'}) %>
-        
-        <!-- CSS Inex -->
-        
-    </head>
+<head>
+    <link rel="stylesheet" href="/css/tienda.css">
+    <%- include('partials/head', {title: 'Tienda'}) %>
+    
+    <!-- CSS Inex -->
+    
+</head>
    
-    <body>
+<body>
 
-	    <%- include('./partials/header') %>
+    <%- include('./partials/header') %>
 
-        <div class="banner">
-            <div class="h1 d-flex justify-content-center align-items-center text-white">
-                <p>TIENDA</p>
-            </div>
+    <div class="banner">
+        <div class="h1 d-flex justify-content-center align-items-center text-white">
+            <p>TIENDA</p>
         </div>
+    </div>
 
-        <head>
-            <link rel="stylesheet" href="/css/tienda.css">
-            <%- include('partials/head', {title: 'tienda'}) %>
-                                   
-       
-        
-       
-
-        <div class="container contenedor-productos">
-            <div class="row">
-                <div class="col-12">
-                    <p class="h2">Productos orientados al cuidado de tu perro</h2>
-                </div>
-                <!-- Show the "visited" products -->
-                <% for(let producto of productos) { %>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <section class="producto">
-                        <a href="/tienda/detalle/<%=producto.id %>" >
-                            <img src="/img/tiendaProductos/<%=producto.imagen %>" class="img-fluid" alt="imagen de producto">
-                            <article class="infoProducto">
-                                <h2 id="">$<%=producto.precio %></h2>
-                            <article class="Descuento">
-                                <span id=""><%=producto.descuento %>% OFF</span>
-                            </article>
-                                <p id=""><%=producto.nombre %></p>
-                                <p id=""><%=producto.categoria %></p>
-                                
-                            </article>
-                        </a>
-                        <a class="add-cart" href="#" id="addToCart">
-                            <i class="fa-solid fa-plus"></i>
-                        </a>
-                    </section>
-                    
-                </div>
-                <% } %>
-            </div>
-        </div>
-
-        <div class="container-fluid">
-            <div class="row row justify-content-end text-center">
-                
-            </div>
+    <div id="sidebar" class="float-left">
+        <p class="h4">CART</p>
+        <div id="cart">
+            <span class="empty">No items in cart.</span>       
         </div>
         
-	    <%- include('./partials/footer') %>
+        <p class="h4">CATEGORIES</p>
+        <div class="checklist categories">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    
+    
 
-    </body>
+
+    
+    
+    <!-- 
+    <div class="container contenedor-productos">
+        <div class="row">
+            <div class="col-12">
+                <p class="h2">Productos orientados al cuidado de tu perro</h2>
+            </div>
+            
+            <% for(let producto of productos) { %>
+            <div class="col-12 col-sm-6 col-lg-4">
+                <section class="producto">
+                    <a href="/tienda/detalle/<%=producto.id %>" >
+                        <img src="/img/tiendaProductos/<%=producto.imagen %>" class="img-fluid" alt="imagen de producto">
+                        <article class="infoProducto">
+                            <h2 id="">$<%=producto.precio %></h2>
+                        <article class="Descuento">
+                            <span id=""><%=producto.descuento %>% OFF</span>
+                        </article>
+                            <p id=""><%=producto.nombre %></p>
+                            <p id=""><%=producto.categoria %></p>
+                            
+                        </article>
+                    </a>
+                    <a class="add-cart" href="#" id="addToCart">
+                        <i class="fa-solid fa-plus"></i>
+                    </a>
+                </section>
+            </div>
+            <% } %>
+        </div>
+    </div> 
+    -->
+
+
+    
+    <%- include('./partials/footer') %>
+
+</body>
     
 </html>
