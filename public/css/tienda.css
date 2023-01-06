@@ -4,19 +4,12 @@ body {
 }
 
 .banner {
-    background-image: url('/img/tienda/perro-banner2.jpg');
-    background-size: cover;
-    min-height: 60vh;
+    background-image: url('/img/tienda/perro-banner.jpg');
+    background-size: 100%;
+    min-height: 25vw;
     position: relative;
+    background-repeat: no-repeat;
 }
-
-.banner .h1{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
 
 
 .product-box {
@@ -45,15 +38,12 @@ body {
 
 
 
-
-
 .contenedor-productos { 
     margin-top: 30px;
     margin-bottom: 30px;
     text-align:center;
   }
   
-
   
   .producto {
     position: relative;

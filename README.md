@@ -1,10 +1,10 @@
 ## Resumen   
-- [Temática](#Presentación del Proyecto)
+- [Temática](#Presentación-del-Proyecto)
 - [Descripción](#Descripción)
 - [Publico de Objetivo](#Público-de-Objetivo)
 - [Fundamentación](#Fundamentación)
 - [Webs Referentes](#Webs-Referentes)
-- [Integrantes del grupo](#Listado-de-Grupo)
+- [Integrantes del grupo](#Integrantes-del-grupo)
 - [Tablero de trabajo](#Tablero-de-trabajo) 
 <br  />
 
@@ -81,7 +81,7 @@
 <br  />
 
 
-# Listado de Grupo
+# Integrantes del grupo
 
 ### Myriam Alvarez:
 #### Técnica Parlamentaria; especializada en investigación, redacción y gestión de proyectos. Mi primer incursión al mundo digital fué a través de un curso de E-Commerce y Marketing Digital que me permitió conocer y comenzar a entender un mundo que me era absolutamente ajeno ( sólo utilizaba buscadores, word y correo electrónico). Mi objetivo es poder reciclarme laboralmente y sumar a mi experiencia los recursos de la programación y de la tecnología para incorporarme a “nuevos proyectos”. 
@@ -89,15 +89,13 @@
 <br  />
 
 ### Nathaniel Boyd:
-#### Técnico Univeristario en Informática, Actor de Método. Deseoso por adquirir habilidades para estar entre los mejores desarolladores, vivir como nómada digital y crear proyectos que aporten valor sustentable y trascendental a las personas. 
+#### Técnico Univeristario en Informática. Deseoso por adquirir habilidades para estar entre los mejores desarolladores, vivir como nómada digital y crear proyectos que aporten valor sustentable y trascendental a las personas. 
 
 <br  />
 
 ### Juana Colaneri:
 #### Me dicen Juanita, soy Licenciada en Administración de la Universidad de Buenos Aires, Argentina. Me gusta repensar, perfeccionar y gestionar procesos que involucren una mejora en la organización de las circunstancias que se me presentan. 
 #### Entiendo particularmente a la tecnología como una aliada de las personas, que permite optimizar la calidad del trabajo sin perder tiempo, practicidad y eficacia.
-
-<br  />
 
 <br  />
 
@@ -116,9 +114,6 @@
 
 #### https://drive.google.com/drive/u/0/folders/1BvgCM6dvm3Tdu1JKoBjssvZBeONCz2i9
 
-# Font
-
-#### https://fonts.google.com/specimen/Baloo+2?query=baloo+2
 
 
 
