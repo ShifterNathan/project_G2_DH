@@ -14,31 +14,51 @@
 
     <%- include('./partials/header') %>
 
-    <div class="banner">
-        <div class="h1 d-flex justify-content-center align-items-center text-white">
-            <p>TIENDA</p>
+        <div class="banner">
+            <div class="h1 d-flex justify-content-center align-items-center text-white">
+            </div>
         </div>
     </div>
 
-    <div id="sidebar" class="float-left">
-        <p class="h4">CART</p>
-        <div id="cart">
-            <span class="empty">No items in cart.</span>       
+        <div class="container contenedor-productos">
+            <div class="row">
+                <div class="col-12">
+                    <p class="h2"> La salud de tu mascota empieza por su alimentación</h2><br>
+                        <p class="h4">Visitá nuestra tienda y hacé tu pedido</h4>
+                </div>
+               
+                <!-- Show the "visited" products -->
+                <% for(let producto of productos) { %>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <section class="producto">
+                        <a href="/tienda/detalle/<%=producto.id %>" >
+                            <img src="/img/tiendaProductos/<%=producto.imagen %>" class="img-fluid" alt="imagen de producto">
+                            <article class="infoProducto">
+                                <h2 id="">$<%=producto.precio %></h2>
+                            <article class="Descuento">
+                                <span id=""><%=producto.descuento %>% OFF</span>
+                            </article>
+                                <p id=""><%=producto.nombre %></p>
+                                <p id=""><%=producto.categoria %></p>
+                                
+                            </article>
+                        </a>
+                        <a class="add-cart" href="#" onclick="sumaCarrito('<%=producto.nombre %>', '<%=producto.precio %>')">
+                            <i class="fa-solid fa-plus"></i>
+                        </a>
+                    </section>
+                    
+                </div>
+                <% } %>
+            </div>
         </div>
-        
-        <p class="h4">CATEGORIES</p>
-        <div class="checklist categories">
-            <ul>
-                <li></li>
-            </ul>
+
+        <div class="container-fluid">
+            <div class="row row justify-content-end text-center">
+                
+            </div>
         </div>
-    </div>
-    
-    
 
-
-    
-    
     <!-- 
     <div class="container contenedor-productos">
         <div class="row">
