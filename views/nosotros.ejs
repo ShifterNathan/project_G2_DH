@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros</title>
+    
+    <%- include('partials/head', {title: 'Nosotros'}) %>
+
+    <link rel="stylesheet" href="/css/nosotros.css">
+    
+   <!-- <title>Nosotros</title>-->
 </head>
 <body>
-    <p>Hola miruchi, vamos vos podes hacer una belleza de esta vista, es lo tuyo</p>
+    <%- include('./partials/header') %>
+    
+ <div class="container-fluid bg-nosotros">
+
+    <div class="nosotros-section">
+        <div class="inner-container">
+            <h1>Nosotros</h1>
+            <p class="text">
+                Somos una empresa joven que decidió invertir en nuestro país. Luego de un minucioso estudio de mercado y comprometidos con la salud y el cuidado animal es que asumimos el compromiso de desarrollar productos frescos elaborados con ingredientes de la más alta calidad, sin conservantes ni aditivos.<br>
+                Para la elaboración de nuestros menus hemos optado por el método de "cocción lenta"; este proceso permite conservar todas las cualidades y proteínas de los productos.<br>
+                                
+                Nos apasiona nuestro trabajo y por eso día a día cuidamos todos los detalles y perfeccionamos nuestros productos y servicios.
+                La experiencia, innovación y creatividad de todos los colaboradores que conforma nuestra empresa generan las bases sólidas para brindar una excelencia en el producto terminado. 
+                Nuestro equipo de trabajo mantiene las premisas de mejora continua para brindar cada día productos de primera línea.                                
+                                
+                Nos involucramos en una capacitación constante a todo el personal, dándoles apoyo y participación a los efectos de lograr el máximo compromiso con la calidad delos alimentos <strong>DogHouse</strong>.<br>
+                Asimismo, nuestros valores radican en la contribución con el medio ambiente y la comunidad toda.<br>
+
+                Alimentos <strong>DogHouse</strong> es sin dudas, lo que tu mascota necesita.
+            </p>
+        </div>
+        </div>
+    </div>
 </body>
 </html>
