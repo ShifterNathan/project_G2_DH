@@ -29,7 +29,6 @@ const controller = {
             }
             
             res.render('tienda', {productos: productList, user: req.session.userLogged}); 
-            module.exports = productList;
         })
         
     },
