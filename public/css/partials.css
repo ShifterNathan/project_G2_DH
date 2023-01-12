@@ -33,9 +33,9 @@ body {
 
 }
 
-.nav-item a i {
+.nav-item button i {
   padding-top: 3vh;
-  font-size: 2vw;
+  font-size: 25px;
 }
 
 
@@ -50,6 +50,10 @@ body {
 }
 
 
+/******************** CART ********************/
+.cart-image {
+  width: 20px;
+}
 
 
 

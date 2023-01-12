@@ -14,23 +14,67 @@
 
     <%- include('./partials/header') %>
 
-        <div class="banner">
-            <div class="h1 d-flex justify-content-center align-items-center text-white">
+    
+
+        <div class="banner"></div>
+
+    
+        <div class="container">
+            <div class="row">
+                <% for(let producto of productos) { %>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                    <div class="product-box">
+            
+                        <div class="product-inner-box position-relative" id="carrito">
+                            
+                            <div class="icons position-absolute">
+                                <a href="/tienda/detalle/<%=producto.id %>" class="text-decoration-none text-dark"><i class="fa-solid fa-eye"></i></a>
+                            </div>
+                            <div class="discount">
+                                <span class="badge rounded-0 text-white"><i class="fa-solid fa-arrow-down-long"></i>
+                                    <%=producto.descuento %>%
+                                </span>
+                            </div>
+                            <a href="/tienda/detalle/<%=producto.id %>">
+                                <img src="/img/tiendaProductos/<%=producto.imagen %>" class="img-fluid" alt="imagen de producto">
+                            </a>
+                            <div class="cart-btn">
+                                <button class="add-cart btn btn-light shadow-sm rounded-pill" id="addToCart"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</button>
+                            </div>
+                        
+                            <div class="product-info">
+                                <div>
+                                    <p class="product-name h3"><%=producto.nombre %></p>
+                                </div>
+                                <div>
+                                    <p class="product-price h4">$ <%=producto.precio %></p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+                <% } %> 
             </div>
         </div>
-    </div>
+        
+        
 
-        <div class="container contenedor-productos">
+
+
+
+        <!-- <div class="container contenedor-productos">
             <div class="row">
                 <div class="col-12">
                     <p class="h2"> La salud de tu mascota empieza por su alimentación</h2><br>
                         <p class="h4">Visitá nuestra tienda y hacé tu pedido</h4>
                 </div>
                
-                <!-- Show the "visited" products -->
+                
                 <% for(let producto of productos) { %>
                 <div class="col-12 col-sm-6 col-lg-4">
-                    <section class="producto">
+                    <section class="producto position-relative">
                         <a href="/tienda/detalle/<%=producto.id %>" >
                             <img src="/img/tiendaProductos/<%=producto.imagen %>" class="img-fluid" alt="imagen de producto">
                             <article class="infoProducto">
@@ -43,57 +87,20 @@
                                 
                             </article>
                         </a>
-                        <a class="add-cart" href="#" onclick="sumaCarrito('<%=producto.nombre %>', '<%=producto.precio %>')">
+                        <a class="add-cart" id="addToCart" href="#">
                             <i class="fa-solid fa-plus"></i>
                         </a>
                     </section>
                     
                 </div>
-                <% } %>
+                <% } %> 
             </div>
-        </div>
-
-        <div class="container-fluid">
-            <div class="row row justify-content-end text-center">
-                
-            </div>
-        </div>
-
-    <!-- 
-    <div class="container contenedor-productos">
-        <div class="row">
-            <div class="col-12">
-                <p class="h2">Productos orientados al cuidado de tu perro</h2>
-            </div>
-            
-            <% for(let producto of productos) { %>
-            <div class="col-12 col-sm-6 col-lg-4">
-                <section class="producto">
-                    <a href="/tienda/detalle/<%=producto.id %>" >
-                        <img src="/img/tiendaProductos/<%=producto.imagen %>" class="img-fluid" alt="imagen de producto">
-                        <article class="infoProducto">
-                            <h2 id="">$<%=producto.precio %></h2>
-                        <article class="Descuento">
-                            <span id=""><%=producto.descuento %>% OFF</span>
-                        </article>
-                            <p id=""><%=producto.nombre %></p>
-                            <p id=""><%=producto.categoria %></p>
-                            
-                        </article>
-                    </a>
-                    <a class="add-cart" href="#" id="addToCart">
-                        <i class="fa-solid fa-plus"></i>
-                    </a>
-                </section>
-            </div>
-            <% } %>
-        </div>
-    </div> 
-    -->
+        </div> -->
 
 
     
     <%- include('./partials/footer') %>
+
 
 </body>
     
