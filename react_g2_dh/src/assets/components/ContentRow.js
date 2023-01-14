@@ -8,11 +8,13 @@ import { useState, useRef } from 'react';
   //const setEstado = estado[1];
 
   let actualizar = () => {  
-  fetch('http://localhost:3000/api/productos')
+  fetch('http://localhost:3001/api/productos')
   .then((response) => response.json())
   .then((data) => console.log(data))
   //setEstado([{valor: data[0].population},{valor: 5}]));
   }
+
+  console.log(actualizar())
 
 //   useEffect( () => { 
 //     alert( "ingrese" ); 
