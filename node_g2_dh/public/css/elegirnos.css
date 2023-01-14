@@ -1,0 +1,87 @@
+.wrap{
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: right;
+   background: url("/img/elegirnos/dogchair-bg.jpg");
+   background-size: cover;
+   background-position: center;
+}
+.wrap-texto{
+   color: #fff;
+   width: 50%;
+   text-shadow: 0 0 8px rgba(0,0,0,0.8);
+}
+.wrap-texto{
+   font-size: 13px;
+   line-height: 15px;
+   text-align: justify;
+   margin-bottom: 10px;
+}
+@media screen and (max-width:1200px){
+   .inner-container{
+       padding: 80px;
+   }
+}
+
+
+@media screen and (max-width:600px){
+   .about-section{
+       padding: 0;
+   }
+   .inner-container{
+       padding: 60px;
+   }
+}
+/*body{
+
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ded585;
+ }
+
+ .nosotros-section{
+    background: url("/img/nosotros/nosotros-bebe.jpg") no-repeat left;
+    background-size: 55%;
+    background-color: #ded585;
+    overflow: hidden;
+    padding: 100px 0;
+ }
+
+ .inner-container{
+    width: 55%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 90px;
+ }
+
+ .inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+ }
+ .text{
+    font-size: 13px;
+    color: #545454;
+    line-height: 15px;
+    text-align: justify;
+    margin-bottom: 10px;
+ }
+ @media screen and (max-width:1200px){
+    .inner-container{
+        padding: 80px;
+    }
+ }
+
+ 
+ @media screen and (max-width:600px){
+    .about-section{
+        padding: 0;
+    }
+    .inner-container{
+        padding: 60px;
+    }
+ }

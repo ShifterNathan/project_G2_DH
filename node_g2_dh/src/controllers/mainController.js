@@ -11,6 +11,10 @@ const controller = {
 
     nosotros: (req, res) => {
         res.render('nosotros', { user: req.session.userLogged })
+    },
+
+    elegirnos: (req, res) => {
+        res.render('por_que_elegirnos', { user: req.session.userLogged})
     }
 
 }
