@@ -1,20 +1,22 @@
 import React from 'react';
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
  function ContentRow() {
 
-  const estado = useState ([{titulo: "Cantidad total de productos en tienda", valor: 0},{titulo: "Cantidad categorías DogHouse", valor: 0}]);
-  //const valoresEstado = estado[0];
-  //const setEstado = estado[1];
+  const estado = useState ([
+    {titulo: "Cantidad total de productos en tienda", valor: 0},
+    {titulo: "Cantidad categorías DogHouse", valor: 0}
+  ]);
+  const valoresEstado = estado[0];
+  const setEstado = estado[1];
 
   let actualizar = () => {  
   fetch('http://localhost:3001/api/productos')
   .then((response) => response.json())
-  .then((data) => console.log(data))
-  //setEstado([{valor: data[0].population},{valor: 5}]));
+  .then((data) => setEstado([
+    {valor: data.count},
+  ]));
   }
-
-  console.log(actualizar())
 
 //   useEffect( () => { 
 //     alert( "ingrese" ); 
@@ -55,8 +57,9 @@ const titulo = useRef();  // en esta variable se almacena un objeto con la propi
                    <div className="card-body">
                        <div className="row no-gutters align-items-center">
                            <div className="col mr-2">
+                               <div><button onClick={actualizar}> Actualizar </button></div>
                                <div className="text-xs font-weight-bold text-primary text-uppercase mb-1"> Cantidad total de productos</div>
-                               <div className="h5 mb-0 font-weight-bold text-gray-800">2</div>
+                               <div className="h5 mb-0 font-weight-bold text-gray-800">{valoresEstado[0].valor}</div>
                            </div>
                            <div className="col-auto">
                                <i className="fas fa-clipboard-list fa-2x text-gray-300"></i>
@@ -106,4 +109,4 @@ const titulo = useRef();  // en esta variable se almacena un objeto con la propi
   
 }
 
-export default ContentRow;
+export default ContentRow

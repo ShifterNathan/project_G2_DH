@@ -33,10 +33,12 @@ app.use(userLoggedMiddleware);
 const mainRouter = require('./src/routes/mainRoutes')
 const tiendaRouter = require('./src/routes/tiendaRouter');
 const usuariosRouter = require('./src/routes/usuariosRouter');
+const apiRouter = require('./src/routes/apiRouter');
 
 app.use('/', mainRouter);
 app.use('/tienda', tiendaRouter);
 app.use('/usuario', usuariosRouter);
+app.use('/api', apiRouter);
 
 
 // ********** Comprobación de que el servidor está funcionando (Hard coded) **********
