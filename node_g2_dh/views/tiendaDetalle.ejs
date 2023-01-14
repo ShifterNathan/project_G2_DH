@@ -3,51 +3,50 @@
 <html>
     <!-- Include Head -->
     <%- include('partials/head', {title: 'producto'}) %>
+	<link rel="stylesheet" href="/css/productoDetalle.css">
 
 <body>
-
+	<div class="row">
     <!-- Header -->
     <%- include('./partials/header') %>
+	</div>
 
     <!-- Detalle producto tienda DogHouse -->
 	<div class="container-fluid">
 
-		<div class="row m-1">
-
-			<div class="col-sm-12 col-md-6 col-lg-6">
-				<img src="/img/tiendaProductos/<%=productoDetalle.imagen%>" style="max-width: 100%;" alt="Imagen de producto"> 
+		<div class="row align-items-center">
+			<div class="col-12 col-sm-12 col-md-6 col-lg-6">
+				<img src="/img/tiendaProductos/<%=productoDetalle.imagen%>" class="img-fluid" id="imagen-detalle-producto" alt="Imagen de producto"> 
 			</div>
 
-            <div class="col-sm-12 col-md-6 col-lg-6 text-center">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center rounded-pill p-2" id="detalleProducto">
 					    <h2 ><%=productoDetalle.nombre %></h2>
-                        <p > <%=productoDetalle.descripcion %> </p>
-
+                        <h4 > <%=productoDetalle.descripcion %> </h4>
 					    <p>
 							<span>$<%= productoDetalle.precio %></span>
 							/
 							<b> <%= productoDetalle.descuento %> % OFF</b>
 						</p>
-
-						<p>
-							$<%=(productoDetalle.precio - (productoDetalle.precio * productoDetalle.descuento)/100) %> 
-						</p>
+						<p>Precio final: $<%=(productoDetalle.precio - (productoDetalle.precio * productoDetalle.descuento)/100) %></p>
+						<div class="cart-btn">
+							<button class="add-cart btn btn-light shadow-sm rounded-pill" id="addToCart"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</button>
+						</div>
                         
-                        <ul>
-							<li type="none">
-								<i class="fas fa-credit-card"></i>
-								<p>Pagá en 12 cuotas sin interes</p>
-							</li>
-						</ul>
-
-                        <button type="button" class="btn btn-link btn-lg col-12"> <a href="#"> COMPRAR AHORA </a> </button>
-                        
+						<% if (user.rol == "ADMIN") { %>
                         <button type="button" class="btn btn-link btn-sm"> <a href="/tienda/editar/<%= productoDetalle.id %>"> EDITAR PRODUCTO </a> </button>
-						
+
 						<form action="/tienda/eliminar/<%= productoDetalle.id %>?_method=DELETE" method="POST">
 							<button type="submit" class="btn-sm"> ELIMINAR </button>
 						</form>
+						<% } %>
 
 			</div>
+
+			<!-- <div class="row align-items-center justify-content-center">
+				<div class="col-12 col-sm-12 col-md-6 col-lg-6 align-self-center">
+					<i class="fas fa-credit-card"> 12 cuotas sin interes </i>
+				</div>
+			</div> -->
 
 		</div>
 
