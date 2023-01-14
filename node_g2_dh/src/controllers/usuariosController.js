@@ -45,6 +45,7 @@ const controller = {
                     Local_id: "1"
                 }).then(results => {res.redirect("/usuario/ingreso")}).catch(err => {res.send(err)})
             }
+            
         })
     },
         
