@@ -21,7 +21,7 @@ module.exports = (sequelize, Datatypes) => {
   Usuario.associate = function (models){
 
     Usuario.belongsTo(models.Local, {   
-      as: "local", 
+      as: "Local", 
       foreignKey: "Local_id"
     });  
           
