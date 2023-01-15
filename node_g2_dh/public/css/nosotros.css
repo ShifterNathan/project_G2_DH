@@ -1,9 +1,9 @@
  body{
-    min-height: 100vh;
-    display: flexbox;
-    align-items: center;
-    justify-content: center;
-    background-color: #ded585;
+   margin: 0px;
+   padding: 0px;
+   align-items: center;
+   justify-content: center;
+   background-color: #ded585;
  }
 
  /*.nosotros-section{
@@ -15,19 +15,20 @@
  }*/
 
  .nosotros-section{
-   width: 100vw;
-   height: 100vw;
+   height: 100vh;
+   object-fit: cover;
    display: flex;
    align-items: center;
    justify-content: center;
    background: url("/img/nosotros/nosotros-bebe.jpg");
    background-size: cover;
    background-position: center;
+   margin: 0px
  }
  .inner-container{
    color: #fff;
-   text-align: left;
-   width: 55%;
+   
+
    text-shadow: 0 0 8px rgba(0, 0, 0.8);
     /*width: 55%;
     float: right;
@@ -41,24 +42,10 @@
     font-weight: 900;
  }
  .text{
-    font-size: 16px;
+    font-size: 18px;
     color: white;
     line-height: 20px;
     text-align: justify;
     margin-bottom: 10px;
     text-shadow: 0 0 8px rgba(0, 0, 0.8);
- }
- @media screen and (max-width:640px){
-    .inner-container{
-        padding: 80px;
-    }
- }
- 
- @media screen and (max-width:600px){
-    .about-section{
-        padding: 0;
-    }
-    .inner-container{
-        padding: 60px;
-    }
  }
