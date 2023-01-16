@@ -1,0 +1,22 @@
+
+.bg-nosotros{
+   background-image: url("/img/elegirnos/dogchair-bg.jpg");
+   background-size: cover;
+   position: relative;
+   height: 100vh;
+
+   
+}
+
+.text{
+text-shadow: 2px 2px black;
+   
+}
+
+
+.wrap-texto{
+   color:  rgba(0,0,0,0.8);
+   font-size: 13px;
+   line-height: 15px;
+   margin-bottom: 10px;
+}
