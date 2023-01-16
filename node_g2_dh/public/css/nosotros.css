@@ -1,25 +1,23 @@
  body{
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ded585;
+   margin: 0px;
+   padding: 0px;
+   align-items: center;
+   justify-content: center;
+   background-color: #ded585;
  }
+
 
  .nosotros-section{
-    background: url("/img/nosotros/nosotros-bebe.jpg") no-repeat left;
-    background-size: 55%;
-    background-color: #ded585;
-    overflow: hidden;
-    padding: 100px 0;
+   height: 100vh;
+   object-fit: cover;
+   display: flex;
+   align-items: center;
+   background: url("/img/nosotros/nosotros-bebe.jpg");
+   background-size: cover;
+   background-position: center;
+   margin: 0px
  }
 
- .inner-container{
-    width: 55%;
-    float: right;
-    background-color: #fdfdfd;
-    padding: 90px;
- }
 
  .inner-container h1{
     margin-bottom: 30px;
@@ -27,24 +25,10 @@
     font-weight: 900;
  }
  .text{
-    font-size: 13px;
-    color: #545454;
-    line-height: 15px;
+    font-size: 18px;
+    color: white;
+    line-height: 20px;
     text-align: justify;
     margin-bottom: 10px;
- }
- @media screen and (max-width:1200px){
-    .inner-container{
-        padding: 80px;
-    }
- }
-
- 
- @media screen and (max-width:600px){
-    .about-section{
-        padding: 0;
-    }
-    .inner-container{
-        padding: 60px;
-    }
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
  }
