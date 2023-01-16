@@ -6,35 +6,18 @@
    background-color: #ded585;
  }
 
- /*.nosotros-section{
-    background: url("/img/nosotros/nosotros-bebe.jpg") no-repeat left;
-    background-size: 70%;
-    background-color: #ded585;
-    overflow: hidden;
-    padding: 100px 0;
- }*/
 
  .nosotros-section{
    height: 100vh;
    object-fit: cover;
    display: flex;
    align-items: center;
-   justify-content: center;
    background: url("/img/nosotros/nosotros-bebe.jpg");
    background-size: cover;
    background-position: center;
    margin: 0px
  }
- .inner-container{
-   color: #fff;
-   
 
-   text-shadow: 0 0 8px rgba(0, 0, 0.8);
-    /*width: 55%;
-    float: right;
-    background-color: #fdfdfd;
-    padding: 90px;*/
- }
 
  .inner-container h1{
     margin-bottom: 30px;
@@ -47,5 +30,5 @@
     line-height: 20px;
     text-align: justify;
     margin-bottom: 10px;
-    text-shadow: 0 0 8px rgba(0, 0, 0.8);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
  }
