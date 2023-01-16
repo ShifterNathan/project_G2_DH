@@ -10,13 +10,15 @@
 
 .text{
 text-shadow: 2px 2px black;
-   
+
+
 }
 
 
-.wrap-texto{
+.wrap-text{
    color:  rgba(0,0,0,0.8);
    font-size: 13px;
    line-height: 15px;
    margin-bottom: 10px;
+   
 }
