@@ -105,8 +105,8 @@ const controller = {
                 precio: product.precio,
                 descuento: product.precio,
                 descripcion: product.descripcion,
-                usuario: product.Usuario_id.email,
-                categoria: product.Categoria_id.nombre
+                usuario: product.Usuario.email,
+                categoria: product.Categoria.nombre
             }
             let urlImagenProducto = path.join(__dirname,"../../public/img/tiendaProducto/",product.imagen)
             

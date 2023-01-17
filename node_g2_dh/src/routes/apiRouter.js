@@ -4,9 +4,9 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/usuarios', apiController.usuarios);
-router.get('/usuario/:id', apiController.usuario);
+router.get('/usuarios/:id', apiController.usuario);
 
 router.get('/productos', apiController.productos);
-router.get('/producto/:id', apiController.producto);
+router.get('/productos/:id', apiController.producto);
 
 module.exports = router;
