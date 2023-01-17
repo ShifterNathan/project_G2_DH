@@ -12,7 +12,7 @@
 
     <!---------------------- CARRUSEL ---------------------->
 
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" id="start">
+    <div id="carouselExampleCaptions" id="start" class="carousel slide" data-bs-ride="carousel"  data-pause="false">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -20,6 +20,7 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
         <div class="carousel-inner">
+
             <div class="carousel-item active" data-bs-interval="6000" data-ride="carousel">              
                 <picture>
                     <source media="(max-width:580px)" srcset="/img/carrusel/perro-lenguasa.png">
@@ -141,7 +142,6 @@
         </div>
 
     </section>
-
     <!-------------------- NUESTRAS RECETAS ---------------------->
     
     <br>
@@ -188,7 +188,13 @@
             </div>
         </div>
     </div>
-
+    <!-- Video -->
+        
+    <div class="text-center col-12"> 
+        <video class="w-100 p-3" playsinline autoplay muted loop>
+            <source src="/video/DogHouseProyectoV10.mp4">
+          </video>
+      </div> 
 	<%- include('./partials/footer') %>
     <script src="/js/cart.js"></script>
 </body>
