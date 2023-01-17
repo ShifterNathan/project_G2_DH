@@ -78,7 +78,6 @@ const controller = {
                     if(req.body.recordame) {
                         res.cookie('emailUsuario', req.body.emailUsuario, { maxAge: (1000 * 60) * 60 })
                     }
-                
                     return res.redirect('/usuario/perfil');
                 } else {
                     // Si es un usuario que quiere ingresar, pero está poniendo mal su contraseña... 

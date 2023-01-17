@@ -20,28 +20,45 @@
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="1000" data-ride="carousel">              
-                <img src="/img/carrusel/perro_en_compu.jpg" class="d-block w-100">
+
+            <div class="carousel-item active" data-bs-interval="6000" data-ride="carousel">              
+                <picture>
+                    <source media="(max-width:580px)" srcset="/img/carrusel/perro-lenguasa.png">
+                    <source media="(min-width:580px)" srcset="/img/carrusel/perro-lengua.png">
+                    <img src="" width="100%" height="100%" class="d-block w-100"/>
+                </picture>
                 <div class="carousel-caption text-justified">
-                    <p class="pb-5 mb-5">Alimentalo con DogHouse y verás los beneficios en pocos días</p>
+                    <p class="pb-5 mb-5 letra-carrusel">Alimentalo con DogHouse y verás los beneficios en pocos días</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="6000">
-                <img src="/img/carrusel/cucharas_en_caida.jpg" class="d-block w-100">
+                <picture>
+                    <source media="(max-width:580px)" srcset="/img/carrusel/perro-plato-comida.png">
+                    <source media="(min-width:580px)" srcset="/img/carrusel/perro-salchicha.png">
+                    <img src="" width="100%" height="100%" class="d-block w-100"/>
+                </picture>
                 <div class="carousel-caption text-justified">
-                    <p class="pb-5 mb-5">Trabajamos para que tu perro tenga una dieta completa y equilibrada que le permita vivir más y mejor</p>
+                    <p class="pb-5 mb-5 letra-carrusel">Trabajamos para que tu perro tenga una dieta completa y equilibrada que le permita vivir más y mejor</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="6000">
-                <img src="/img/carrusel/curioso.jpg" class="d-block w-100">
+                <picture>
+                    <source media="(max-width:580px)" srcset="/img/carrusel/perrito.png">
+                    <source media="(min-width:580px)" srcset="/img/carrusel/curioso.jpg">
+                    <img src="" width="100%" height="100%" class="d-block w-100"/>
+                </picture>
                 <div class="carousel-caption text-justified">
-                    <p class="pb-5 mb-5">Dale amor, una buena calidad de vida y cuidalo con alimento DogHouse</p>
+                    <p class="pb-5 mb-5 letra-carrusel">Dale amor, una buena calidad de vida y cuidalo con alimento DogHouse</p>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="6000" >
-                <img src="/img/carrusel/perro_con_banquete.jpg" class="d-block w-100">
+                <picture>
+                    <source media="(max-width:580px)" srcset="/img/carrusel/perro-snacks.png">
+                    <source media="(min-width:580px)" srcset="/img/carrusel/perro-con-hambre.png">
+                    <img src="" width="100%" height="100%" class="d-block w-100"/>
+                </picture>
                 <div class="carousel-caption text-justified">
-                    <p class="pb-5 mb-5">DogHouse solo utiliza ingredientes frescos y naturales que sometidos a una cocción lenta conservan todos sus nutrientes y propiedades</h3>
+                    <p class="pb-5 mb-5 letra-carrusel">DogHouse solo utiliza ingredientes frescos y naturales que sometidos a una cocción lenta conservan todos sus nutrientes y propiedades</p>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -64,16 +81,14 @@
 
     <br>
    
-    <!-------------------- SECCIÓN 2: "DALE A TU PERRO LA COMIDA QUE SE MERECE" ---------------------->
+    <!-------------------- DALE A TU PERRO LA COMIDA QUE SE MERECE ---------------------->
 
     <section class="container-fluid mb-2">
         
         <div class="row m-2 align-items-center justify-content-evenly">
 
             <div class = "col-12 col-sm-12 col-md-6 col-lg-6">
-
                     <img src="/img/indexSection2/section2_parteB1.png" class="rounded opacity-75 shadow-sm" style="max-width: 100%; max-height: 100%;" alt="Contenido no disponible en este momento">
-                
             </div>
 
             <div class = "col-12 col-sm-12 col-md-6 col-lg-6">
@@ -107,14 +122,14 @@
                     <li class="list-group-item d-flex justify-content-between align-items-start opacity-90" id="li3">
                     <div class="ms-2 me-auto">
                         <div class="fw-bold">Sin procesados ni cereales</div>
-                        70% de carne o pescado y un 30% de vegetales.
+                        70% de carne o pollo y un 30% de vegetales.
                     </div>
                     </li>
 
                     <li class="list-group-item d-flex justify-content-between align-items-start opacity-90" id="li4">
                         <div class="ms-2 me-auto">
                         <div class="fw-bold">Elaborado por nutricionistas</div>
-                        Menús equilibrados para tu perro en todas las etapas de la vida.
+                        Recetas equilibradas para tu perro en todas las etapas de la vida.
                         </div>
                     </li>
 
@@ -127,63 +142,52 @@
         </div>
 
     </section>
-
-   
-
-    <!-------------------- "NUESTRAS RECETAS" ---------------------->
+    <!-------------------- NUESTRAS RECETAS ---------------------->
     
     <br>
-    <center>
-    <h2 id="nuestros-menus">Nuestros Menús</h2>
-    </center>
-    <!-- Columnas -->
+    <h3 class="text-center" id="nuestros-menus">Nuestras recetas</h3>
     
     <div class="container-fluid">
         <div class="container py-5">
             <div class="row">
-             <!-- columna 1 -->
              <div class="col-md-4">
-                <div class="card text-center">
+                <div class="card" id="tarjeta1_recetas">
                     <div class="card-block">
-                        <div class="py-3">
                         <img src="/img/comida-saludable-para-perros-pollo.jpg" alt="Pollo" class="img-fluid mb-3">
+                        <div class="card-body">
+                            <h4 class="card-title">Pollo</h4>
+                            <p class="card-text">El clásico, para todos los públicos</p> 
                         </div>
-                        <p class="h1">Pollo</p>
-                        <h4 class="card-title py-2">Menú Pollo</h4>
                     </div>
-                    <a href="#" class="card-footer btn text-white" id="boton_leer_mas">Adquirir</a>
+                    <a href="/tienda" class="card-footer btn text-white" id="mas_info">+ info</a>
                 </div>
-             </div><!-- columna 1 -->
-             <!-- columna 2 -->
+            </div>
              <div class="col-md-4">
-                <div class="card text-center">
+                <div class="card" id="tarjeta2_recetas">
                     <div class="card-block">
-                        <div class="py-3">
-                            <img src="/img/mejor-comida-cocinada-perros-carne.jpg" alt="Carne" class="img-fluid mb-3">
-                        </div>
-                        <p class="h1">Carne</p>
-                        <h4 class="card-title py-2">Menú Carne</h4>
-                    </div>
-                    <a href="#" class="card-footer btn text-white" id="boton_leer_mas">Adquirir</a>
+                        <img src="/img/mejor-comida-cocinada-perros-carne.jpg" alt="Carne" class="img-fluid mb-3">
+                        <div class="card-body">
+                            <h4 class="card-title">Carne</h4>
+                            <p class="card-text">Bajo en grasas y con mucho hierro</p> 
+                        </div>                    </div>
+                    <a href="/tienda" class="card-footer btn text-white" id="mas_info">+ info</a>
                 </div>
-             </div><!-- columna 2 -->
-             <!-- columna 3 -->
+             </div>
              <div class="col-md-4">
-                <div class="card text-center">
+                <div class="card" id="tarjeta3_recetas">
                     <div class="card-block">
-                        <div class="py-3">
-                            <img src="/img/comida-barf-para-perros-mixta.jpg" alt="Mixta" class="img-fluid mb-3">
+                        <img src="/img/comida-barf-para-perros-mixta.jpg" alt="Mixta" class="img-fluid mb-3">
+                        <div class="card-body">
+                            <h4 class="card-title">Mixto</h4>
+                            <p class="card-text">El más proteico, para los campeones</p> 
                         </div>
-                        <p class="h1">Mixto</p>
-                        <h4 class="card-title py-2">Menú Mixto</h4>
                     </div>
-                    <a href="#" class="card-footer btn text-white" id="boton_leer_mas">Adquirir</a>
+                    <a href="/tienda" class="card-footer btn text-white" id="mas_info">+ info</a>
                 </div>
-             </div><!-- columna 3 -->
+             </div>
             </div>
         </div>
     </div>
-
     <!-- Video -->
         
     <div class="text-center col-12"> 
@@ -191,17 +195,6 @@
             <source src="/video/DogHouseProyectoV10.mp4">
           </video>
       </div> 
-
-          
-
-    <!-- Acordeón Preguntas Frecuentes -->
-   
-    
-    
-      
-
-
-
 	<%- include('./partials/footer') %>
     <script src="/js/cart.js"></script>
 </body>
