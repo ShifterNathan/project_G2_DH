@@ -40,6 +40,7 @@ onLoadCartNumbers();
 
 
 
+
 // -------------------- Captura de info del producto para la vista del carrito --------------------
 
 const addToCart = document.getElementsByClassName('add-cart');
