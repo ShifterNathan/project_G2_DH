@@ -7,10 +7,11 @@ import TabListBase from './components/TabListBase';
 function App() {
   return (
     <>
-   {/* <CardBase/>*/}
-    {/*<TabListBase />*/}
-    {/*<CharDonut />*/}
+    <CardBase/>
+    <TabListBase />
+    <CharDonut />
     <DashboardBase/>
+    
     </>
   );
 }

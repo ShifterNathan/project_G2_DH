@@ -2,32 +2,32 @@ import { Card, DonutChart, Title } from "@tremor/react";
 import React from "react";
 
 const cities = [{
-    name: 'New York',
+    name: 'Capital Federal',
     sales: 9800
 
 },
 {
-    name: 'London' ,
+    name: 'Vicente Lopez' ,
     sales: 4567
 },
 {
-    name:'Hong Kong' ,
+    name:'Pilar' ,
     sales: 3908 
 },
 
 {
-    name: 'San Francisco' ,
-    sales: 2400
+    name: 'Morón' ,
+    sales: 3400
 },
 
 {
-    name:'Singapure' ,
+    name:'Gran Buenos Aires' ,
     sales: 1908 
 },
 
 {
-    name:'Zurich' ,
-    sales: 1398
+    name:'Quilmes' ,
+    sales: 10398
 },
 
 ]
@@ -35,13 +35,13 @@ const cities = [{
 const ChartDonut =() => {
     return(
    <Card>
-        <Title>Sales by City</Title>
+        <Title>Ventas en Capital Federal y Gran Buenos Aires DogHouse</Title>
         <DonutChart
             data={cities}
             category='sales'
             dataKey='name'
             marginTop="mt-6"
-            colors={["yellow","violet","green","rose","cyan","indigo"]}
+            //colors={["yellow","violet","green","rose","cyan","indigo"]}
             />
    </Card>
     )

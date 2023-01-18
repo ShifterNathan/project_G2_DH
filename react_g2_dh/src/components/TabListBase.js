@@ -10,10 +10,9 @@ const TabListBase = () => {
             handleSelect={ value=> setSelectedView(value)}
             defaultValue={selectedView}
             marginTop= "mt-6">
-            <Tab value={1} text= "Pestaña 1" icon={HandThumbUpIcon}/> 
+            <Tab value={1} text= "Pestaña 1" icon={HandThumbUpIcon }/> 
             <Tab value={2} text= "Pestaña 2" icon={HandThumbDownIcon}/> 
-{/*Usamos operadores ternarios para decir que si seclecciona 1 nos muestre una tarjeta y si seleccionea un número
-distinto de 1 muestre otra tarjeta*/}
+
 </TabList>
 
 { selectedView === 1? (
@@ -31,6 +30,7 @@ distinto de 1 muestre otra tarjeta*/}
         </>
     )
 }
-
+{/*Usamos operadores ternarios para decir que si seclecciona 1 nos muestre una tarjeta y si seleccionea un número
+distinto de 1 muestre otra tarjeta*/}
 export default TabListBase
 

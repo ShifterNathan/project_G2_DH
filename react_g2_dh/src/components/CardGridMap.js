@@ -3,10 +3,10 @@ import React from "react";
 
 const data = [
     {
-        title: "sale",
-        metric: '$ 12,699',
-        progress: 15.9,
-        target: '$80,000',
+        title: "Productos",
+        metric: '1380',
+        progress: 30.9,
+        target: '$400,000',
         delta: '13,2',
         deltaType: 'moderateIncrease',
 
