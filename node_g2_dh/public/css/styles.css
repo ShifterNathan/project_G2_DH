@@ -76,32 +76,28 @@
     opacity: 0.9;
   }
 
-  /******************** SECCIÓN 3: "OPINIONES" ********************/
-  
-  #boton_leer_mas{
-    opacity: 0.8;
-    background-color: #EF863D;
-    border: solid #ef863d;
-    color: #FDFAF2;
-    font-family: "baloo 2";
-  }
-
-  #boton_leer_mas:hover {
-    background-color: #F5B77C;
-    border: solid #F5B77C;
-    transition: 
-      background-color, 2s, 
-      border, 2s;
-  }
-
 /******************** SECCIÓN 4 ********************/
 #nuestros-menus{
   background-color: #EF863D;
-  color: white;
+  color: #FDFAF2;
   align-content: center;
+  opacity: 0.9;
 }
 
+#mas_info{
+    background-color: #ef863d;
+    border: solid #ef863d;
+    color: #ef863d;
+    font-family: "baloo 2";
+    opacity: 0.9;
+}
 
+.card{
+  background-color: #ef863d;
+  color: #FDFAF2;
+  opacity: 0.9;
+  margin-bottom: 22px; 
+}
 
 
 
@@ -110,23 +106,17 @@
 /******** Smaller smartphones ********/
 
 @media (max-width: 480px) {
-  #titParteA{
-    font-size: 22px;
-  } 
-  #subtParteA{
-    font-size: 18px;
-  }
+  #titParteA{font-size: 22px} 
+  #subtParteA{font-size: 18px}
+  .letra-carrusel{font-size:18px}
   }
 
 /******** Tablets and larger smartphones ********/
 
 @media (min-width: 481px) and (max-width: 768px) {
-  #titParteA{
-    font-size: 22px;
-  } 
-  #subtParteA{
-    font-size: 18px;
-  }
+  #titParteA{font-size: 22px} 
+  #subtParteA{font-size: 18px}
+  .letra-carrusel{font-size:18px}
 }
 
 /******** Laptops, larger tablets in landscape and small desktops ********/
@@ -143,3 +133,4 @@
 /******** Larger desktops and monitors ********/
 
 @media (min-width: 1280px) {}
+

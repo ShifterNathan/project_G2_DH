@@ -2,6 +2,8 @@ const {where} = require("sequelize");
 const db = require("../database/models");
 const {validationResult} = require('express-validator');
 
+
+
 // -------------------- EL CONTROLADOR DE TIENDA --------------------
 const controller = {
 
