@@ -33,7 +33,7 @@ let actualizar = () => {
 
 return (
     <div>
-           <div className="col-md-4 mb-4">
+           <div className="col-md-4 mb-4 h-40">
                <div className="card border-left-primary shadow h-100 py-2">
                    <div className="card-body">
                        <div className="row no-gutters align-items-center">

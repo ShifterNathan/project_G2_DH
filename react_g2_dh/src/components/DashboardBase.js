@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import CardGridMap from "./CardGridMap";
 import ChartDonut from "./ChartDonut";
 import TableBase from "./TableBase";
-import TotalUsuarios from '../assets/TotalUsuarios'
+
+
 
 
 
@@ -14,29 +15,27 @@ const DashboardBase = () => {
         <main className='bg-slate-200 p-6 sm-:p-15'>
             <Title>Dashboard</Title>
             <Text> <strong>DogHouse</strong></Text>
-            <TotalUsuarios />
+            
             <TabList defaultValue={selectedView} handleSelect={ value => selectedView(value)} marginTop= "mt-6">
                 <Tab value={selectedView} text="Principal"/>
                 <Tab value={selectedView} text="Detalles"/>
             </TabList>
+ 
 
-            { selectedView === 1? (
-    <>  
-<CardGridMap/>
+    <CardGridMap />
     
-    <Block>
+    <Block marginTop="mt-6">
         <ChartDonut/>
     </Block>
-    </>
+
         
-) : (
-    <>
+
+
     <Block marginTop="mt-6">
         <TableBase/>
     </Block>        
-    </>
-    )
-}
+
+
         
         
         </main>
