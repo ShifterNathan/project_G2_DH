@@ -1,5 +1,5 @@
 import { CameraIcon } from "@heroicons/react/24/solid";
-import { Badge, Card, Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow } from "@tremor/react";
+import { Badge, Card, Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow, Title } from "@tremor/react";
 import React from "react";
 import data from '../data.json'
 const TableBase = ()=>{
