@@ -1,223 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <%- include('partials/head', {title: 'Inicio' }) %>
+    <%- include('partials/head', {title: 'Inicio'}) %>
 
-        <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
-
 <body>
 
     <%- include('./partials/header') %>
 
 
-        <!---------------------- CARRUSEL ---------------------->
+    <!---------------------- CARRUSEL ---------------------->
 
-        <div id="carouselExampleCaptions" id="start" class="carousel slide" data-bs-ride="carousel" data-pause="false">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-                    aria-label="Slide 4"></button>
-            </div>
-            <div class="carousel-inner">
-
-                <div class="carousel-item active" data-bs-interval="6000" data-ride="carousel">
-                    <picture>
-                        <source media="(max-width:580px)" srcset="/img/carrusel/perro-lenguasa.png">
-                        <source media="(min-width:580px)" srcset="/img/carrusel/perro-lengua.png">
-                        <img src="" width="100%" height="100%" class="d-block w-100" />
-                    </picture>
-                    <div class="carousel-caption text-justified">
-                        <p class="pb-5 mb-5 letra-carrusel">Alimentalo con DogHouse y verás los beneficios en pocos días
-                        </p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="6000">
-                    <picture>
-                        <source media="(max-width:580px)" srcset="/img/carrusel/perro-plato-comida.png">
-                        <source media="(min-width:580px)" srcset="/img/carrusel/perro-salchicha.png">
-                        <img src="" width="100%" height="100%" class="d-block w-100" />
-                    </picture>
-                    <div class="carousel-caption text-justified">
-                        <p class="pb-5 mb-5 letra-carrusel">Trabajamos para que tu perro tenga una dieta completa y
-                            equilibrada que le permita vivir más y mejor</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="6000">
-                    <picture>
-                        <source media="(max-width:580px)" srcset="/img/carrusel/perrito.png">
-                        <source media="(min-width:580px)" srcset="/img/carrusel/curioso.jpg">
-                        <img src="" width="100%" height="100%" class="d-block w-100" />
-                    </picture>
-                    <div class="carousel-caption text-justified">
-                        <p class="pb-5 mb-5 letra-carrusel">Dale amor, una buena calidad de vida y cuidalo con alimento
-                            DogHouse</p>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="6000">
-                    <picture>
-                        <source media="(max-width:580px)" srcset="/img/carrusel/perro-snacks.png">
-                        <source media="(min-width:580px)" srcset="/img/carrusel/perro-con-hambre.png">
-                        <img src="" width="100%" height="100%" class="d-block w-100" />
-                    </picture>
-                    <div class="carousel-caption text-justified">
-                        <p class="pb-5 mb-5 letra-carrusel">DogHouse solo utiliza ingredientes frescos y naturales que
-                            sometidos a una cocción lenta conservan todos sus nutrientes y propiedades</p>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                </button>
-            </div>
+    <div id="carouselExampleCaptions" id="start" class="carousel slide" data-bs-ride="carousel"  data-pause="false">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
-        <!-- <script>
+        <div class="carousel-inner">
+
+            <div class="carousel-item active" data-bs-interval="6000" data-ride="carousel">              
+                <picture>
+                    <source media="(max-width:580px)" srcset="/img/carrusel/perro-lenguasa.png">
+                    <source media="(min-width:580px)" srcset="/img/carrusel/perro-lengua.png">
+                    <img src="" width="100%" height="100%" class="d-block w-100"/>
+                </picture>
+                <div class="carousel-caption text-justified">
+                    <p class="pb-5 mb-5 letra-carrusel">Alimentalo con DogHouse y verás los beneficios en pocos días</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000">
+                <picture>
+                    <source media="(max-width:580px)" srcset="/img/carrusel/perro-plato-comida.png">
+                    <source media="(min-width:580px)" srcset="/img/carrusel/perro-salchicha.png">
+                    <img src="" width="100%" height="100%" class="d-block w-100"/>
+                </picture>
+                <div class="carousel-caption text-justified">
+                    <p class="pb-5 mb-5 letra-carrusel">Trabajamos para que tu perro tenga una dieta completa y equilibrada que le permita vivir más y mejor</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000">
+                <picture>
+                    <source media="(max-width:580px)" srcset="/img/carrusel/perrito.png">
+                    <source media="(min-width:580px)" srcset="/img/carrusel/curioso.jpg">
+                    <img src="" width="100%" height="100%" class="d-block w-100"/>
+                </picture>
+                <div class="carousel-caption text-justified">
+                    <p class="pb-5 mb-5 letra-carrusel">Dale amor, una buena calidad de vida y cuidalo con alimento DogHouse</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="6000" >
+                <picture>
+                    <source media="(max-width:580px)" srcset="/img/carrusel/perro-snacks.png">
+                    <source media="(min-width:580px)" srcset="/img/carrusel/perro-con-hambre.png">
+                    <img src="" width="100%" height="100%" class="d-block w-100"/>
+                </picture>
+                <div class="carousel-caption text-justified">
+                    <p class="pb-5 mb-5 letra-carrusel">DogHouse solo utiliza ingredientes frescos y naturales que sometidos a una cocción lenta conservan todos sus nutrientes y propiedades</p>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </div>
+    <!-- <script>
         $('.carousel').carousel({
             pause: false
         })
     </script> -->
 
-        </div>
+    </div>
 
-        <br>
+    <br>
+   
+    <!-------------------- DALE A TU PERRO LA COMIDA QUE SE MERECE ---------------------->
 
-        <!-------------------- DALE A TU PERRO LA COMIDA QUE SE MERECE ---------------------->
+    <section class="container-fluid mb-2">
+        
+        <div class="row m-2 align-items-center justify-content-evenly">
 
-        <section class="container-fluid mb-2">
+            <div class = "col-12 col-sm-12 col-md-6 col-lg-6">
+                    <img src="/img/indexSection2/section2_parteB1.png" class="rounded opacity-75 shadow-sm" style="max-width: 100%; max-height: 100%;" alt="Contenido no disponible en este momento">
+            </div>
 
-            <div class="row m-2 align-items-center justify-content-evenly">
+            <div class = "col-12 col-sm-12 col-md-6 col-lg-6">
 
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                    <img src="/img/indexSection2/section2_parteB1.png" class="rounded opacity-75 shadow-sm"
-                        style="max-width: 100%; max-height: 100%;" alt="Contenido no disponible en este momento">
+                <div class="d-flex flex-column mb-3 justify-content-center align-items-start m-2 p-2">
+
+                    <h2 class="p-2" id="titParteA"> Dale a tu perro la comida que se merece </h2>
+
+                <div class = "p-2">
+                
+                <p class="p-2" id="subtParteA"> Elaboramos comida casera para tu perro. Cocinada a fuego lento y con amor. Con ingredientes frescos y 100% naturales.</p>
+                
                 </div>
+                
+                <ol class="p-2 list-group list-group-numbered align-self-stretch">
 
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-
-                    <div class="d-flex flex-column mb-3 justify-content-center align-items-start m-2 p-2">
-
-                        <h2 class="p-2" id="titParteA"> Dale a tu perro la comida que se merece </h2>
-
-                        <div class="p-2">
-
-                            <p class="p-2" id="subtParteA"> Elaboramos comida casera para tu perro. Cocinada a fuego
-                                lento y con amor. Con ingredientes frescos y 100% naturales.</p>
-
-                        </div>
-
-                        <ol class="p-2 list-group list-group-numbered align-self-stretch">
-
-                            <li class="list-group-item d-flex justify-content-between align-items-start opacity-90"
-                                id="li1">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">Ingredientes naturales</div>
-                                    Comida 100% real. Huele bien, sabe mejor.
-                                </div>
-                            </li>
-
-                            <li class="list-group-item d-flex justify-content-between align-items-start opacity-90"
-                                id="li2">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">Porciones personalizadas</div>
-                                    Envasado en raciones diarias. Tan fácil como abrir y servir.
-                                </div>
-                            </li>
-
-                            <li class="list-group-item d-flex justify-content-between align-items-start opacity-90"
-                                id="li3">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">Sin procesados ni cereales</div>
-                                    70% de carne o pollo y un 30% de vegetales.
-                                </div>
-                            </li>
-
-                            <li class="list-group-item d-flex justify-content-between align-items-start opacity-90"
-                                id="li4">
-                                <div class="ms-2 me-auto">
-                                    <div class="fw-bold">Elaborado por nutricionistas</div>
-                                    Recetas equilibradas para tu perro en todas las etapas de la vida.
-                                </div>
-                            </li>
-
-                        </ol>
-
+                    <li class="list-group-item d-flex justify-content-between align-items-start opacity-90" id="li1">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Ingredientes naturales</div>
+                        Comida 100% real. Huele bien, sabe mejor.
                     </div>
+                    </li>
 
+                    <li class="list-group-item d-flex justify-content-between align-items-start opacity-90" id="li2">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Porciones personalizadas</div>
+                        Envasado en raciones diarias. Tan fácil como abrir y servir.
+                    </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start opacity-90" id="li3">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Sin procesados ni cereales</div>
+                        70% de carne o pollo y un 30% de vegetales.
+                    </div>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between align-items-start opacity-90" id="li4">
+                        <div class="ms-2 me-auto">
+                        <div class="fw-bold">Elaborado por nutricionistas</div>
+                        Recetas equilibradas para tu perro en todas las etapas de la vida.
+                        </div>
+                    </li>
+
+                    </ol>
+                
                 </div>
 
             </div>
 
-        </section>
-        <!-------------------- NUESTRAS RECETAS ---------------------->
+        </div>
 
-        <br>
-
-        <h3 class="text-center">Nuestras recetas</h3>
-        <h5 class="text-center">La comida favorita de tu peludo</h5>
-        <div class="container-fluid">
-            <div class="container py-5">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card" id="tarjeta1_recetas">
-                            <div class="card-block">
-                                <img src="/img/comida-saludable-para-perros-pollo.jpg" alt="Pollo"
-                                    class="img-fluid mb-3">
-                                <div class="card-body">
-                                    <h3>POLLO</h3>
-                                    <P>65% de pollo y 35% de verduras
-                                        frescas de la mejor calidad</P>
-
-                                </div>
-                            </div>
+    </section>
+    <!-------------------- NUESTRAS RECETAS ---------------------->
+    
+    <br>
+   
+<h3 class="text-center">Nuestras recetas</h3>
+    <h5 class="text-center">La comida favorita de tu peludo</h5>
+    <div class="container-fluid">
+        <div class="container py-5">
+            <div class="row">
+             <div class="col-md-4">
+                <div class="card" id="tarjeta1_recetas">
+                    <div class="card-block">
+                        <img src="/img/comida-saludable-para-perros-pollo.jpg" alt="Pollo" class="img-fluid mb-3">
+                        <div class="card-body">
+                            <h3>POLLO</h3>
+    <P>65% de pollo y 35% de verduras
+    frescas de la mejor calidad</P>
+    <!--<button class="Agregar-al-Carrito">
+        Agregar al Carrito
+    </button>-->
+                                            </div>
+                    </div>
+                                    </div>
+            </div>
+             <div class="col-md-4">
+                <div class="card" id="tarjeta2_recetas">
+                    <div class="card-block">
+                        <img src="/img/mejor-comida-cocinada-perros-carne.jpg" alt="Carne" class="img-fluid mb-3">
+                        <div class="card-body">
+                           <h3>CARNE</h3>
+                           <P>Nuestro menú más calórico. Ideal para perros muy activos</P>
+                           <!--<button class="Agregar-al-Carrito">
+                               Agregar al Carrito
+                           </button>-->                        
+                           
+            </div>
+                </div>
+                    </div>
+                        </div>
+             <div class="col-md-4">
+                <div class="card" id="tarjeta3_recetas">
+                    <div class="card-block">
+                        <img src="/img/comida-barf-para-perros-mixta.jpg" alt="Mixta" class="img-fluid mb-3">
+                        <div class="card-body">
+                            <h3>MIXTO</h3>
+                            <P>Verdura, pollo, carne vacuna. Ideal para dietas bajas en calorías</P>
+                            <!--<button class="Agregar-al-Carrito">
+                                Agregar al Carrito
+                            </button> -->                        
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card" id="tarjeta2_recetas">
-                            <div class="card-block">
-                                <img src="/img/mejor-comida-cocinada-perros-carne.jpg" alt="Carne"
-                                    class="img-fluid mb-3">
-                                <div class="card-body">
-                                    <h3>CARNE</h3>
-                                    <P>Nuestro menú más calórico. Ideal para perros muy activos</P>
-
-                                    <div class="col-md-4">
-                                        <div class="card" id="tarjeta3_recetas">
-                                            <div class="card-block">
-                                                <img src="/img/comida-barf-para-perros-mixta.jpg" alt="Mixta"
-                                                    class="img-fluid mb-3">
-                                                <div class="card-body">
-                                                    <h3>MIXTO</h3>
-                                                    <P>Verdura, pollo, carne vacuna. Ideal para dietas bajas en calorías
-                                                    </P>
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Video -->
-
-                        <div class="text-center col-12">
-                            <video class="w-100 p-3" playsinline autoplay muted loop>
-                                <source src="/video/DogHouseProyectoV10.mp4">
-                            </video>
-                        </div>
-                        <%- include('./partials/footer') %>
-                            <script src="/js/cart.js"></script>
+                </div>
+             </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video -->
+        
+    <div class="text-center col-12"> 
+        <video class="w-100 p-3" playsinline autoplay muted loop>
+            <source src="/video/DogHouseProyectoV10.mp4">
+          </video>
+      </div> 
+	<%- include('./partials/footer') %>
+    <script src="/js/cart.js"></script>
 </body>
-
 </html>
