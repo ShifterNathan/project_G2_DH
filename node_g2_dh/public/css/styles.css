@@ -77,11 +77,15 @@
   }
 
 /******************** SECCIÓN 4 ********************/
+
+
 #nuestros-menus{
+  justify-content: center;
   background-color: #EF863D;
   color: #FDFAF2;
   align-content: center;
   opacity: 0.9;
+  line-height: 0%;
 }
 
 #mas_info{

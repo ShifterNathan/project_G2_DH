@@ -12,7 +12,7 @@
    object-fit: cover;
    display: flex;
    align-items: center;
-   background: url("/img/nosotros/nosotros-bebe.jpg");
+   background: url("/img/nosotros/carita.jpg");
    background-size: cover;
    background-position: center;
    margin: 0px
@@ -23,10 +23,11 @@
     margin-bottom: 30px;
     font-size: 30px;
     font-weight: 900;
+    text-align: right;
  }
  .text{
-    font-size: 18px;
-    color: white;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.911);
     line-height: 20px;
     text-align: justify;
     margin-bottom: 10px;
