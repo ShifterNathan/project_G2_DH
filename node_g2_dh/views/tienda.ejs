@@ -20,6 +20,21 @@
 
     
         <div class="container">
+
+            <div class="container min-vh-100 py-4">
+                <div class="row">
+                    <div class="col-md-5 mx-auto">
+                        <div class="input-group">
+                            <input class="form-control border-end-0 border rounded-pill" type="search" value="" id="example-search-input">
+                            <span class="input-group-append">
+                                <button class="btn btn-outline-secondary bg-blue border-bottom-0 border solid rounded-pill ms-n5" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+            </div>
+
             <div class="row">
                 <% for(let producto of productos) { %>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4">
@@ -46,7 +61,7 @@
                         
                             <div class="product-info">
                                 <div>
-                                    <p class="product-name h3"><%=producto.nombre %></p>
+                                    <p class="product-name h4"><%=producto.nombre %></p>
                                 </div>
                                 <div>
                                     <p class="product-price h4">$ <%=producto.precio %></p>
