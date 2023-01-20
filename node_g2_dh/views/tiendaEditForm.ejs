@@ -2,92 +2,114 @@
 
 <html>
     
-    <%- include('partials/head', {title: 'Crear producto'}) %>
+    <%- include('partials/head', {title: 'Editar producto'}) %>
+    <link rel="stylesheet" href="/css/create-edit-form.css">
 
     <body>
+        <%- include('./partials/header') %> 
     
-    <%- include('./partials/header') %> 
-
-    <!-- Formulario de creación de productos de la tienda de DogHouse -->
-        <div class="container-fluid m-5">
-            
-            <div class="row m-2 justify-content-md-center">
-
-                <div class="col-12">
-                    <h2> Edición producto </h2>
-                </div>
-
-                <div class="col-12 m-4">
-                <form action="/tienda/editar/<%=productEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
-                    <div class="row">
-                        <div class="col-12">
-                            <label for="name" class="form-label"> Nombre del producto:</label>
-                            <input type="text" id="name" name="nombre" class="form-input <%= locals.errors && errors.nombreUsuario ? 'is-invalid': null%>"
-                            value="<%= locals.oldData ? oldData.nombre : null %>">
-                            <%if (locals.errors && errors.nombre) {%>
-                                <div class="text-danger">
-                                    <%= errors.nombre.msg%>
-                                </div>
-                            <% } %>
+        <section class=" gradient-custom pb-5 pt-5">
+            <div class="container py-5 h-100">
+              <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12 col-lg-9 col-xl-7">
+                  <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Editar producto</h3>
+                      <form action="/tienda/editar/<%=productEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+          
+                        <div class="row">
+    
+                          <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                              <input type="text" id="name" name="nombre" class="form-control form-control-lg <%= locals.errors && errors.nombreUsuario ? 'is-invalid': null%>"
+                                value="<%= locals.oldData ? oldData.nombre : null %>">
+                                <%if (locals.errors && errors.nombre) {%>
+                                    <div class="text-danger">
+                                        <%= errors.nombre.msg%>
+                                    </div>
+                                <% } %>
+                              <label class="form-label" for="name">Nombre del producto</label>
+                            </div>
+                          </div>
+    
+                          <div class="col-md-6 mb-4">
+                            <div class="form-outline">
+                              <input type="number" id="price" name="precio" class="form-control form-control-lg <%= locals.errors && errors.precio ? 'is-invalid': null%>"
+                                value="<%= locals.oldData ? oldData.precio : null %>">
+                                <%if (locals.errors && errors.precio) {%>
+                                    <div class="text-danger">
+                                        <%= errors.precio.msg%>
+                                    </div>
+                                <% } %>
+                              <label class="form-label" for="price">Precio del producto</label> 
+                            </div>
+                          </div>
+    
                         </div>
-                        <div class="col-12">
-                            <label for="price" class="form-label"> Precio del producto:</label>
-                            <input type="number" id="price" name="precio" class="form-input <%= locals.errors && errors.precio ? 'is-invalid': null%>"
-                            value="<%= locals.oldData ? oldData.precio : null %>">
-                            <%if (locals.errors && errors.precio) {%>
-                                <div class="text-danger">
-                                    <%= errors.precio.msg%>
-                                </div>
-                            <% } %>
-                        </div>
-                        <div class="col-12">
-                            <label for="discount" class="form-label"> Descuento:</label>
-                            <input type="number" id="discount" name="descuento" class="form-input <%= locals.errors && errors.descuento ? 'is-invalid': null%>"
-                            value="<%= locals.oldData ? oldData.descuento : null %>">
-                        </div>
-                        <div class="col-12">
-                            <label for="category" class="form-label">Categoría:</label>
-                            <select name="categoria" id="categoriaID" class="form-input">
+          
+                        <div class="row">
+    
+                          <div class="col-md-6 mb-4 d-flex align-items-center">
+                            <div class="form-outline datepicker w-100">
+                              <input type="number" id="discount" name="descuento" class="form-control form-control-lg <%= locals.errors && errors.descuento ? 'is-invalid': null%>"
+                                value="<%= locals.oldData ? oldData.descuento : null %>">
+                              <label for="discount" class="form-label">Descuento</label>
+                            </div>
+                          </div>
+    
+                          <div class="col-md-6 mb-4">
+                            <label for="category" class="form-label select-label">Categoría</label>
+                            <select class="select form-control-lg" name="categoria" id="categoriaID">
                                 <option value="">Selecciona</option>
                                 <% for (let categoria of categorias) { %>
                                     <option value="<%=categoria.id %>"><%=categoria.nombre %></option>
                                 <% } %>
                             </select>
+                          </div>
                         </div>
-                        <div class="col-12">
-                            <label for="imagenProducto" class="form-label"> Seleccionar imagen:</label>
-                            <input type="file" name="imagenProducto">
-                            <%if (locals.errors && errors.imagenProducto) {%>
-                                <div class="text-danger">
-                                    <%= errors.imagenProducto.msg%>
-                                </div>
-                            <%} %>
-                        </div>
-                        <div class="col-12">
-                            <label for="descripcion" class="form-label"> Descripción:</label>
-                            <textarea name="descripcion" id="descripcion" class="form-input <%= locals.errors && errors.descripcion ? 'is-invalid': null%>"
-                            value="<%= locals.oldData ? oldData.descripcion : null %>"></textarea>
-                            <%if (locals.errors && errors.descripcion) {%>
-                                <div class="text-danger">
-                                    <%= errors.descripcion.msg%>
-                                </div>
-                            <% } %>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="buy-now-button"> Editar producto</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            </div>
-        </div>   
-
-    <!-- Footer -->
-	<div>
-    <%- include('./partials/footer') %>
-    </div>
     
-    </body>
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3">
+                                <label for="descripcion" class="form-label select-label" class="mb-0">Descripción</label>
+                            </div>
+                            <div class="col-md-9">
+                                <textarea name="descripcion" id="descripcion" rows="3" class="form-control <%= locals.errors && errors.descripcion ? 'is-invalid': null%>"
+                                    value="<%= locals.oldData ? oldData.descripcion : null %>"></textarea>
+                                    <%if (locals.errors && errors.descripcion) {%>
+                                        <div class="text-danger">
+                                            <%= errors.descripcion.msg%>
+                                        </div>
+                                    <% } %>
+                            </div>
+                        </div>
+    
+                        <div class="row align-items-center py-3">
+                            <div class="col-md-3">
+                              <label for="imagenProducto" class="mb-0">Carga la imagen</label>
+                            </div>
+                            <div class="col-md-9">
+                              <input class="form-control form-control-lg" id="imagenProducto" type="file" name="imagenProducto" />
+                                <%if (locals.errors && errors.imagenProducto) {%>
+                                    <div class="text-danger">
+                                        <%= errors.imagenProducto.msg%>
+                                    </div>
+                                <%} %>
+                            </div>
+                        </div>
+          
+                        <div class="mt-4 pt-2">
+                          <input class="btn btn-lg btn-outline-secondary" type="submit" value="Editar producto" />
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    
+        <%- include('./partials/footer') %>
+            
+        </body>
 
 </html>
