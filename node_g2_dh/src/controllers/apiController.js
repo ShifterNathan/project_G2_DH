@@ -6,7 +6,7 @@ const controller = {
         
         const usersList = [];
         
-        db.Usuario.findAll()
+        db.Usuario.findAll({where: {rol: "COMUN"}})
         .then((users) => {
             for (u of users) {
                 let user = {
@@ -14,6 +14,7 @@ const controller = {
                     apellido: u.apellido,
                     email: u.email,
                     rol: u.rol,
+                    imagen: u.imagen
                 } 
                 usersList.push(user);
             }
