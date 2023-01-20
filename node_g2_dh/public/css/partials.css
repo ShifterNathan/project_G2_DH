@@ -48,6 +48,10 @@ body {
   background-color: rgba(0, 0, 0, 0.6) !important;
   color: white;
 }
+/**************faq******************************/
+body {
+  margin-left: 40px;
+}
 
 
 /******************** CART ********************/
