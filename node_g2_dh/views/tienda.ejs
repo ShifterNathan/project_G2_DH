@@ -33,6 +33,7 @@
                             </span>
                         </div>
                     </div>
+                </div>
             </div>
 
             <div class="row">
@@ -75,50 +76,9 @@
                 <% } %> 
             </div>
         </div>
+
+        <%- include('./partials/footer') %>
         
-        
-
-
-
-
-        <!-- <div class="container contenedor-productos">
-            <div class="row">
-                <div class="col-12">
-                    <p class="h2"> La salud de tu mascota empieza por su alimentación</h2><br>
-                        <p class="h4">Visitá nuestra tienda y hacé tu pedido</h4>
-                </div>
-               
-                
-                <% for(let producto of productos) { %>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <section class="producto position-relative">
-                        <a href="/tienda/detalle/<%=producto.id %>" >
-                            <img src="/img/tiendaProductos/<%=producto.imagen %>" class="img-fluid" alt="imagen de producto">
-                            <article class="infoProducto">
-                                <h2 id="">$<%=producto.precio %></h2>
-                            <article class="Descuento">
-                                <span id=""><%=producto.descuento %>% OFF</span>
-                            </article>
-                                <p id=""><%=producto.nombre %></p>
-                                <p id=""><%=producto.categoria %></p>
-                                
-                            </article>
-                        </a>
-                        <a class="add-cart" id="addToCart" href="#">
-                            <i class="fa-solid fa-plus"></i>
-                        </a>
-                    </section>
-                    
-                </div>
-                <% } %> 
-            </div>
-        </div> -->
-
-
-    
-    <%- include('./partials/footer') %>
-
-
 </body>
     
 </html>
