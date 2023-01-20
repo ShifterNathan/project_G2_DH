@@ -8,7 +8,7 @@ function TotalProductos() {
     const [products, setProducts] = useState();
 
     useEffect(() => {
-        fetch('http://localhost:3005/api/productos')
+        fetch('https://doghousefood.onrender.com/api/productos')
         .then((response) => response.json())
         .then((data) => { 
             setProducts(data.count) 
