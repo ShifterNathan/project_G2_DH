@@ -40,7 +40,13 @@ window.addEventListener("load",function(){
             alert("Las extensiones de archivo permitidas son: .jpg, .jpeg, .png y .gif");
         }
 
-    formularioRegistro.submit();
+    formularioRegistro.submit(Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: '¡Qué alegria! Ya sos parte de DogHouse',
+        showConfirmButton: false,
+        timer: 1500
+      }));
         
     })    
 })

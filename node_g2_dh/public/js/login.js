@@ -19,7 +19,13 @@ window.addEventListener("load",function(){
             alert("Ingresa tu clave");
         } 
 
-    formularioLogin.submit();
+    formularioLogin.submit(Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Login exitoso',
+        showConfirmButton: false,
+        timer: 3000
+      }));
         
     })    
 })
