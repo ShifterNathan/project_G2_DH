@@ -23,7 +23,7 @@ router.get('/detalle/:id', authMiddleware, tiendaController.detalleProducto)
 
 /* Para editar un producto de la tienda */ 
 router.get('/editar/:id', authMiddleware, tiendaController.edit)
-router.put('/editar/:id', authMiddleware, uploadFile.single('imagenProducto'), validacionesProducto, tiendaController.update)
+router.put('/editar/:id', authMiddleware, uploadFile.single('imagenProducto'), tiendaController.update)
 
 /*** Para eliminar un producto de la tienda ***/ 
 router.delete('/eliminar/:id', authMiddleware, tiendaController.destroy); 

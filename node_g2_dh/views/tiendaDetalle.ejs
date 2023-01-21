@@ -38,14 +38,21 @@
 								</div>
 							
 								<p class="about"><%=productoDetalle.descripcion %></p>
+								<% if (user.rol == "COMUN") { %>
 								<div class="cart mt-4 align-items-center">
 									<button class="add-cart btn btn-light shadow-sm rounded-pill" id="addToCart"><i class="fa-solid fa-cart-shopping"></i> Añadir al carrito</button> 
 								</div>
+								<% } %>
 								<% if (user.rol == "ADMIN") { %>
-									<button type="button" class="btn btn-link btn-sm"> <a href="/tienda/editar/<%= productoDetalle.id %>"> EDITAR PRODUCTO </a> </button>
+								<div class="p-2">
+									<a class="btn btn-outline-secondary" href="/tienda/editar/<%= productoDetalle.id %>"> Editar producto </a> 
+								</div>
+								<div class="p-2">
 									<form action="/tienda/eliminar/<%= productoDetalle.id %>?_method=DELETE" method="POST">
-										<button type="submit" class="btn-sm"> ELIMINAR </button>
+										<button type="submit" class="btn btn-outline-danger"> Eliminar producto </button>
 									</form>
+								</div>
+
 								<% } %>
 							</div>
 						</div>
