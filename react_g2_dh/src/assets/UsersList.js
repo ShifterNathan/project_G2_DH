@@ -8,7 +8,7 @@ function UsersList() {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3005/api/usuarios')
+        fetch('https://doghousefood.onrender.com/api/usuarios')
         .then((response) => response.json())
         .then((data) => { 
             const usersMapped = data.users.map((item) => {  
@@ -16,7 +16,7 @@ function UsersList() {
                 nombre: item.nombre,
                 apellido: item.apellido,
                 email: item.email,
-                imagen: "http://localhost:3005/img/avatars/" + item.imagen
+                imagen: "https://doghousefood.onrender.com/img/avatars/" + item.imagen
                 }
              })
             setUsers(usersMapped); 

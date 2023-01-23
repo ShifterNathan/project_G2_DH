@@ -4,39 +4,32 @@
     
 <head>
     <link rel="stylesheet" href="/css/tienda.css">
-    <%- include('partials/head', {title: 'Tienda'}) %>
-    
-    <!-- CSS Inex -->
-    
+    <%- include('partials/head', {title: 'Tienda'}) %>    
 </head>
    
 <body>
 
     <%- include('./partials/header') %>
 
-    
-
         <div class="banner"></div>
 
-    
         <div class="container">
 
-            <div class="container min-vh-100 py-4">
-                <div class="row">
-                    <div class="col-md-5 mx-auto">
-                        <div class="input-group">
-                            <input class="form-control border-end-0 border rounded-pill" type="search" value="" id="example-search-input">
-                            <span class="input-group-append">
-                                <button class="btn btn-outline-secondary bg-blue border-bottom-0 border solid rounded-pill ms-n5" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div>
+            <div class="row py-4">
+                <div class="col-md-5 mx-auto">
+                    <div class="input-group">
+                        <input class="form-control border-end-0 border rounded-pill" type="search" value="" id="example-search-input">
+                        <span class="input-group-append">
+                            <button class="btn btn-outline-secondary bg-blue border-bottom-0 border solid rounded-pill ms-n5" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span>
                     </div>
+                </div>
             </div>
 
             <div class="row">
-                <% for(let producto of productos) { %>
+            <% for(let producto of productos) { %>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4">
                     <div class="product-box">
             
@@ -75,50 +68,9 @@
                 <% } %> 
             </div>
         </div>
+
+        <%- include('./partials/footer') %>
         
-        
-
-
-
-
-        <!-- <div class="container contenedor-productos">
-            <div class="row">
-                <div class="col-12">
-                    <p class="h2"> La salud de tu mascota empieza por su alimentación</h2><br>
-                        <p class="h4">Visitá nuestra tienda y hacé tu pedido</h4>
-                </div>
-               
-                
-                <% for(let producto of productos) { %>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <section class="producto position-relative">
-                        <a href="/tienda/detalle/<%=producto.id %>" >
-                            <img src="/img/tiendaProductos/<%=producto.imagen %>" class="img-fluid" alt="imagen de producto">
-                            <article class="infoProducto">
-                                <h2 id="">$<%=producto.precio %></h2>
-                            <article class="Descuento">
-                                <span id=""><%=producto.descuento %>% OFF</span>
-                            </article>
-                                <p id=""><%=producto.nombre %></p>
-                                <p id=""><%=producto.categoria %></p>
-                                
-                            </article>
-                        </a>
-                        <a class="add-cart" id="addToCart" href="#">
-                            <i class="fa-solid fa-plus"></i>
-                        </a>
-                    </section>
-                    
-                </div>
-                <% } %> 
-            </div>
-        </div> -->
-
-
-    
-    <%- include('./partials/footer') %>
-
-
 </body>
     
 </html>

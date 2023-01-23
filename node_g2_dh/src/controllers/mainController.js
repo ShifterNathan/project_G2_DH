@@ -15,8 +15,11 @@ const controller = {
 
     elegirnos: (req, res) => {
         res.render('por_que_elegirnos', { user: req.session.userLogged})
-    }
+    },
 
+    galeria: (req, res) => {
+        res.render('galeria', { user: req.session.userLogged})
+    }
 }
 
 // ********** Exportación del controlador del main. No tocar **********

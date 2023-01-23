@@ -8,7 +8,7 @@ function ProductsList() {
     const [products, setProduct] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3005/api/productos')
+        fetch('https://doghousefood.onrender.com/api/productos')
         .then((response) => response.json())
         .then((data) => { 
             const productsMapped = data.products.map((item) => {  
@@ -16,7 +16,7 @@ function ProductsList() {
                 nombre: item.nombre,
                 precio: item.precio,
                 categoria: item.Categoria.nombre,
-                imagen: "http://localhost:3005/img/tiendaProductos/" + item.imagen
+                imagen: "https://doghousefood.onrender.com/img/tiendaProductos/" + item.imagen
                 }
              })
             setProduct(productsMapped); 
