@@ -79,7 +79,7 @@ const controller = {
             return res.render('tiendaCreateForm', {
                 errors: resultValidation.mapped(),
                 oldData: req.body,
-                categorias: categoriesList,
+                categorias: [{nombre: "Comida natural"},{nombre:"Snacks"},{nombre:"Suplementos"}],
                 user: req.session.userLogged
             });
         };

@@ -36,41 +36,41 @@
   
   #titParteA {
     font-family: "baloo 2";
-    color:#EF863D;
+    color:#72848C;
     font-weight: bold;
     font-size: 40px;
   }
 
   #subtParteA {
     font-family: "baloo 2";  
-    color:#EF863D;
+    color:#72848C;
     font-size: 1.2vw;
     line-height: 35px;  
   } 
 
   #li1 {
-    background-color: #EF863D;
+    background-color: #B6BBC3;
     font-family: "baloo 2";
     color: #FDFAF2;
     opacity: 0.9;
   }
 
   #li2 {
-    background-color: #EF863D;
+    background-color: #B6BBC3;
     font-family: "baloo 2";
     color: #FDFAF2;
     opacity: 0.9;
   }
 
   #li3 {
-    background-color: #EF863D;
+    background-color: #B6BBC3;
     font-family: "baloo 2";
     color: #FDFAF2;
     opacity: 0.9;
   }
 
   #li4 {
-    background-color: #EF863D;
+    background-color: #B6BBC3;
     font-family: "baloo 2";
     color: #FDFAF2;
     opacity: 0.9;
@@ -78,18 +78,27 @@
 
 /******************** SECCIÓN 4 ********************/
 
+#recetas{
+  color: #72848C;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+#recetas_sub{
+  color: #72848C;
+}
 
 #nuestros-menus{
   justify-content: center;
-  background-color: #EF863D;
-  color: #FDFAF2;
+  background-color: #B6BBC3;
+  color: #B6BBC3;
   align-content: center;
   opacity: 0.9;
   line-height: 0%;
 }
 
 #mas_info{
-    background-color: #ef863d;
+    background-color: #B6BBC3;
     border: solid #ef863d;
     color: #ef863d;
     font-family: "baloo 2";
@@ -97,7 +106,7 @@
 }
 
 .card{
-  background-color: #ef863d;
+  background-color: #B6BBC3;
   color: #FDFAF2;
   opacity: 0.9;
   margin-bottom: 22px; 
