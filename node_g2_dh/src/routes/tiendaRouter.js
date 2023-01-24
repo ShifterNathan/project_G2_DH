@@ -28,7 +28,7 @@ router.put('/editar/:id', authMiddleware, uploadFile.single('imagenProducto'), t
 /*** Para eliminar un producto de la tienda ***/ 
 router.delete('/eliminar/:id', authMiddleware, tiendaController.destroy); 
 
-router.get('/carrito', authMiddleware, tiendaController.cart);
+
 
 
 // ********** Exportación de las rutas. No tocar **********

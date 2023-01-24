@@ -7,8 +7,6 @@ module.exports = (sequelize, Datatypes) => {
     nombre: {type: Datatypes.STRING(45), allowNull: false},
     precio: {type: Datatypes.DECIMAL(10,0), allowNull: false},
     descuento: {type: Datatypes.INTEGER(100), allowNull: true},
-    //fecha_creacion: {type: Datatypes.DATE(6), defaulValue: Datatypes.NOW},
-    //fecha_baja: {type: Datatypes.DATE(6), allowNull: true},
     imagen: {type: Datatypes.STRING(45), allowNull: false},
     descripcion: {type: Datatypes.STRING(255), allowNull: false},
     Usuario_id: {type: Datatypes.INTEGER(11), allowNull: false},
