@@ -199,10 +199,6 @@ const controller = {
     .catch(err => {res.send(err)})
     },
 
-    cart: (req, res) => {
-        res.render('cart.ejs')
-    }
-
 }
 
 // ********** Exportación del controlador de la tienda. No tocar **********

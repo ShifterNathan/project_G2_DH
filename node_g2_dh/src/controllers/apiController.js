@@ -118,8 +118,9 @@ const controller = {
         })
         .catch(err => (console.log(err)))
 
+    },
 
-    }
+
 }
 
 // ********** Exportación del controlador del main. No tocar **********

@@ -55,6 +55,10 @@ body {
   width: 20px;
 }
 
+.cart-price {
+  color: #39b54a;
+}
+
 /******************** FOOTER ********************/
 
 .bg-secondary {
