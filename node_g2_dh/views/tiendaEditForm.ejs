@@ -8,7 +8,7 @@
     <body>
         <%- include('./partials/header') %> 
     
-        <section class=" gradient-custom pb-5 pt-5">
+        <section class=" gradient-custom pb-5 pt-5" id="ventana_crear">
             <div class="container py-5 h-100">
               <div class="row justify-content-center align-items-center h-100">
                 <div class="col-12 col-lg-9 col-xl-7">
@@ -60,7 +60,7 @@
                           <div class="col-md-6 mb-4">
                             <label for="category" class="form-label select-label">Categoría</label>
                             <select class="select form-control-lg" name="categoria" id="categoriaID">
-                                <option value="">Selecciona</option>
+                                <option value=""></option>
                                 <% for (let categoria of categorias) { %>
                                     <option value="<%=categoria.id %>"><%=categoria.nombre %></option>
                                 <% } %>

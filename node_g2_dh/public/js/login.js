@@ -7,17 +7,21 @@ window.addEventListener("load",function(){
         evento.preventDefault();
 
         let email = document.getElementById("emailUsuario").value;
-        if (email==""){
-            alert("Ingresa tu email");
-        } // faltaría agregar la parte que valida si es email
-
-        //let emailRegex = "/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i";
-        // https://es.stackoverflow.com/questions/142/validar-un-email-en-javascript-que-acepte-todos-los-caracteres-latinos
-        
         let contraseña = document.getElementById("claveLogin").value;
-        if (contraseña==""){
-            alert("Ingresa tu clave");
+       
+        if ((email=="")&&(contraseña=="")){
+            return alert("Ingresa tu email y clave para ingresar");
+        }
+
+        if (email==""){
+            return alert("Ingresa tu email");
         } 
+        
+        if (contraseña==""){
+            return alert("Ingresa tu clave");
+        } 
+
+         
 
     formularioLogin.submit(Swal.fire({
         position: 'center',
@@ -26,6 +30,28 @@ window.addEventListener("load",function(){
         showConfirmButton: false,
         timer: 3000
       }));
+    
+    // formularioLogin.addEventListener("submit", function(evento){
+
+    //     evento.preventDefault();
+
+    //     let email = document.getElementById("emailUsuario").value;
+    //     if (email==""){
+    //         alert("Ingresa tu email");
+    //     } 
+        
+    //     let contraseña = document.getElementById("claveLogin").value;
+    //     if (contraseña==""){
+    //         alert("Ingresa tu clave");
+    //     } 
+
+    // formularioLogin.submit(Swal.fire({
+    //     position: 'center',
+    //     icon: 'success',
+    //     title: 'Login exitoso',
+    //     showConfirmButton: false,
+    //     timer: 3000
+    //   }));
         
     })    
 })

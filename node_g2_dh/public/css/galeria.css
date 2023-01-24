@@ -1,3 +1,11 @@
+#body{
+  background-color: #B6BBC3;
+}
+
+#titulito{
+  color: white
+}
+
 CSS.g-6,
 .gx-6 {
   --bs-gutter-x: 4.5rem;
